@@ -35,9 +35,9 @@ Not applicable, as project related work didn't start yet.
 - If you happen to have a running version of python3 and a code editor, you are good to go, even if you have different installation / software.
 - Check whether you have a bash shell on your computer, also as described on the setup page.
 - Everything else - like downloading materials for the course - we will do together in the next session.
-- Your third task is to download the ebook 'Python for Experimental Psychologists' from the University Library website. Have a look at Chapter 1 - but don't follow their installation instructions - use the ones from our website!
+- Your third task is to download the ebook 'Python for Experimental Psychologists' from the University Library website. 
 
 ## Optional/reading/further materials
 
-Here are some things that you could check out further regarding the topics discussed
+Have a look at Chapter 1 - but don't follow their installation instructions - use the ones from our website!
 

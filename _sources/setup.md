@@ -59,7 +59,6 @@ Select the tab that corresponds to your operating system and follow the instruct
 
 ````{tab-set}
 ```{tab-item} Windows
-**Windows Subsystem for Linux (WSL)**
 
 **Python**
 

@@ -183,10 +183,23 @@ The commandline installation procedures are described further down under 'quicks
 For the course, we will need a few python packages that we will add to our python installation. We will do this together in the next session. 
 
 
-### Download environment file
+### Preparation of your local environment
 
-Please download the [`environment.yml`](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/environment.yml) file (e.g. with right mouse click -> Save As). Make sure that the file ends with `.yml` and not `.txt`.
-We will use this file in the next session.
+1. Please generate a folder for this course on your computer. This should be in a more or less easy to reach location (as we may have to write out the path to this folder from time to time). One possibility would be in the main folder of your account, e.g.: 
+
+   /Users/<YourUsername>/pfp_course (macOS, LINUX) or C:\Users\<YourUsername>\ (Windows)
+
+An alternative would be to locate this folder in your documents folder or in a folder for projects or similar: 
+
+      /Users/<YourUsername>/Documents/pfp_course (macOS, LINUX) or C:\Users\Documents\<YourUsername>\ (Windows)
+
+      /Users/<YourUsername>/Documents/Projects/pfp_course (macOS, LINUX) or C:\Users\Documents\Projects\<YourUsername>\ (Windows)
+
+You can generate this folder graphically in the explorer (windows) or finder (macOS) or using the command 'md' in a bash shell or terminal (all operating systems). The most important thing is that your project folder for this course is in a location that you remember. 
+
+
+2. Please download the [`environment.yml`](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/environment.yml) file (e.g. with right mouse click -> Save As). Make sure that the file ends with `.yml` and not `.txt`.
+Please move this file your project folder. We will use this file in the next session.
 
 
 ### Modern web browser

@@ -14,11 +14,11 @@ The optimistic schedule below may be subject of change, dependent on time constr
 
 | Date (day/month/year) 🗓 | Topic 💡 👨🏻‍🏫 |
 |-------------------------|-------------|
-| 23/10/2025 | Introduction I - course information |
-| 30/10/2025 | Introduction II - Jupyter notebooks |
+| 23/10/2025 | Introduction I - course information; homework assignment: install first parts of software |
+| 30/10/2025 | Checking and finalizing software setup; Introduction II - Jupyter notebooks |
 | 06/11/2025 | Introduction III - Intro to Python I  |
 | 13/11/2025 | No in person session! Introduction IV - Intro to Python II |
 | 20/11/2025 | No in person session! Introduction IV - Intro to Python II continued |
 | 27/11/2025 | Introduction V - Recap and Intro to Python III |
-| 04/12/2025 | Start of Block 2: Running Experiments in Python with PsychoPy|
+| 04/12/2025 | Start of Block 2: Running Experiments in Python with PsychoPy (Dr. Cosimo Iaia)|
 | 11/12/2025 | 

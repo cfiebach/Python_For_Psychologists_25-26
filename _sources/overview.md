@@ -63,6 +63,8 @@ https://www.inferentialthinking.com/
 
 https://jakevdp.github.io/PythonDataScienceHandbook/
 
+For the 2025 course, also check out the "Python for Experimental Psychologists" book by Dalmaijer et al.
+
 Additional reading material might be added but will always be open & free with students being informed about any addition.
 
 <iframe src="https://giphy.com/embed/9dFvgd4ID6ne0" width="240" height="135" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/community-nbc-ken-jeong-9dFvgd4ID6ne0">via GIPHY</a></p>

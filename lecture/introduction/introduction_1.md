@@ -39,5 +39,4 @@ Not applicable, as project related work didn't start yet.
 
 ## Optional/reading/further materials
 
-Have a look at Chapter 1 - but don't follow their installation instructions - use the ones from our website!
 

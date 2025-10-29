@@ -3,7 +3,7 @@
 The things covered in this section will introduce central concepts for our subsequent endeavors in this class. More precisely, we'll explore `jupyter notebooks` as one form of interacting with your computer, specifically `python`. Getting a good hang of this will be important as most of our `python` endeavors will happen within `jupyter notebooks` and they are a staple in research workflows.
 
 ## Create environment
-Download the following [environment file](https://github.com/aylinsgl/Python_For_Psychologists_23-24/blob/master/environment.yaml)
+Download the following [environment file](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/master/environment.yml)
 In your terminal, type `conda env create -f path/to/your/file/pfp_2023.yml` replacing 'path/to/your/file/' with the actual filepath.
 
 
@@ -19,7 +19,7 @@ We will now take a closer look at `jupyter notebook` and how we can work with th
 
 ## Materials 📓
 
-Please see the rendered version of the `jupyter notebook` [Introduction III - jupyter notebooks](https://aylinsgl.github.io/Python_For_Psychologists_23-24/introduction/intro_jupyter.html) in the `ToC` on the left.
+Please see the rendered version of the `jupyter notebook` [Introduction III - jupyter notebooks](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_jupyter.html) in the `ToC` on the left.
 
 ## Homework
 
@@ -30,7 +30,7 @@ You should create a `jupyter notebook` with
             - 1 code cell with an equation (e.g. `1+1`, `(a+b)/(c+d)`, etc.)
             - 1 raw cell with your favorite snack
 - **optional**: try to include a picture of your favorite animal
-- save the notebook and e-mail it to kallmayer@psych.uni-frankfurt.de
+- save the notebook and e-mail it to cfiebach@psych.uni-frankfurt.de
 
 Please note that the deadline for the assignment is: 10/11/2021, 11:59 PM EST.
 

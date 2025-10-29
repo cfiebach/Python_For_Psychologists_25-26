@@ -17,8 +17,8 @@ Don't worry, you got this!
 There are a few computing requirements for the course that are absolutely necessary (beyond the few software packages you should install, described below):
 
 1. You must have administrator access to your computer (i.e., you must be able to install things yourself without requesting IT approval).
-1. You should have at least 20 GB of free disk space on your computer (but we would recommend more, to be safe).
-1. If you are using Windows you must be using Windows 10/11; Windows 7 and 8 will not be sufficient for this course.
+2. You should have at least 20 GB of free disk space on your computer (but we would recommend more, to be safe).
+3. If you are using Windows you must be using Windows 10/11; Windows 7 and 8 will not be sufficient for this course.
 
 If you foresee any of these being a problem please reach out to one of the instructors and enquire what steps you can take to ensure your setup is ready for the course.
 
@@ -32,7 +32,7 @@ To get the most out of the course, we ask that you to install the following soft
 
 Miniconda is a frequently used system in scientific computing that contains python, but also is an efficient way of keeping your software packages up to date and of managing the environment in which you conduct scientific computing (like data analysis). PyCharm is a powerful user interface, which we will use to run interactive python notebooks but which also provides us with a terminal window through which we can do other things like installing packages or managing our computing environment. The web browser is not strictly necessary, but for our first steps using interactive jupyter notebooks, we will use the browser. 
 
-If you already have the above software tools/packages installed (what are you even doing here?), or are confident you’ll be able to install them by the time the course starts, or a have enough programming experience that you have alternative installations with similar functionality, you can jump straight to [checking your install](#checking-your-install).
+If you already have the above software tools/packages installed (what are you even doing here?), or are confident you’ll be able to install them by the time the course starts, or a have enough programming experience that you have alternative installations with similar functionality, you can use these. 
 
 There are a number of further software that may become relevant in the next weeks, but do not have to be installed right now. These influde:
 
@@ -44,14 +44,13 @@ There are a number of further software that may become relevant in the next week
 
 The rest of this page provides more detail on installation procedures for each of the above elements, with separate instructions for each of the three major operating systems (`Windows`, `Mac OS`, and `Linux`).
 
+
 ### Some quick general notes on instructions
 
 - There is no difference between `Enter` and `Return` in these instructions, so just press whatever the equivalent on your keyboard is whenever one is stated
 - If you already have some of these things installed on your computer that should (theoretically) be okay.
-  However, you need to make sure that you are able to complete the steps described in [checking your install](#checking-your-install) without issue.
-  - For example, having multiple different `Python` installations on your computer can lead to incredibly frustrating issues that are very difficult to debug.
-    As such, if you have already installed `Python` via some other application (not `Miniconda`/`Anaconda`), it's strongly encouraged to uninstall it before following the instructions below.
-    You _must_ have `Python` installed via `Miniconda` for this course.
+- Having multiple different `Python` installations on your computer can lead to frustrating issues that are very difficult to debug. Thus, if you have already installed `Python` via some other application (not `Miniconda`/`Anaconda`), it's strongly encouraged to uninstall it before following the instructions below. Alternatively, you should (be able to) assure that the basic needed functionality works in your setup. At the moment, this primarily involves running python interactively in jupyter notebooks.
+
 
 ### OS-specific installation instructions
 

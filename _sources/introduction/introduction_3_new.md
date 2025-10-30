@@ -19,7 +19,8 @@ We will now take a closer look at `jupyter notebook` and how we can work with th
 
 ## Materials 📓
 
-Please see the rendered version of the `jupyter notebook` [Introduction III - jupyter notebooks](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_jupyter.html) in the `ToC` on the left.
+we will see
+
 
 ## Homework
 

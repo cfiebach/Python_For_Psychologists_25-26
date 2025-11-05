@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'introduction/introduction_2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introduction III" href="introduction_3_new.html" />
+    <link rel="next" title="Introduction II - the jupyter ecosystem &amp; notebooks, first look at programming in Python" href="intro_jupyter.html" />
     <link rel="prev" title="Introduction I" href="introduction_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,11 +189,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../outline.html">General outline</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction.html">Introduction</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="introduction_1.html">Introduction I</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction II</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="introduction_3_new.html">Introduction III</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Introduction II</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="intro_jupyter.html">Introduction II - the jupyter ecosystem &amp; notebooks, first look at programming in Python</a></li>
 </ul>
 </details></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction_3_new.html">Introduction III</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="introduction_4.html">Introduction IV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="intro_python_I.html">Introduction IV - Introduction to Python - I</a></li>
 </ul>
@@ -489,8 +489,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-subsequent-meeting">tasks for subsequent meeting 🖥️✍🏽📖</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-jupyter-notebook">Open jupyter notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-own-notebook">Create your own notebook</a></li>
 </ul>
             </nav>
         </div>
@@ -531,23 +529,10 @@ max. 2 sentences
 <li><p>save the notebook and e-mail it to <a class="reference external" href="mailto:fiebach&#37;&#52;&#48;psych&#46;uni-frankfurt&#46;de">fiebach<span>&#64;</span>psych<span>&#46;</span>uni-frankfurt<span>&#46;</span>de</a></p></li>
 </ul>
 <p>Please note that the deadline for the assignment is: Tuesday Nov 04 2025, 11:59 PM EST.</p>
+<p>If you’re eager to explore more, feel free to do so, for example <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/notebook.html">over here</a>.</p>
 </section>
-<section id="open-jupyter-notebook">
-<h2>Open jupyter notebook<a class="headerlink" href="#open-jupyter-notebook" title="Permalink to this heading">#</a></h2>
-<p>There are different ways to open the program. If you installed Anaconda, you can open the <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Navigator</span></code> and from your <code class="docutils literal notranslate"><span class="pre">base</span></code> envirnoment, jupyter notebooks should have already been installed. Just click on <code class="docutils literal notranslate"><span class="pre">Launch</span></code> and youre ready to go!</p>
-<img align="center" src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/anaconda_navigator.png" alt="logo" title="Twitter" width="900" height="600" />
-<p>If you installed miniconda, you won’t have the <code class="docutils literal notranslate"><span class="pre">Navigagor</span></code>. Instead, what you should do, is open your <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and type in <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. Make sure your <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is activated. If you can’t see the <code class="docutils literal notranslate"><span class="pre">(base)</span></code> that you see in the picture, type in <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">init</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">base</span></code>.</p>
-<img align="center" src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/terminal_jn.png" alt="terminal" title=" " width="600" height="450" />
-<p>If you start <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> from the terminal, a lot of text will appear in your terminal which has something to do with the server that the notebook is hosted on locally. It should also automatically open a <code class="docutils literal notranslate"><span class="pre">homepage</span></code> on your browser, if it doesn’t, copy paste the link from your terminal and open it in your browser.</p>
-<p>Your jupyter homepage should look something like this:</p>
-<img align="center" src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/jupyter_homepage.png" alt="homepage" title=" " width="900" height="600" />
-</section>
-<section id="create-your-own-notebook">
-<h2>Create your own notebook<a class="headerlink" href="#create-your-own-notebook" title="Permalink to this heading">#</a></h2>
-<p>The last thing I want you to do, is open your own notebook and save it. Click on <code class="docutils literal notranslate"><span class="pre">New</span></code> and select <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">3</span> <span class="pre">(ipykernel)</span></code>. It will create a new empty notebook for you with a python 3 kernel.</p>
-<img align="center" src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/open_new_nb.png" alt="new" title=" " width="900" height="600" />
-<p>Tada! now you can save this notebook under <code class="docutils literal notranslate"><span class="pre">File</span></code> <code class="docutils literal notranslate"><span class="pre">save</span> <span class="pre">as</span></code>. We will go from here next time. If you’re eager to explore more, feel free to do so, for example <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/notebook.html">over here</a>.</p>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -590,11 +575,11 @@ max. 2 sentences
       </div>
     </a>
     <a class="right-next"
-       href="introduction_3_new.html"
+       href="intro_jupyter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introduction III</p>
+        <p class="prev-next-title">Introduction II - the jupyter ecosystem &amp; notebooks, first look at programming in Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -617,8 +602,6 @@ max. 2 sentences
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-subsequent-meeting">tasks for subsequent meeting 🖥️✍🏽📖</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-jupyter-notebook">Open jupyter notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-own-notebook">Create your own notebook</a></li>
 </ul>
   </nav></div>
 

@@ -511,10 +511,22 @@ document.write(`
 <h2>Create an Environment and Install Python packages in conda<a class="headerlink" href="#create-an-environment-and-install-python-packages-in-conda" title="Permalink to this heading">#</a></h2>
 <p>Before that, we want to make sure that a number of packages are installed on your system that you may need for the next sessions.</p>
 <p>For this, we need to open a terminal (eg in PyCharm, or the bash in linux, or a terminal window on your Mac).</p>
-<p>Let’s first have a look whether you already have an environment and what packages are installed: ‘conda env list’</p>
-<p>We can also check which packages are installed in your system: ‘conda list’</p>
-<p>Now let us generate a new environment for this course: ‘conda create -n pfp25’</p>
-<p>Use the above command to check whether it indeed extists, and then activate it: ‘conda activate pfp25’</p>
+<p>Let’s first have a look whether you already have an environment and what packages are installed:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &#39;conda env list&#39;
+</pre></div>
+</div>
+<p>We can also check which packages are installed in your system:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &#39;conda list&#39;
+</pre></div>
+</div>
+<p>Now let us generate a new environment for this course:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &#39;conda create -n pfp25&#39;
+</pre></div>
+</div>
+<p>Use the above command to check whether it indeed extists, and then activate it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &#39;conda activate pfp25&#39;
+</pre></div>
+</div>
 <p>Next, let’s install some of the packages we need:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &#39;conda config --append channels conda-forge&#39;
     &#39;conda config --set channel_priority strict&#39;

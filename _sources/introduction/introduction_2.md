@@ -11,13 +11,21 @@ Before that, we want to make sure that a number of packages are installed on you
 
 For this, we need to open a terminal (eg in PyCharm, or the bash in linux, or a terminal window on your Mac). 
 
-Let's first have a look whether you already have an environment and what packages are installed: 'conda env list'
+Let's first have a look whether you already have an environment and what packages are installed: 
 
-We can also check which packages are installed in your system: 'conda list'
+        'conda env list'
 
-Now let us generate a new environment for this course: 'conda create -n pfp25'
+We can also check which packages are installed in your system: 
 
-Use the above command to check whether it indeed extists, and then activate it: 'conda activate pfp25'
+        'conda list'
+
+Now let us generate a new environment for this course: 
+
+        'conda create -n pfp25'
+
+Use the above command to check whether it indeed extists, and then activate it: 
+
+        'conda activate pfp25'
 
 Next, let's install some of the packages we need: 
 

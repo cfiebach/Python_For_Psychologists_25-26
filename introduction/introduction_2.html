@@ -486,9 +486,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-subsequent-meeting">tasks for subsequent meeting 🖥️✍🏽📖</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-conda">Installation of Python packages in conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-subsequent-meeting">tasks for subsequent meeting 🖥️✍🏽📖</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -504,20 +507,34 @@ document.write(`
 <h1>Introduction II<a class="headerlink" href="#introduction-ii" title="Permalink to this heading">#</a></h1>
 <p>This week, I want you to explore with you the basics of Jupyter Notebooks. In the first place, you won’t have to program anything by yourself at this point. I just want you to familiarize yourself with the application so that next time, we can dive right into our first Python programming session! All I want you to do for today, is (a) to open a jupyter notebook on your computer, (b) follow me while I go through a first notebook covering some functionality of jupyter notebooks, and complete the first (very easy!) homework assignmentt.</p>
 <p>The things covered in this section will introduce central concepts for our subsequent endeavors in this class. More precisely, we’ll explore <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> as one form of interacting with your computer, specifically <code class="docutils literal notranslate"><span class="pre">python</span></code>. Getting a good hang of this will be important as most of our <code class="docutils literal notranslate"><span class="pre">python</span></code> endeavors will happen within <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> and they are a staple in research workflows.</p>
-<p>If you run into any issues, we will discuss them next week! Have fun!</p>
+<section id="installation-of-python-packages-in-conda">
+<h2>Installation of Python packages in conda<a class="headerlink" href="#installation-of-python-packages-in-conda" title="Permalink to this heading">#</a></h2>
+<p>Before that, we want to make sure that a number of packages are installed on your system that you may need for the next sessions.</p>
+<p>For this, we need to open a terminal (eg in PyCharm, or the bash in linux, or a terminal window on your Mac).</p>
+<p>Let’s first have a look whether you already have an environment and what packages are installed: ‘conda env list’</p>
+<p>We can also check which packages are installed in your system: ‘conda list’</p>
+<p>Now let us generate a new environment for this course: ‘conda create -n pfp25’</p>
+<p>Use the above command to check whether it indeed extists, and then activate it: ‘conda activate pfp25’</p>
+<p>Next, let’s install some of the packages we need:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &#39;conda config --append channels conda-forge&#39;
+    &#39;conda config --set channel_priority strict&#39;
+    &#39;conda install ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly&#39;
+</pre></div>
+</div>
+<p>Finally, let’s start jupyter notebook and have a look: ‘jupyter notebook’</p>
 <section id="objectives">
-<h2>Objectives 📍<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<h3>Objectives 📍<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Learn how to open jupyter notebooks locally and create your own jupyter notebook</p></li>
 <li><p>learn basic and efficient usage of the jupyter ecosystem &amp; notebooks</p></li>
 </ul>
 </section>
 <section id="materials">
-<h2>Materials 📓<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
+<h3>Materials 📓<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h3>
 <p>Please see the rendered version of the <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> <a class="reference external" href="https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_jupyter.html">Introduction II - jupyter notebooks</a> in the <code class="docutils literal notranslate"><span class="pre">ToC</span></code> on the left.</p>
 </section>
 <section id="tasks-for-subsequent-meeting">
-<h2>tasks for subsequent meeting 🖥️✍🏽📖<a class="headerlink" href="#tasks-for-subsequent-meeting" title="Permalink to this heading">#</a></h2>
+<h3>tasks for subsequent meeting 🖥️✍🏽📖<a class="headerlink" href="#tasks-for-subsequent-meeting" title="Permalink to this heading">#</a></h3>
 <p>You should create a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> with</p>
 <ul class="simple">
 <li><p><strong>mandatory</strong>:  <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">different</span> <span class="pre">cells</span></code>:
@@ -528,8 +545,9 @@ max. 2 sentences
 <li><p><strong>optional</strong>: try to include a picture of your favorite animal</p></li>
 <li><p>save the notebook and e-mail it to <a class="reference external" href="mailto:fiebach&#37;&#52;&#48;psych&#46;uni-frankfurt&#46;de">fiebach<span>&#64;</span>psych<span>&#46;</span>uni-frankfurt<span>&#46;</span>de</a></p></li>
 </ul>
-<p>Please note that the deadline for the assignment is: Tuesday Nov 04 2025, 11:59 PM EST.</p>
+<p>Please note that the deadline for the assignment is: Tuesday Nov 11 2025, 11:59 PM EST.</p>
 <p>If you’re eager to explore more, feel free to do so, for example <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/notebook.html">over here</a>.</p>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -599,9 +617,12 @@ max. 2 sentences
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-subsequent-meeting">tasks for subsequent meeting 🖥️✍🏽📖</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-of-python-packages-in-conda">Installation of Python packages in conda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks-for-subsequent-meeting">tasks for subsequent meeting 🖥️✍🏽📖</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

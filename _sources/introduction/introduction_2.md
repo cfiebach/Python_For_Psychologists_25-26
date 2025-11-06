@@ -4,7 +4,29 @@ This week, I want you to explore with you the basics of Jupyter Notebooks. In th
 
 The things covered in this section will introduce central concepts for our subsequent endeavors in this class. More precisely, we'll explore `jupyter notebooks` as one form of interacting with your computer, specifically `python`. Getting a good hang of this will be important as most of our `python` endeavors will happen within `jupyter notebooks` and they are a staple in research workflows.
 
-If you run into any issues, we will discuss them next week! Have fun!
+
+## Installation of Python packages in conda
+
+Before that, we want to make sure that a number of packages are installed on your system that you may need for the next sessions.
+
+For this, we need to open a terminal (eg in PyCharm, or the bash in linux, or a terminal window on your Mac). 
+
+Let's first have a look whether you already have an environment and what packages are installed: 'conda env list'
+
+We can also check which packages are installed in your system: 'conda list'
+
+Now let us generate a new environment for this course: 'conda create -n pfp25'
+
+Use the above command to check whether it indeed extists, and then activate it: 'conda activate pfp25'
+
+Next, let's install some of the packages we need: 
+
+        'conda config --append channels conda-forge'
+        'conda config --set channel_priority strict'
+        'conda install ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly'
+
+Finally, let's start jupyter notebook and have a look: 'jupyter notebook'
+
 
 
 ### Objectives 📍
@@ -30,7 +52,7 @@ You should create a `jupyter notebook` with
 - **optional**: try to include a picture of your favorite animal
 - save the notebook and e-mail it to fiebach@psych.uni-frankfurt.de
 
-Please note that the deadline for the assignment is: Tuesday Nov 04 2025, 11:59 PM EST.
+Please note that the deadline for the assignment is: Tuesday Nov 11 2025, 11:59 PM EST.
 
 
 If you're eager to explore more, feel free to do so, for example [over here](https://jupyter-notebook.readthedocs.io/en/latest/notebook.html). 

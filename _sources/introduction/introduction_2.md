@@ -5,7 +5,7 @@ This week, I want you to explore with you the basics of Jupyter Notebooks. In th
 The things covered in this section will introduce central concepts for our subsequent endeavors in this class. More precisely, we'll explore `jupyter notebooks` as one form of interacting with your computer, specifically `python`. Getting a good hang of this will be important as most of our `python` endeavors will happen within `jupyter notebooks` and they are a staple in research workflows.
 
 
-## Installation of Python packages in conda
+## Create an Environment and Install Python packages in conda
 
 Before that, we want to make sure that a number of packages are installed on your system that you may need for the next sessions.
 

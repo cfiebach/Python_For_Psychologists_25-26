@@ -21,7 +21,7 @@ We can also check which packages are installed in your system:
 
 Now let us generate a new environment for this course: 
 
-        conda create -n pfp25
+        conda create -n pfp2025 python
 
 Use the above command to check whether it indeed extists, and then activate it: 
 

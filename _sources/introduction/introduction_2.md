@@ -13,25 +13,25 @@ For this, we need to open a terminal (eg in PyCharm, or the bash in linux, or a 
 
 Let's first have a look whether you already have an environment and what packages are installed: 
 
-        'conda env list'
+        conda env list
 
 We can also check which packages are installed in your system: 
 
-        'conda list'
+        conda list
 
 Now let us generate a new environment for this course: 
 
-        'conda create -n pfp25'
+        conda create -n pfp2025 python
 
 Use the above command to check whether it indeed extists, and then activate it: 
 
-        'conda activate pfp25'
+        conda activate pfp25
 
 Next, let's install some of the packages we need: 
 
-        'conda config --append channels conda-forge'
-        'conda config --set channel_priority strict'
-        'conda install ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly'
+        conda config --append channels conda-forge
+        conda config --set channel_priority strict
+        conda install ipython jupyter jupyterlab matplotlib numpy pandas scipy seaborn pingouin statsmodels plotly
 
 Finally, let's start jupyter notebook and have a look: 'jupyter notebook'
 

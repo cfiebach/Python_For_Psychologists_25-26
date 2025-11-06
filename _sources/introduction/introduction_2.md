@@ -48,6 +48,8 @@ Finally, let's start jupyter notebook and have a look: 'jupyter notebook'
 Please see the rendered version of the `jupyter notebook` [Introduction II - jupyter notebooks](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_jupyter.html) in the `ToC` on the left.
 
 
+You can also download the notebook itself so that you can open it in your own browser: https://tinyurl.com/pfp25github
+
 
 ### tasks for subsequent meeting 🖥️✍🏽📖
 

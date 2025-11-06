@@ -520,14 +520,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-get-started">Before we get started…</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">What is Python?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#widely-used">Widely-used</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stackoverflow-developer-survey">2022 Stackoverflow Developer Survey</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level">High-level</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-reading-in-java">File reading in Java</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-file-reading-in-java">Example: File reading in Java</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-reading-in-python">File-reading in Python</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-purpose">General-purpose</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic">Dynamic</a></li>
 </ul>
 </li>
@@ -561,16 +558,6 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-programming-science-in-python">Why do programming/science in Python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easy-to-learn">Easy to learn</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehensive-standard-library">Comprehensive standard library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptional-external-libraries">Exceptional external libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relatively-good-performance">(Relatively) good performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-vs-other-data-science-languages">Python vs. other data science languages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r">R</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-why-python">So, why Python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-have-your-cake-and-eat-it">You can have your cake <em>and</em> eat it!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-python-data-science-stack">The core Python “data science” stack</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-python-for-psychology-stack">The core “Python for psychology” stack</a></li>
 </ul>
@@ -591,7 +578,7 @@ document.write(`
 <h1>Introduction IV - Introduction to Python - I<a class="headerlink" href="#introduction-iv-introduction-to-python-i" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://github.com/M-earnest">Michael Ernst</a><br />
 Phd student - <a class="reference external" href="http://www.fiebachlab.org/">Fiebach Lab</a>, <a class="reference external" href="https://www.psychologie.uni-frankfurt.de/49868684/Abteilungen">Neurocognitive Psychology</a> at <a class="reference external" href="https://www.goethe-university-frankfurt.de/en?locale=en">Goethe-University Frankfurt</a></p>
-<p>Adapted by: <a class="reference external" href="https://www.aylinkallmayer.com">Aylin Kallmayer</a>, <a class="reference external" href="https://www.scenegrammarlab.com">Scene-Grammar-Lab</a></p>
+<p>Adapted by: <a class="reference external" href="https://www.aylinkallmayer.com">Aylin Kallmayer</a>, Christian Fiebach</p>
 <section id="before-we-get-started">
 <h2>Before we get started…<a class="headerlink" href="#before-we-get-started" title="Permalink to this heading">#</a></h2>
 <br>
@@ -622,22 +609,9 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <h2>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Python is a programming language</p></li>
-<li><p>Specifically, it’s a <strong>widely used/very flexible</strong>, <strong>high-level</strong>, <strong>general-purpose</strong>, <strong>dynamic</strong> programming language</p></li>
-<li><p>That’s a mouthful! Let’s explore each of these points in more detail…</p></li>
+<li><p>Specifically, it’s a widely used/very flexible, <strong>high-level</strong>, general-purpose, <strong>dynamic</strong> programming language</p></li>
+<li><p>That’s a mouthful! Let’s explore some of these points in more detail…</p></li>
 </ul>
-<section id="widely-used">
-<h3>Widely-used<a class="headerlink" href="#widely-used" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Python is the fastest-growing major programming language</p></li>
-<li><p>Top 3 overall (with JavaScript, Java)</p></li>
-</ul>
-<center><img src="https://149351115.v2.pressablecdn.com/wp-content/uploads/2017/09/growth_major_languages-1-1400x1200.png" width="800px" style="margin-bottom: 10px;"></center>
-<p><a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">The incredible growth of python, by David Robinson, 6.09.2017</a></p>
-</section>
-<section id="stackoverflow-developer-survey">
-<h3>2022 Stackoverflow Developer Survey<a class="headerlink" href="#stackoverflow-developer-survey" title="Permalink to this heading">#</a></h3>
-<img src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/popular_languages_devs.png">
-</section>
 <section id="high-level">
 <h3>High-level<a class="headerlink" href="#high-level" title="Permalink to this heading">#</a></h3>
 <p>Python features a high level of abstraction</p>
@@ -646,8 +620,8 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <li><p>E.g., memory allocation, garbage collection, etc.</p></li>
 <li><p>Python lets you write code faster</p></li>
 </ul>
-<section id="file-reading-in-java">
-<h4>File reading in Java<a class="headerlink" href="#file-reading-in-java" title="Permalink to this heading">#</a></h4>
+<section id="example-file-reading-in-java">
+<h4>Example: File reading in Java<a class="headerlink" href="#example-file-reading-in-java" title="Permalink to this heading">#</a></h4>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedReader</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileReader</span><span class="p">;</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
@@ -679,17 +653,6 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </div>
 </section>
 </section>
-<section id="general-purpose">
-<h3>General-purpose<a class="headerlink" href="#general-purpose" title="Permalink to this heading">#</a></h3>
-<p>You can do almost everything in Python</p>
-<ul class="simple">
-<li><p>Comprehensive standard library</p></li>
-<li><p>Enormous ecosystem of third-party packages</p></li>
-<li><p>Widely used in many areas of software development (web, dev-ops, data science, etc.)</p></li>
-</ul>
-<center><img src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/pypi_packages.png" width="500px" style="margin-bottom: 10px;"></center>
-<center><img src="https://raw.githubusercontent.com/aylinsgl/Python_For_Psychologists_23-24/master/lecture/static/general_purpose_meme.png"></center>
-</section>
 <section id="dynamic">
 <h3>Dynamic<a class="headerlink" href="#dynamic" title="Permalink to this heading">#</a></h3>
 <p>Code is interpreted at runtime</p>
@@ -698,11 +661,18 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <li><p>Eliminates delays between development and execution</p></li>
 <li><p>The downside: poorer performance compared to compiled languages</p></li>
 </ul>
-<center><img src="https://imgs.xkcd.com/comics/python.png"></center><p>(Try typing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">antigravity</span></code> into a new cell and running it!)</p>
+<p>(Try typing <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">antigravity</span></code> into a new cell and running it!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">antigravity</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>What we will do in this section of the course is a <em>short</em> introduction to <code class="docutils literal notranslate"><span class="pre">Python</span></code> to help beginners to get familiar with this <code class="docutils literal notranslate"><span class="pre">programming</span> <span class="pre">language</span></code>.</p>
 <p>It is divided into the following chapters:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#Module"><span class="xref myst">Module</span></a></p></li>
+<li><p><a class="reference internal" href="#Modules"><span class="xref myst">Modules</span></a></p></li>
 <li><p><a class="reference internal" href="#Help-and-Descriptions"><span class="xref myst">Help and Descriptions</span></a></p></li>
 <li><p><a class="reference internal" href="#Variables-and-types"><span class="xref myst">Variables and types</span></a></p>
 <ul>
@@ -745,26 +715,13 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </ul>
 <p>Here’s what we will focus on in the first block:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#Module"><span class="xref myst">Module</span></a></p></li>
+<li><p><a class="reference internal" href="#Modules"><span class="xref myst">Modules</span></a></p></li>
 <li><p><a class="reference internal" href="#Help-and-Descriptions"><span class="xref myst">Help and Descriptions</span></a></p></li>
 <li><p><a class="reference internal" href="#Variables-and-types"><span class="xref myst">Variables and types</span></a></p>
 <ul>
 <li><p><a class="reference internal" href="#Symbol-names"><span class="xref myst">Symbol names</span></a></p></li>
 <li><p><a class="reference internal" href="#Assignment"><span class="xref myst">Assignment</span></a></p></li>
 <li><p><a class="reference internal" href="#Fundamental-types"><span class="xref myst">Fundamental types</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#Operators-and-comparisons"><span class="xref myst">Operators and comparisons</span></a></p>
-<ul>
-<li><p><a class="reference internal" href="#Shortcut-math-operation-and-assignment"><span class="xref myst">Shortcut math operation and assignment</span></a></p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="#Strings,-List-and-dictionaries"><span class="xref myst">Strings, List and dictionaries</span></a></p>
-<ul>
-<li><p><a class="reference internal" href="#Strings"><span class="xref myst">Strings</span></a></p></li>
-<li><p><a class="reference internal" href="#List"><span class="xref myst">List</span></a></p></li>
-<li><p><a class="reference internal" href="#Tuples"><span class="xref myst">Tuples</span></a></p></li>
-<li><p><a class="reference internal" href="#Dictionaries"><span class="xref myst">Dictionaries</span></a></p></li>
 </ul>
 </li>
 </ul>
@@ -819,7 +776,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <p>You can make use of <code class="docutils literal notranslate"><span class="pre">tab</span></code> again to get a list of <code class="docutils literal notranslate"><span class="pre">functions</span></code>/<code class="docutils literal notranslate"><span class="pre">classes</span></code>/etc. for a given <code class="docutils literal notranslate"><span class="pre">module</span></code>. Try it out via navigating the cursor behind the <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">statement</span></code> and press <code class="docutils literal notranslate"><span class="pre">tab</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">cos</span>
 </pre></div>
 </div>
 </div>
@@ -829,6 +786,322 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 <span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on module math:
+
+NAME
+    math
+
+MODULE REFERENCE
+    https://docs.python.org/3.13/library/math.html
+
+    The following documentation is automatically generated from the Python
+    source files.  It may be incomplete, incorrect or include features that
+    are considered implementation detail and may vary between Python
+    implementations.  When in doubt, consult the module reference at the
+    location listed above.
+
+DESCRIPTION
+    This module provides access to the mathematical functions
+    defined by the C standard.
+
+FUNCTIONS
+    acos(x, /)
+        Return the arc cosine (measured in radians) of x.
+
+        The result is between 0 and pi.
+
+    acosh(x, /)
+        Return the inverse hyperbolic cosine of x.
+
+    asin(x, /)
+        Return the arc sine (measured in radians) of x.
+
+        The result is between -pi/2 and pi/2.
+
+    asinh(x, /)
+        Return the inverse hyperbolic sine of x.
+
+    atan(x, /)
+        Return the arc tangent (measured in radians) of x.
+
+        The result is between -pi/2 and pi/2.
+
+    atan2(y, x, /)
+        Return the arc tangent (measured in radians) of y/x.
+
+        Unlike atan(y/x), the signs of both x and y are considered.
+
+    atanh(x, /)
+        Return the inverse hyperbolic tangent of x.
+
+    cbrt(x, /)
+        Return the cube root of x.
+
+    ceil(x, /)
+        Return the ceiling of x as an Integral.
+
+        This is the smallest integer &gt;= x.
+
+    comb(n, k, /)
+        Number of ways to choose k items from n items without repetition and without order.
+
+        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates
+        to zero when k &gt; n.
+
+        Also called the binomial coefficient because it is equivalent
+        to the coefficient of k-th term in polynomial expansion of the
+        expression (1 + x)**n.
+
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+
+    copysign(x, y, /)
+        Return a float with the magnitude (absolute value) of x but the sign of y.
+
+        On platforms that support signed zeros, copysign(1.0, -0.0)
+        returns -1.0.
+
+    cos(x, /)
+        Return the cosine of x (measured in radians).
+
+    cosh(x, /)
+        Return the hyperbolic cosine of x.
+
+    degrees(x, /)
+        Convert angle x from radians to degrees.
+
+    dist(p, q, /)
+        Return the Euclidean distance between two points p and q.
+
+        The points should be specified as sequences (or iterables) of
+        coordinates.  Both inputs must have the same dimension.
+
+        Roughly equivalent to:
+            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
+
+    erf(x, /)
+        Error function at x.
+
+    erfc(x, /)
+        Complementary error function at x.
+
+    exp(x, /)
+        Return e raised to the power of x.
+
+    exp2(x, /)
+        Return 2 raised to the power of x.
+
+    expm1(x, /)
+        Return exp(x)-1.
+
+        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+
+    fabs(x, /)
+        Return the absolute value of the float x.
+
+    factorial(n, /)
+        Find n!.
+
+    floor(x, /)
+        Return the floor of x as an Integral.
+
+        This is the largest integer &lt;= x.
+
+    fma(x, y, z, /)
+        Fused multiply-add operation.
+
+        Compute (x * y) + z with a single round.
+
+    fmod(x, y, /)
+        Return fmod(x, y), according to platform C.
+
+        x % y may differ.
+
+    frexp(x, /)
+        Return the mantissa and exponent of x, as pair (m, e).
+
+        m is a float and e is an int, such that x = m * 2.**e.
+        If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.
+
+    fsum(seq, /)
+        Return an accurate floating-point sum of values in the iterable seq.
+
+        Assumes IEEE-754 floating-point arithmetic.
+
+    gamma(x, /)
+        Gamma function at x.
+
+    gcd(*integers)
+        Greatest Common Divisor.
+
+    hypot(...)
+        hypot(*coordinates) -&gt; value
+
+        Multidimensional Euclidean distance from the origin to a point.
+
+        Roughly equivalent to:
+            sqrt(sum(x**2 for x in coordinates))
+
+        For a two dimensional point (x, y), gives the hypotenuse
+        using the Pythagorean theorem:  sqrt(x*x + y*y).
+
+        For example, the hypotenuse of a 3/4/5 right triangle is:
+
+            &gt;&gt;&gt; hypot(3.0, 4.0)
+            5.0
+
+    isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
+        Determine whether two floating-point numbers are close in value.
+
+          rel_tol
+            maximum difference for being considered &quot;close&quot;, relative to the
+            magnitude of the input values
+          abs_tol
+            maximum difference for being considered &quot;close&quot;, regardless of the
+            magnitude of the input values
+
+        Return True if a is close in value to b, and False otherwise.
+
+        For the values to be considered close, the difference between them
+        must be smaller than at least one of the tolerances.
+
+        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
+        is, NaN is not close to anything, even itself.  inf and -inf are
+        only close to themselves.
+
+    isfinite(x, /)
+        Return True if x is neither an infinity nor a NaN, and False otherwise.
+
+    isinf(x, /)
+        Return True if x is a positive or negative infinity, and False otherwise.
+
+    isnan(x, /)
+        Return True if x is a NaN (not a number), and False otherwise.
+
+    isqrt(n, /)
+        Return the integer part of the square root of the input.
+
+    lcm(*integers)
+        Least Common Multiple.
+
+    ldexp(x, i, /)
+        Return x * (2**i).
+
+        This is essentially the inverse of frexp().
+
+    lgamma(x, /)
+        Natural logarithm of absolute value of Gamma function at x.
+
+    log(...)
+        log(x, [base=math.e])
+        Return the logarithm of x to the given base.
+
+        If the base is not specified, returns the natural logarithm (base e) of x.
+
+    log10(x, /)
+        Return the base 10 logarithm of x.
+
+    log1p(x, /)
+        Return the natural logarithm of 1+x (base e).
+
+        The result is computed in a way which is accurate for x near zero.
+
+    log2(x, /)
+        Return the base 2 logarithm of x.
+
+    modf(x, /)
+        Return the fractional and integer parts of x.
+
+        Both results carry the sign of x and are floats.
+
+    nextafter(x, y, /, *, steps=None)
+        Return the floating-point value the given number of steps after x towards y.
+
+        If steps is not specified or is None, it defaults to 1.
+
+        Raises a TypeError, if x or y is not a double, or if steps is not an integer.
+        Raises ValueError if steps is negative.
+
+    perm(n, k=None, /)
+        Number of ways to choose k items from n items without repetition and with order.
+
+        Evaluates to n! / (n - k)! when k &lt;= n and evaluates
+        to zero when k &gt; n.
+
+        If k is not specified or is None, then k defaults to n
+        and the function returns n!.
+
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+
+    pow(x, y, /)
+        Return x**y (x to the power of y).
+
+    prod(iterable, /, *, start=1)
+        Calculate the product of all the elements in the input iterable.
+
+        The default start value for the product is 1.
+
+        When the iterable is empty, return the start value.  This function is
+        intended specifically for use with numeric values and may reject
+        non-numeric types.
+
+    radians(x, /)
+        Convert angle x from degrees to radians.
+
+    remainder(x, y, /)
+        Difference between x and the closest integer multiple of y.
+
+        Return x - n*y where n*y is the closest integer multiple of y.
+        In the case where x is exactly halfway between two multiples of
+        y, the nearest even value of n is used. The result is always exact.
+
+    sin(x, /)
+        Return the sine of x (measured in radians).
+
+    sinh(x, /)
+        Return the hyperbolic sine of x.
+
+    sqrt(x, /)
+        Return the square root of x.
+
+    sumprod(p, q, /)
+        Return the sum of products of values from two iterables p and q.
+
+        Roughly equivalent to:
+
+            sum(itertools.starmap(operator.mul, zip(p, q, strict=True)))
+
+        For float and mixed int/float inputs, the intermediate products
+        and sums are computed with extended precision.
+
+    tan(x, /)
+        Return the tangent of x (measured in radians).
+
+    tanh(x, /)
+        Return the hyperbolic tangent of x.
+
+    trunc(x, /)
+        Truncates the Real x to the nearest Integral toward 0.
+
+        Uses the __trunc__ magic method.
+
+    ulp(x, /)
+        Return the value of the least significant bit of the float x.
+
+DATA
+    e = 2.718281828459045
+    inf = inf
+    nan = nan
+    pi = 3.141592653589793
+    tau = 6.283185307179586
+
+FILE
+    /Users/cfiebach/miniconda3/lib/python3.13/lib-dynload/math.cpython-313-darwin.so
 </pre></div>
 </div>
 </div>
@@ -845,6 +1118,11 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>180.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>You can provide any name (given it’s following <code class="docutils literal notranslate"><span class="pre">python</span></code>/<code class="docutils literal notranslate"><span class="pre">coding</span></code> conventions) but focusing on intelligibility won’t be the worst idea.</p>
 <p>Remember <a class="reference external" href="https://peps.python.org/pep-0020/">“Readibility counts”</a></p>
@@ -858,6 +1136,11 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pineapple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;matplotlib&#39; from &#39;/Users/cfiebach/miniconda3/lib/python3.13/site-packages/matplotlib/__init__.py&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -899,6 +1182,16 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">welovethiscourse</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;welovethiscourse&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -923,6 +1216,17 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function log in module math:
+
+log(...)
+    log(x, [base=math.e])
+    Return the logarithm of x to the given base.
+
+    If the base is not specified, returns the natural logarithm (base e) of x.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -930,10 +1234,20 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.302585092994046
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3219280948873626
 </pre></div>
 </div>
 </div>
@@ -975,7 +1289,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <section id="symbol-names">
 <h3>Symbol names<a class="headerlink" href="#symbol-names" title="Permalink to this heading">#</a></h3>
 <p>Variable names in Python can contain alphanumerical characters <code class="docutils literal notranslate"><span class="pre">a-z</span></code>, <code class="docutils literal notranslate"><span class="pre">A-Z</span></code>, <code class="docutils literal notranslate"><span class="pre">0-9</span></code> and some special characters such as <code class="docutils literal notranslate"><span class="pre">_</span></code>. Normal variable names must start with a letter.</p>
-<p>By convention, variable names start with a lower-case letter, and Class names start with a capital letter.</p>
+<p><strong>By convention, variable names start with a lower-case letter, and Class names start with a capital letter.</strong></p>
 <p>In addition, there are a number of Python keywords that cannot be used as variable names. These keywords are:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>and, as, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield
 </pre></div>
@@ -1054,7 +1368,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </div>
 </div>
 <p>This outlines one more <em>very important</em> characteristic of <code class="docutils literal notranslate"><span class="pre">python</span></code> (and many other programming languages):</p>
-<p><code class="docutils literal notranslate"><span class="pre">variables</span></code> can be directly overwritten by <code class="docutils literal notranslate"><span class="pre">assigning</span></code> them a new <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">variables</span></code> can be directly overwritten by <code class="docutils literal notranslate"><span class="pre">assigning</span></code> them a new <code class="docutils literal notranslate"><span class="pre">value</span></code>.</strong></p>
 <p>We don’t get an error like “This <code class="docutils literal notranslate"><span class="pre">namespace</span></code> is already taken.” Thus, always remember/keep track of what <code class="docutils literal notranslate"><span class="pre">namespaces</span></code> were already used to avoid unintentional deletions/errors (reproducibility/replicability much?).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1092,8 +1406,8 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">aylinkallmayer</span><span class="o">/</span><span class="n">Dropbox</span><span class="o">/</span><span class="n">Promotion</span><span class="o">/</span><span class="mi">05</span><span class="o">-</span><span class="n">Teaching</span><span class="o">/</span><span class="mi">2023</span><span class="n">_Python</span><span class="o">-</span><span class="n">seminar</span><span class="o">/</span><span class="n">Python_For_Psychologists_23</span><span class="o">-</span><span class="mi">24</span><span class="o">/</span><span class="n">lecture</span><span class="o">/</span><span class="n">introduction</span><span class="o">/</span><span class="n">intro_python_I</span><span class="o">.</span><span class="n">ipynb</span> <span class="n">Cell</span> <span class="mi">63</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/Users/aylinkallmayer/Dropbox/Promotion/05-Teaching/2023_Python-seminar/Python_For_Psychologists_23-24/lecture/introduction/intro_python_I.ipynb#Y130sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">god</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">56</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">god</span>
 
 <span class="ne">NameError</span>: name &#39;god&#39; is not defined
 </pre></div>
@@ -1122,13 +1436,14 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <ul class="simple">
 <li><p>Can include <code class="docutils literal notranslate"><span class="pre">letters</span></code> (A-Z), <code class="docutils literal notranslate"><span class="pre">digits</span></code> (0-9), and <code class="docutils literal notranslate"><span class="pre">underscores</span></code> ( _ )</p></li>
 <li><p>Cannot start with a <code class="docutils literal notranslate"><span class="pre">digit</span></code></p></li>
-<li><p>Are <strong>case sensitive</strong> (question: where did “lower/upper case” originate?)</p></li>
+<li><p>Are <strong>case sensitive</strong></p></li>
 </ul>
 <p>This means that, for example:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">shire0</span></code> is a valid variable name, whereas <code class="docutils literal notranslate"><span class="pre">0shire</span></code> is not</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">shire</span></code> and <code class="docutils literal notranslate"><span class="pre">Shire</span></code> are different variables</p></li>
 </ul>
+<p><strong>Remember: By convention, variable names start with a lower-case letter, and Class names start with a capital letter.</strong></p>
 <section id="exercise-2-1">
 <h4>Exercise 2.1<a class="headerlink" href="#exercise-2-1" title="Permalink to this heading">#</a></h4>
 <p>Create the following variables: <code class="docutils literal notranslate"><span class="pre">n_underwear</span></code>, <code class="docutils literal notranslate"><span class="pre">n_shirts</span></code>, <code class="docutils literal notranslate"><span class="pre">n_socks</span></code> with the respective values <code class="docutils literal notranslate"><span class="pre">7</span></code>, <code class="docutils literal notranslate"><span class="pre">3.0</span></code> and <code class="docutils literal notranslate"><span class="pre">14</span></code>.</p>
@@ -1142,7 +1457,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </section>
 <section id="exercise-2-2">
 <h4>Exercise 2.2<a class="headerlink" href="#exercise-2-2" title="Permalink to this heading">#</a></h4>
-<p>What’s the output of <code class="docutils literal notranslate"><span class="pre">n_shirts</span> <span class="pre">+</span> <span class="pre">n_underwear</span></code>?</p>
+<p>What’s the output of the following code: <code class="docutils literal notranslate"><span class="pre">n_shirts</span> <span class="pre">+</span> <span class="pre">n_underwear</span></code>?</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">n_shirts</span> <span class="pre">+</span> <span class="pre">n_underwear</span></code></p></li>
 <li><p>10</p></li>
@@ -1168,7 +1483,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <h3>Fundamental types &amp; data structures<a class="headerlink" href="#fundamental-types-data-structures" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Most code requires more <em>complex structures</em> built out of <em>basic data <code class="docutils literal notranslate"><span class="pre">types</span></code></em></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">value</span></code> that is <code class="docutils literal notranslate"><span class="pre">assigned</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">of</span> <span class="pre">value</span></code> that is <code class="docutils literal notranslate"><span class="pre">assigned</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> provides built-in support for many common structures</p>
 <ul>
 <li><p>Many additional structures can be found in the <a class="reference external" href="https://docs.python.org/3/library/collections.html">collections</a> module</p></li>
@@ -1272,7 +1587,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <section id="strings">
 <h4>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">#</a></h4>
 <p>Next up: <code class="docutils literal notranslate"><span class="pre">strings</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">Strings</span></code> are basically <code class="docutils literal notranslate"><span class="pre">text</span> <span class="pre">elements</span></code>, from <code class="docutils literal notranslate"><span class="pre">letters</span></code> to <code class="docutils literal notranslate"><span class="pre">words</span></code> to <code class="docutils literal notranslate"><span class="pre">sentences</span></code> all are encoded as <code class="docutils literal notranslate"><span class="pre">strings</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code>. In order to define a <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">Python</span></code> needs <strong>quotation marks</strong>, more precisely <code class="docutils literal notranslate"><span class="pre">strings</span></code> start and end with quotation marks, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Rivendell&quot;</span></code>. You can choose between <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">'</span></code> as both will work (NB: <code class="docutils literal notranslate"><span class="pre">python</span></code> will put <code class="docutils literal notranslate"><span class="pre">'</span></code> around <code class="docutils literal notranslate"><span class="pre">strings</span></code> even if you specified <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). However, it is recommended to decide on one and be consistent.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Strings</span></code> are basically <code class="docutils literal notranslate"><span class="pre">text</span> <span class="pre">elements</span></code>. From <code class="docutils literal notranslate"><span class="pre">letters</span></code> to <code class="docutils literal notranslate"><span class="pre">words</span></code> to <code class="docutils literal notranslate"><span class="pre">sentences</span></code> all are encoded as <code class="docutils literal notranslate"><span class="pre">strings</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code>. In order to define a <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">Python</span></code> needs <strong>quotation marks</strong>, more precisely <code class="docutils literal notranslate"><span class="pre">strings</span></code> start and end with quotation marks, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;Rivendell&quot;</span></code>. You can choose between <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">'</span></code> as both will work (NB: <code class="docutils literal notranslate"><span class="pre">python</span></code> will put <code class="docutils literal notranslate"><span class="pre">'</span></code> around <code class="docutils literal notranslate"><span class="pre">strings</span></code> even if you specified <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>). However, it is recommended to decide on one and be consistent.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;Frankfurt&quot;</span>
@@ -1400,7 +1715,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </section>
 <section id="converting-data-types">
 <h4>Converting data types<a class="headerlink" href="#converting-data-types" title="Permalink to this heading">#</a></h4>
-<p>As mentioned before the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> is not set when <code class="docutils literal notranslate"><span class="pre">assigning</span></code> a <code class="docutils literal notranslate"><span class="pre">value</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code> but determined based on its properties. Additionally, the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> of a given <code class="docutils literal notranslate"><span class="pre">value</span></code> can also be changed via set of functions.</p>
+<p>As mentioned before the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> is not set explicitly when <code class="docutils literal notranslate"><span class="pre">assigning</span></code> a <code class="docutils literal notranslate"><span class="pre">value</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code> but determined automatically based on its properties. Additionally, the <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> of a given <code class="docutils literal notranslate"><span class="pre">value</span></code> can also be changed via set of functions.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">int()</span></code> -&gt; convert the <code class="docutils literal notranslate"><span class="pre">value</span></code> of a <code class="docutils literal notranslate"><span class="pre">variable</span></code> to an <code class="docutils literal notranslate"><span class="pre">integer</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">float()</span></code> -&gt; convert the <code class="docutils literal notranslate"><span class="pre">value</span></code> of a <code class="docutils literal notranslate"><span class="pre">variable</span></code> to a <code class="docutils literal notranslate"><span class="pre">floating-point</span> <span class="pre">number</span></code></p></li>
@@ -1502,134 +1817,6 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </section>
 </section>
 </section>
-<section id="why-do-programming-science-in-python">
-<h3>Why do programming/science in Python?<a class="headerlink" href="#why-do-programming-science-in-python" title="Permalink to this heading">#</a></h3>
-<p>Lets go through some advantages of the <code class="docutils literal notranslate"><span class="pre">python</span></code> programming language.</p>
-</section>
-<section id="easy-to-learn">
-<h3>Easy to learn<a class="headerlink" href="#easy-to-learn" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Readable, explicit syntax</p></li>
-<li><p>Most packages are very well documented</p>
-<ul>
-<li><p>e.g., <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>’s <a class="reference external" href="http://scikit-learn.org/stable/documentation.html">documentation</a> is widely held up as a model</p></li>
-</ul>
-</li>
-<li><p>A huge number of tutorials, guides, and other educational materials</p></li>
-</ul>
-</section>
-<section id="comprehensive-standard-library">
-<h3>Comprehensive standard library<a class="headerlink" href="#comprehensive-standard-library" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>The <a class="reference external" href="https://docs.python.org/2/library/">Python standard library</a> contains a huge number of high-quality modules</p></li>
-<li><p>When in doubt, check the standard library first before you write your own tools!</p></li>
-<li><p>For example:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">os</span></code>: operating system tools</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">re</span></code>: regular expressions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">collections</span></code>: useful data structures</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>: simple parallelization tools</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pickle</span></code>: serialization</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">json</span></code>: reading and writing JSON</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="exceptional-external-libraries">
-<h3>Exceptional external libraries<a class="headerlink" href="#exceptional-external-libraries" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> has very good (often best-in-class) external <code class="docutils literal notranslate"><span class="pre">packages</span></code> for almost everything</p></li>
-<li><p>Particularly important for “data science”, which draws on a very broad toolkit</p></li>
-<li><p>Package management is easy (<code class="docutils literal notranslate"><span class="pre">conda</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span></code>)</p></li>
-<li><p>Examples:</p>
-<ul>
-<li><p>Web development: flask, Django</p></li>
-<li><p>Database ORMs: SQLAlchemy, Django ORM (w/ adapters for all major DBs)</p></li>
-<li><p>Scraping/parsing text/markup: beautifulsoup, scrapy</p></li>
-<li><p>Natural language processing (NLP): nltk, gensim, textblob</p></li>
-<li><p>Numerical computation and data analysis: numpy, scipy, pandas, xarray, statsmodels, pingouin</p></li>
-<li><p>Machine learning: scikit-learn, Tensorflow, keras</p></li>
-<li><p>Image processing: pillow, scikit-image, OpenCV</p></li>
-<li><p>audio processing: librosa, pyaudio</p></li>
-<li><p>Plotting: matplotlib, seaborn, altair, ggplot, Bokeh</p></li>
-<li><p>GUI development: pyQT, wxPython</p></li>
-<li><p>Testing: py.test</p></li>
-<li><p>Etc. etc. etc.</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="relatively-good-performance">
-<h3>(Relatively) good performance<a class="headerlink" href="#relatively-good-performance" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> is a high-level dynamic language — this comes at a performance cost</p></li>
-<li><p>For many (not all!) use cases, performance is irrelevant most of the time</p></li>
-<li><p>In general, the less <code class="docutils literal notranslate"><span class="pre">Python</span></code> code you write yourself, the better your performance will be</p>
-<ul>
-<li><p>Much of the standard library consists of <code class="docutils literal notranslate"><span class="pre">Python</span></code> interfaces to <code class="docutils literal notranslate"><span class="pre">C</span></code> functions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, etc. all rely heavily on <code class="docutils literal notranslate"><span class="pre">C/C++</span></code> or <code class="docutils literal notranslate"><span class="pre">Fortran</span></code></p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="python-vs-other-data-science-languages">
-<h3>Python vs. other data science languages<a class="headerlink" href="#python-vs-other-data-science-languages" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Python</span></code> competes for mind share with many other languages</p></li>
-<li><p>Most notably, <code class="docutils literal notranslate"><span class="pre">R</span></code></p></li>
-<li><p>To a lesser extent, <code class="docutils literal notranslate"><span class="pre">Matlab</span></code>, <code class="docutils literal notranslate"><span class="pre">Mathematica</span></code>, <code class="docutils literal notranslate"><span class="pre">SAS</span></code>, <code class="docutils literal notranslate"><span class="pre">Julia</span></code>, <code class="docutils literal notranslate"><span class="pre">Java</span></code>, <code class="docutils literal notranslate"><span class="pre">Scala</span></code>, etc.</p></li>
-</ul>
-</section>
-<section id="r">
-<h3>R<a class="headerlink" href="#r" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.r-project.org/">R</a> is wide-spread in traditional statistics and some fields of science</p>
-<ul>
-<li><p>Has attracted many SAS, SPSS, and Stata users</p></li>
-</ul>
-</li>
-<li><p>Exceptional statistics support; hundreds of best-in-class libraries</p></li>
-<li><p>Designed to make data analysis and visualization as easy as possible</p></li>
-<li><p>Slow</p></li>
-<li><p>Language quirks drive many experienced software developers crazy</p></li>
-<li><p>Less support for most things non-data-related</p></li>
-</ul>
-</section>
-<section id="matlab">
-<h3>MATLAB<a class="headerlink" href="#matlab" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>A proprietary numerical computing language widely used by engineers</p></li>
-<li><p>Good performance and very active development, but expensive</p></li>
-<li><p>Closed ecosystem, relatively few third-party libraries</p>
-<ul>
-<li><p>There is an open-source port (Octave)</p></li>
-</ul>
-</li>
-<li><p>Not suitable for use as a general-purpose language</p></li>
-</ul>
-</section>
-<section id="so-why-python">
-<h3>So, why Python?<a class="headerlink" href="#so-why-python" title="Permalink to this heading">#</a></h3>
-<p>Why choose Python over other languages?</p>
-<ul class="simple">
-<li><p>Arguably none of these offers the same combination of readability, flexibility, libraries, and performance</p></li>
-<li><p>Python is sometimes described as “the second best language for everything”</p></li>
-<li><p>Doesn’t mean you should always use Python</p>
-<ul>
-<li><p>Depends on your needs, community, etc.</p></li>
-</ul>
-</li>
-</ul>
-<center><img src="https://media.tenor.com/fMUOPRVdSzUAAAAd/python.gif" width="200" ></center> 
-<center><a href="https://media.tenor.com/fMUOPRVdSzUAAAAd/python.gif">via GIPHY</a></center></section>
-<section id="you-can-have-your-cake-and-eat-it">
-<h3>You can have your cake <em>and</em> eat it!<a class="headerlink" href="#you-can-have-your-cake-and-eat-it" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Many languages—particularly R—now interface seamlessly with Python (<a class="reference external" href="https://rpy2.github.io/">r2py</a>, <a class="reference external" href="https://rforge.net/Rserve/">Rserve</a>, and <a class="reference external" href="https://pypi.python.org/pypi/pyRserve/">pyRserve</a>)</p></li>
-<li><p>You can work primarily in Python, fall back on R when you need it (or vice versa)</p></li>
-<li><p>The best of all possible worlds?</p></li>
-</ul>
-</section>
 <section id="the-core-python-data-science-stack">
 <h3>The core Python “data science” stack<a class="headerlink" href="#the-core-python-data-science-stack" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
@@ -1663,10 +1850,10 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <li><p><a class="reference external" href="http://scipy.org">Scipy</a>: scientific <code class="docutils literal notranslate"><span class="pre">Python</span></code> tools</p></li>
 <li><p><a class="reference external" href="http://matplotlib.org">Matplotlib</a>: plotting in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
 <li><p><a class="reference external" href="https://seaborn.pydata.org/index.html">seaborn</a>: plotting in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
-<li><p><a class="reference external" href="http://scikit-learn.org">scikit-learn</a>: machine learning in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
 <li><p><a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a>: statistical analyses in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
 <li><p><a class="reference external" href="https://pingouin-stats.org/">pingouin</a>: statistical analyses in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
 <li><p><a class="reference external" href="https://www.psychopy.org/">psychopy</a>: running experiments in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
+<li><p><a class="reference external" href="http://scikit-learn.org">scikit-learn</a>: machine learning in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
 <li><p><a class="reference external" href="https://nilearn.github.io/stable/index.html">nilearn</a>: brain imaging analyses in `Python``</p></li>
 <li><p><a class="reference external" href="https://mne.tools/stable/index.html">mne</a>: electrophysiology analyses in <code class="docutils literal notranslate"><span class="pre">Python</span></code></p></li>
 </ul>
@@ -1681,7 +1868,7 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </section>
 <section id="homework-assignment-2">
 <h2>Homework assignment #2<a class="headerlink" href="#homework-assignment-2" title="Permalink to this heading">#</a></h2>
-<p>Your third homework assignment will entail working through a few tasks covering the contents discussed in this session within of a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. You can download it<a class="reference external" href="https://drive.google.com/file/d/12Mfx92N7uoTEZkBgqprEqwW0YmuXzg3p/view?usp=sharing">here</a>. In order to open it, put the <code class="docutils literal notranslate"><span class="pre">homework</span> <span class="pre">assignment</span> <span class="pre">notebook</span></code> within the folder you stored the <code class="docutils literal notranslate"><span class="pre">course</span> <span class="pre">materials</span></code>, start a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> as during the sessions, navigate to the <code class="docutils literal notranslate"><span class="pre">homework</span> <span class="pre">assignment</span> <span class="pre">notebook</span></code>, open it and have fun!</p>
+<p>Your third homework assignment will entail working through a few tasks covering the contents discussed in this session within a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>. You can download it<a class="reference external" href="https://drive.google.com/file/d/12Mfx92N7uoTEZkBgqprEqwW0YmuXzg3p/view?usp=sharing">here</a>. In order to open it, put the <code class="docutils literal notranslate"><span class="pre">homework</span> <span class="pre">assignment</span> <span class="pre">notebook</span></code> within the folder you stored the <code class="docutils literal notranslate"><span class="pre">course</span> <span class="pre">materials</span></code>, start a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> as during the sessions, navigate to the <code class="docutils literal notranslate"><span class="pre">homework</span> <span class="pre">assignment</span> <span class="pre">notebook</span></code>, open it and have fun!</p>
 <p><strong>Deadline: 17/11/2023, 11:59 PM EST</strong></p>
 </section>
 </section>
@@ -1753,14 +1940,11 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-we-get-started">Before we get started…</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-python">What is Python?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#widely-used">Widely-used</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stackoverflow-developer-survey">2022 Stackoverflow Developer Survey</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-level">High-level</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-reading-in-java">File reading in Java</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-file-reading-in-java">Example: File reading in Java</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-reading-in-python">File-reading in Python</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-purpose">General-purpose</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic">Dynamic</a></li>
 </ul>
 </li>
@@ -1794,16 +1978,6 @@ Member - <a class="reference external" href="https://bids-specification.readthed
 </li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-programming-science-in-python">Why do programming/science in Python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#easy-to-learn">Easy to learn</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehensive-standard-library">Comprehensive standard library</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exceptional-external-libraries">Exceptional external libraries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relatively-good-performance">(Relatively) good performance</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-vs-other-data-science-languages">Python vs. other data science languages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r">R</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">MATLAB</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#so-why-python">So, why Python?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-have-your-cake-and-eat-it">You can have your cake <em>and</em> eat it!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-python-data-science-stack">The core Python “data science” stack</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-core-python-for-psychology-stack">The core “Python for psychology” stack</a></li>
 </ul>

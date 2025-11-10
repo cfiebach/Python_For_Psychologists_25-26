@@ -1,4 +1,4 @@
-# Introduction II
+# Introductory Session II
 
 This week, I want you to explore with you the basics of Jupyter Notebooks. In the first place, you won't have to program anything by yourself at this point. I just want you to familiarize yourself with the application so that next time, we can dive right into our first Python programming session! All I want you to do for today, is (a) to open a jupyter notebook on your computer, (b) follow me while I go through a first notebook covering some functionality of jupyter notebooks, and complete the first (very easy!) homework assignmentt. 
 

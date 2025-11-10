@@ -1,4 +1,4 @@
-# Introduction III
+# Introductory Session III
 
 Today, we will **start working with the `python` programming language** - nothing more and nothing less!
 

@@ -1,42 +1,33 @@
 # Introduction III
 
-The things covered in this section will introduce central concepts for our subsequent endeavors in this class. More precisely, we'll explore `jupyter notebooks` as one form of interacting with your computer, specifically `python`. Getting a good hang of this will be important as most of our `python` endeavors will happen within `jupyter notebooks` and they are a staple in research workflows.
-
-## Create environment
-Download the following [environment file](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/master/environment.yml)
-In your terminal, type `conda env create -f path/to/your/file/pfp_2023.yml` replacing 'path/to/your/file/' with the actual filepath.
+Today, we will **start working with the `python` programming language** - nothing more and nothing less!
 
 
-## Jupyter notebooks
-We will now take a closer look at `jupyter notebook` and how we can work with them. This is a central topic as the `python introduction` and `data analyzes` parts of the course will be conducted via `jupyter notebook` and you'll have to hand in most assignments via them as well.  
+## Introduction to Python - Part I
+The big moment is finally here: we will start exploring `python` itself. Within the first block of programming with `python` we will go through some of the basics of the `python` programming language, including what `modules` and `functions` are, what `variables` are, what different 'data types' exist in python, and how to `assign` data to variables.
 
 ## Objectives 📍
 
-- learn basic and efficient usage of the jupyter ecosystem & notebooks
-    - what is Jupyter & how to utilize jupyter notebooks
-- Ask and answer questions
-- Have a great time
+- learn basic and efficient usage of the python programming language
+  - what is python & how to utilize it
+  - building blocks of & first operations in python
 
 ## Materials 📓
 
-we will see
+Please see the rendered version of the `jupyter notebook` [Introduction IV - Introduction to Python I](https://aylinsgl.github.io/Python_For_Psychologists_23-24/introduction/intro_python_I.html) in the `ToC` on the left.
+
+You can also download the notebook itself from the 'github repository' of the course, here (you find it under the subfolder 'lecture/introduction': https://tinyurl.com/pfp25github
 
 
-## Homework
+## Homework Assignment
 
-You should create a `jupyter notebook` with
-- **mandatory**:  `3 different cells`:
-            - 1 rendered markdown cell within which you name your favorite movie and describe why you like it via  
-              max. 2 sentences
-            - 1 code cell with an equation (e.g. `1+1`, `(a+b)/(c+d)`, etc.)
-            - 1 raw cell with your favorite snack
-- **optional**: try to include a picture of your favorite animal
-- save the notebook and e-mail it to cfiebach@psych.uni-frankfurt.de
+Your second homework assignment will entail working through a few tasks covering the contents discussed in this session within a `jupyter notebook`. You can download it [here](https://drive.google.com/file/d/12Mfx92N7uoTEZkBgqprEqwW0YmuXzg3p/view?usp=sharing). In order to open it, put the `homework assignment notebook` within the folder in which you stored your `course materials`, start a `jupyter notebook` as during the last session, navigate to the `homework assignment notebook` which is called **PFP_assignment_2_intro_python_1.ipynb**, open it and have fun!  
 
-Please note that the deadline for the assignment is: 10/11/2021, 11:59 PM EST.
+**Deadline: 17.11.2025**
 
 ## optional/reading/further materials
 
-`Fernando Perez`' presentation on `From interactive exploration to reproducible data science: Jupyter` from [NeuroHackademy](https://neurohackademy.org/) 2020.
+Chapter 2 in the e-book 'Python for Experimental Psychologists', which you should already have downloaded!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nXA39_eW3Q4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MHPGeQD8TvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

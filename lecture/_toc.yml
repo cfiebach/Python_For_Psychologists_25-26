@@ -14,7 +14,6 @@ chapters:
     - file: introduction/introduction_3_new.md
       sections:
         - file: introduction/intro_python_I.ipynb
-  sections:
     - file: showcases/python_numpy.ipynb
     - file: showcases/python_scipy.ipynb
     - file: showcases/python_scikit.ipynb

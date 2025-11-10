@@ -2,6 +2,8 @@
 
 Today, we will **start working with the `python` programming language** - nothing more and nothing less!
 
+**Note that I cannot be in Frankfurt for this and next weeks' sessions**, so that I ask you to work on your own and at your own pace through this and the next jupyter notebook. Note that there are a few exercises embedded into the jupyter notebook. We strongly encourage you to try these out, either by opening a new notebook to code in, or by downloading the executable notebook from the github repository as described below! **Please also note that there is a homework assignment going along with this week's session.**
+
 
 ## Introduction to Python - Part I
 The big moment is finally here: we will start exploring `python` itself. Within the first block of programming with `python` we will go through some of the basics of the `python` programming language, including what `modules` and `functions` are, what `variables` are, what different 'data types' exist in python, and how to `assign` data to variables.

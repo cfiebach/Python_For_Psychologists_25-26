@@ -14,14 +14,14 @@ The big moment is finally here: we will start exploring `python` itself. Within 
 
 ## Materials 📓
 
-Please see the rendered version of the `jupyter notebook` [Introduction IV - Introduction to Python I](https://aylinsgl.github.io/Python_For_Psychologists_23-24/introduction/intro_python_I.html) in the `ToC` on the left.
+Please see the rendered version of the `jupyter notebook` [Introduction III - Introduction to Python I](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_python_I.html) in the `ToC` on the left.
 
-You can also download the notebook itself from the 'github repository' of the course, here (you find it under the subfolder 'lecture/introduction': https://tinyurl.com/pfp25github
+You can also download the executable notebook itself from the 'github repository' of the course, here (you find it under the subfolder 'lecture/introduction': https://tinyurl.com/pfp25github
 
 
 ## Homework Assignment
 
-Your second homework assignment will entail working through a few tasks covering the contents discussed in this session within a `jupyter notebook`. You can download it [here](https://drive.google.com/file/d/12Mfx92N7uoTEZkBgqprEqwW0YmuXzg3p/view?usp=sharing). In order to open it, put the `homework assignment notebook` within the folder in which you stored your `course materials`, start a `jupyter notebook` as during the last session, navigate to the `homework assignment notebook` which is called **PFP_assignment_2_intro_python_1.ipynb**, open it and have fun!  
+Your second homework assignment will entail working through a few tasks covering the contents discussed in this session within a `jupyter notebook`. You can download it [here](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/homework/PFP_assignment_2_intro_python_1.ipynb). In order to open it, put the `homework assignment notebook` within the folder in which you stored your `course materials`, start a `jupyter notebook` as during the last session, navigate to the `homework assignment notebook` which is called **PFP_assignment_2_intro_python_1.ipynb**, open it and have fun!  
 
 **Deadline: 17.11.2025**
 

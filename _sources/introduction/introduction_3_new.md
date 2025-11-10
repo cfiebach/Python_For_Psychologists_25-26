@@ -23,11 +23,13 @@ You can also download the executable notebook itself from the 'github repository
 
 Your second homework assignment will entail working through a few tasks covering the contents discussed in this session within a `jupyter notebook`. You can download it [here](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/homework/PFP_assignment_2_intro_python_1.ipynb). In order to open it, put the `homework assignment notebook` within the folder in which you stored your `course materials`, start a `jupyter notebook` as during the last session, navigate to the `homework assignment notebook` which is called **PFP_assignment_2_intro_python_1.ipynb**, open it and have fun!  
 
+**NOTE:** You actually have multiple options to work with the downloaded 'jupyter notebook'. You can start a 'jupyter server' in your web browser like we did last session. However, you can also open the jupyter notebook in 'PyCharm' or in any other interactive editor that you may happen to be using anyway (like 'VSCode'). This is up to you.
+
 **Deadline: 17.11.2025**
 
 ## optional/reading/further materials
 
-Chapter 2 in the e-book 'Python for Experimental Psychologists', which you should already have downloaded!
+Chapter 2 in the e-book 'Python for Experimental Psychologists', which you should already have downloaded! The first pages are also a structured introduction into variables, variable types, and some basic operations you can conduct in python with numbers and variables. Looking into this Chapter may also help introduce yourself to the work with variables in the python programming language.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MHPGeQD8TvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

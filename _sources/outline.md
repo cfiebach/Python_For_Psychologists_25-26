@@ -1,10 +1,12 @@
-# General outline
+# Schedule
+
+## General outline
 Within this course, we will talk about and work through the core aspects of using `python` for a scientific project, i.e. `data acquisition` and `data analyzes`. 
 In order to provide a solid basis for the practical work on these topics, they will be preceded by an `introduction` that will introduce and outline central characteristics and functions of the `python` programming language.
 These three defining parts will also be used as cornerstones of the course outline and will entail respective more-detailed subsections.
 
-## Schedule
 
+## Schedule
 Please see below for our current optimistic schedule. Depending on our progress, potential problems and different forms of learning, content and times might change a bit. Each session will be divided into two parts: a lecture part and a practicle part where you work on problems in groups.
 
 

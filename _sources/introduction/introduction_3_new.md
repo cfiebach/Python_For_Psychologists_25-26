@@ -33,7 +33,7 @@ Your second homework assignment will entail working through a few tasks covering
 
 ## optional/reading/further materials
 
-Chapter 2 in the e-book 'Python for Experimental Psychologists', which you should already have downloaded! The first pages are also a structured introduction into variables, variable types, and some basic operations you can conduct in python with numbers and variables. Looking into this Chapter may also help introduce yourself to the work with variables in the python programming language.
+Chapter 2 in the e-book **Python for Experimental Psychologists**, which you should already have downloaded! The first pages are also a structured introduction into variables, variable types, and some basic operations you can conduct in python with numbers and variables. Looking into this Chapter may also help introduce yourself to the work with variables in the python programming language.
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MHPGeQD8TvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

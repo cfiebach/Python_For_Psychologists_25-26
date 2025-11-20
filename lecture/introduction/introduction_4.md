@@ -1,8 +1,8 @@
 # Introductory Session IV
 
-Within the fifth session we'll continue to explore the basic building blocks of `python`, this and the next `session` will contain exhaustive content aiming to provide you with a somewhat detailed understanding of central `python` aspects. The aim is to get a good set of basic experience to then advance into more practical aspects, specifically evaluating how these things can be utilized within `experiments` to collect data and their subsequent `analysis`. To nevertheless get some experience on the way, there will be some exercises at the beginning and throughout the session. Additionally, the `homework assignments` will be made in a way that showcases some tasks that you might most likely encounter in real-life so that you get more practice in conducting them through `python`.
+Within the fourth session we'll continue to explore the basic building blocks of `python`. This and the next `session` will contain exhaustive content aiming to provide you with a somewhat detailed understanding of central `python` aspects. The aim is to get a good set of basic experience to then advance into more practical aspects, specifically evaluating how these things can be utilized within `experiments` to collect data and their subsequent `analysis`. To nevertheless get some experience on the way, there will be some exercises at the beginning and throughout the session. Additionally, the `homework assignments` will be made in a way that showcases some tasks that you might most likely encounter in real-life so that you get more practice in conducting them through `python`.
 
-## Introduction to Python - II
+## Introduction to Python - Part II
 This session, we'll build upon the things learned last week and broaden our capabilities in `python`, focusing on `operations`, `comparisons` and `data types`/`structures`.
 
 ## Objectives 📍
@@ -23,7 +23,7 @@ You can also download the executable notebook itself from the 'github repository
 **NOTE:** You actually have multiple options to work with the downloaded 'jupyter notebook'. You can start a 'jupyter server' in your web browser like we did last session. However, you can also open the jupyter notebook in 'PyCharm' or in any other interactive editor that you may happen to be using anyway (like 'VSCode'). This is up to you.
 
 
-## tasks for subsequent meeting 🖥️✍🏽📖
+## Homework Assignment: Tasks for subsequent meeting 🖥️✍🏽📖
 
 Your third homework assignment will entail working through a few tasks covering the contents discussed in this session within two `jupyter notebooks`. 
 

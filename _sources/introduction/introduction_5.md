@@ -16,7 +16,7 @@ This session, we'll build upon the things learn last week and broader our capabi
 
 ## Materials 📓
 
-Please see the rendered version of the `jupyter notebook` [Introduction V - Introduction to Python II](https://aylinsgl.github.io/Python_For_Psychologists_23-24/introduction/intro_python_II.html) in the `ToC` on the left.
+Please see the rendered version of the `jupyter notebook` [Introduction V - Introduction to Python II](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_python_II.html) in the `ToC` on the left.
 
 
 Your fourth homework assignment will entail working through a few tasks covering the contents discussed in this session within of a `jupyter notebook`. You can download it [here](https://drive.google.com/file/d/1oHi1P3YzNLIKvhUx9TlmtmbIZT5Q2zHx/view?usp=sharing). In order to open it, put the `homework assignment notebook` within the folder you stored the `course materials`, start a `jupyter notebook` as during the sessions, navigate to the `homework assignment notebook`, open it and have fun! NB: a substantial part of it will be _optional_ and thus the notebook will look way longer than it actually is. Also remember that you can work on your homework in groups, as long as you indicate at the top of the homework notebook, with whom you've worked together.

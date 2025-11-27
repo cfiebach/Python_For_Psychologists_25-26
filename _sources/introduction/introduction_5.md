@@ -16,7 +16,7 @@ This session, we'll build upon the things learn last week and broader our capabi
 
 ## Materials 📓
 
-Please see the rendered version of the `jupyter notebook` [Introductory Session V - Introduction to Python Part III](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_python_II.html) in the `ToC` on the left.
+Please see the rendered version of the `jupyter notebook` [Introductory Session V - Introduction to Python Part III](https://cfiebach.github.io/Python_For_Psychologists_25-26/introduction/intro_python_III.html) in the `ToC` on the left.
 
 You can also download the executable notebook itself from the 'github repository' of the course, here (you find it under the subfolder 'lecture/introduction': https://tinyurl.com/pfp25github
 

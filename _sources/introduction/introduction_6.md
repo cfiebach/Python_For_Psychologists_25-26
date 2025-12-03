@@ -21,7 +21,7 @@ Not applicable, as project related work didn't start yet.
 
 
 ## tasks for subsequent meeting 🖥️✍🏽📖
-You can download the homework for next week [here](https://drive.google.com/file/d/10g9krxq9Y5SNdRpWfkvOMF0j5i3lbxeB/view?usp=share_link). It is due Wednesday 10.12.2025
+You can download the homework for next week [here](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/homework/PFP_assignment_6_intro_python_4.ipynb). It is due Wednesday 10.12.2025
 
 
 ## Prepare PsychoPy installation

@@ -20,6 +20,9 @@ chapters:
     - file: introduction/introduction_5.md
       sections:
         - file: introduction/intro_python_III.ipynb
+    - file: introduction/introduction_6.md
+      sections:
+        - file: introduction/intro_python_IV.ipynb
 - file: showcases/showcases.md
   sections:
     - file: showcases/python_numpy.ipynb

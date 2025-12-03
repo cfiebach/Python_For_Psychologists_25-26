@@ -686,11 +686,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Thanks for taking the time to go through this recap!</strong></p>
 <p><img alt="image.png" src="https://media2.giphy.com/media/l1TqF9rA0bcKiRSQsT/giphy.gif?cid=790b7611959a95103f8a4a983b25e8a44cb2bd2aebe9145b&amp;rid=giphy.gif&amp;ct=g" /></p>
@@ -738,11 +733,6 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world
-</pre></div>
-</div>
-</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">function</span></code> above does not take any <code class="docutils literal notranslate"><span class="pre">arguments</span></code> (which would be given to the funciton in the brackets) but only executes the <code class="docutils literal notranslate"><span class="pre">code</span></code> within. As there is also no explicit <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">statement</span></code> (compare above) the function will simply return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Let’s check that. To access the <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">value</span></code> of a <code class="docutils literal notranslate"><span class="pre">function</span></code>, you simply <code class="docutils literal notranslate"><span class="pre">assign</span></code> the <code class="docutils literal notranslate"><span class="pre">function</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code>, as we learned above and in the previous sessions.</p>
@@ -752,20 +742,10 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greetings</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
@@ -791,34 +771,11 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
-27
-</pre></div>
-</div>
-</div>
 </div>
 <p>So when defining the function, we use placeholder variables in the code block, and we define them in the parentheses of the function call. By doing so, we can give <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">arguments</span></code> when calling the function. These <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">arguments</span></code> then take the place of the placeholder variables (here <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">p</span></code>) we used when we initially defined our funtion. What happens if our input arguments are of a different variable type then expected in the function body?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">calc_power</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">calc_power</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;two&#39;</span><span class="p">))</span>
-
-<span class="nn">Cell In[8], line 4,</span> in <span class="ni">calc_power</span><span class="nt">(x, p)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">calc_power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="c1"># x is our base</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="c1"># p is our exponent</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">power</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="n">p</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">power</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for ** or pow(): &#39;int&#39; and &#39;str&#39;
 </pre></div>
 </div>
 </div>
@@ -831,16 +788,6 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">calc_power</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-
-<span class="ne">TypeError</span>: calc_power() missing 1 required positional argument: &#39;p&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Again, a rather explicit error. Our function was defined as requiring 2 <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">arguments</span></code>, so we need to provide exactly that number.</p>
 <p>As we used a <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">statement</span></code> this time, the <code class="docutils literal notranslate"><span class="pre">power</span></code> that we calculated is <code class="docutils literal notranslate"><span class="pre">returned</span></code> and can be <code class="docutils literal notranslate"><span class="pre">printed</span></code> or <code class="docutils literal notranslate"><span class="pre">assigned</span></code> to a <code class="docutils literal notranslate"><span class="pre">variable</span></code>.</p>
@@ -848,11 +795,6 @@ Somewhat intimidating, right? Let's check the different components in further de
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">five_to_pow_2</span> <span class="o">=</span> <span class="n">calc_power</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">five_to_pow_2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
 </pre></div>
 </div>
 </div>
@@ -885,21 +827,11 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4 is maximum
-</pre></div>
-</div>
-</div>
 </div>
 <p>and that value is now stored in our variable called maximum for future use</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maximum</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -915,20 +847,10 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7 is equal to 7
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">maximum</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -953,22 +875,12 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(25, 125, 625)
-</pre></div>
-</div>
-</div>
 </div>
 <p>As you see, your <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">variable</span></code> <code class="docutils literal notranslate"><span class="pre">powers</span></code> is a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> that contains the <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">values</span></code> of the <code class="docutils literal notranslate"><span class="pre">function</span></code>. We can however, split this <code class="docutils literal notranslate"><span class="pre">tuple</span></code> directly into the specific <code class="docutils literal notranslate"><span class="pre">values</span></code>. This can help to make your <code class="docutils literal notranslate"><span class="pre">code</span></code> more readable. Make sure to speficy the same number of variables to assign to as values your return statements provide. Makes sense?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">,</span> <span class="n">x4</span> <span class="o">=</span> <span class="n">calc_powers</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>125
 </pre></div>
 </div>
 </div>
@@ -994,22 +906,11 @@ Somewhat intimidating, right? Let's check the different components in further de
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
-</pre></div>
-</div>
-</div>
 </div>
 <p>Now we call our function, which takes the <code class="docutils literal notranslate"><span class="pre">x</span></code> that we’ve just defined outside of the function as an <code class="docutils literal notranslate"><span class="pre">input</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is 50
-Changed local x to 25.0
 </pre></div>
 </div>
 </div>
@@ -1019,11 +920,6 @@ Changed local x to 25.0
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
 </pre></div>
 </div>
 </div>
@@ -1045,13 +941,6 @@ Changed local x to 25.0
 <span class="n">func</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Value of x outside of function now is&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x is 50
-Changed global x to 2
-Value of x outside of function now is 2
 </pre></div>
 </div>
 </div>
@@ -1080,25 +969,10 @@ Value of x outside of function now is 2
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function func_with_docstring in module __main__:
-
-func_with_docstring(s)
-    Print a string &#39;s&#39; and tell how many characters it has
-    :param s (string): input string of any length
-    :returns: None
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func_with_docstring</span><span class="p">(</span><span class="s1">&#39;So much fun to write functions&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>So much fun to write functions has 30 characters
 </pre></div>
 </div>
 </div>
@@ -1134,22 +1008,12 @@ func_with_docstring(s)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
 </div>
 <p>The input in the function is <strong>positionally</strong> defined. Hence, the first parameter represents <code class="docutils literal notranslate"><span class="pre">x</span></code> and the second <code class="docutils literal notranslate"><span class="pre">power</span></code>. But does this really tell you what is happening, just from reading the <code class="docutils literal notranslate"><span class="pre">function</span></code>?
 We can increase readability by calling the <code class="docutils literal notranslate"><span class="pre">parameters</span></code> by their names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">calc_power</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -1163,25 +1027,12 @@ We can increase readability by calling the <code class="docutils literal notrans
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">calc_power</span><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-                            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: parameter without a default follows parameter with a default
-</pre></div>
-</div>
-</div>
 </div>
 <p>If we don’t provide a <code class="docutils literal notranslate"><span class="pre">value</span></code> for the <code class="docutils literal notranslate"><span class="pre">power</span></code> argument when calling the the function <code class="docutils literal notranslate"><span class="pre">calc_power</span></code> it <code class="docutils literal notranslate"><span class="pre">defaults</span></code> to the <code class="docutils literal notranslate"><span class="pre">value</span></code> provided in the <code class="docutils literal notranslate"><span class="pre">function</span> <span class="pre">definition</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">calc_power</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1197,14 +1048,6 @@ We can increase readability by calling the <code class="docutils literal notrans
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calc_power</span><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">**</span> <span class="n">power</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">calc_power</span><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-                            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: parameter without a default follows parameter with a default
 </pre></div>
 </div>
 </div>
@@ -1253,23 +1096,11 @@ We can increase readability by calling the <code class="docutils literal notrans
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Args: ([1, 2, 3], [3, 4, 5], &#39;17&#39;, &#39;float&#39;)
-Kwargs: {}
-</pre></div>
-</div>
-</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">**kwargs</span></code> does much the same, except it allows us to pass any number of <code class="docutils literal notranslate"><span class="pre">keyword</span> <span class="pre">-</span> <span class="pre">value</span> <span class="pre">pairs</span></code> as arguments to a function, so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_args_and_kwargs</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="s1">&#39;017xxx&#39;</span><span class="p">,</span> <span class="n">adress</span><span class="o">=</span><span class="s1">&#39;5G.103&#39;</span><span class="p">,</span> <span class="n">e_mail</span><span class="o">=</span><span class="s1">&#39;ernst@psych&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Args: ()
-Kwargs: {&#39;name&#39;: &#39;Michael&#39;, &#39;number&#39;: &#39;017xxx&#39;, &#39;adress&#39;: &#39;5G.103&#39;, &#39;e_mail&#39;: &#39;ernst@psych&#39;}
 </pre></div>
 </div>
 </div>
@@ -1285,14 +1116,6 @@ Kwargs: {&#39;name&#39;: &#39;Michael&#39;, &#39;number&#39;: &#39;017xxx&#39;, 
 
 <span class="n">args</span> <span class="o">=</span> <span class="n">return_args</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;str&#39;</span><span class="p">)</span>
 <span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Args: ([1, 2, 3], 7, &#39;str&#39;)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
 </pre></div>
 </div>
 </div>
@@ -1312,13 +1135,6 @@ Kwargs: {&#39;name&#39;: &#39;Michael&#39;, &#39;number&#39;: &#39;017xxx&#39;, 
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">return_kwargs</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Aylin&#39;</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="s1">&#39;017xxx&#39;</span><span class="p">,</span> <span class="n">e_mail</span><span class="o">=</span><span class="s1">&#39;kallmayer@psych&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kwargs: {&#39;name&#39;: &#39;Aylin&#39;, &#39;number&#39;: &#39;017xxx&#39;, &#39;e_mail&#39;: &#39;kallmayer@psych&#39;}
-{&#39;name&#39;: &#39;Aylin&#39;, &#39;number&#39;: &#39;017xxx&#39;, &#39;e_mail&#39;: &#39;kallmayer@psych&#39;}
-&lt;class &#39;dict&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1357,30 +1173,6 @@ Kwargs: {&#39;name&#39;: &#39;Michael&#39;, &#39;number&#39;: &#39;017xxx&#39;, 
 <span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def mean(data):
-    &quot;&quot;&quot;Return the sample arithmetic mean of data.
-
-    &gt;&gt;&gt; mean([1, 2, 3, 4, 4])
-    2.8
-
-    &gt;&gt;&gt; from fractions import Fraction as F
-    &gt;&gt;&gt; mean([F(3, 7), F(1, 21), F(5, 3), F(1, 3)])
-    Fraction(13, 21)
-
-    &gt;&gt;&gt; from decimal import Decimal as D
-    &gt;&gt;&gt; mean([D(&quot;0.5&quot;), D(&quot;0.75&quot;), D(&quot;0.625&quot;), D(&quot;0.375&quot;)])
-    Decimal(&#39;0.5625&#39;)
-
-    If ``data`` is empty, StatisticsError will be raised.
-    &quot;&quot;&quot;
-    T, total, n = _sum(data)
-    if n &lt; 1:
-        raise StatisticsError(&#39;mean requires at least one data point&#39;)
-    return _convert(total / n, T)
 </pre></div>
 </div>
 </div>

@@ -1349,6 +1349,42 @@ Kwargs: {&#39;name&#39;: &#39;Michael&#39;, &#39;number&#39;: &#39;017xxx&#39;, 
 </div>
 </div>
 </div>
+<br>
+<p><strong>Last but not least:</strong> The same principle underlies several functions that we may be using in python. For example, let’s have a look at the python code of the <code class="docutils literal notranslate"><span class="pre">mean</span></code> function in the <code class="docutils literal notranslate"><span class="pre">statistics</span></code> package:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statistics</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>def mean(data):
+    &quot;&quot;&quot;Return the sample arithmetic mean of data.
+
+    &gt;&gt;&gt; mean([1, 2, 3, 4, 4])
+    2.8
+
+    &gt;&gt;&gt; from fractions import Fraction as F
+    &gt;&gt;&gt; mean([F(3, 7), F(1, 21), F(5, 3), F(1, 3)])
+    Fraction(13, 21)
+
+    &gt;&gt;&gt; from decimal import Decimal as D
+    &gt;&gt;&gt; mean([D(&quot;0.5&quot;), D(&quot;0.75&quot;), D(&quot;0.625&quot;), D(&quot;0.375&quot;)])
+    Decimal(&#39;0.5625&#39;)
+
+    If ``data`` is empty, StatisticsError will be raised.
+    &quot;&quot;&quot;
+    T, total, n = _sum(data)
+    if n &lt; 1:
+        raise StatisticsError(&#39;mean requires at least one data point&#39;)
+    return _convert(total / n, T)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>

@@ -524,6 +524,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-the-last-session">Recap of the last session</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-for-loops">Indentation, for loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-conditionals">if conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">while loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-vs-keyword-arguments">Positional vs. keyword arguments</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-quickly-talk-about-function-names">Let’s quickly talk about function names…</a></li>
@@ -649,11 +652,51 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="recap-of-the-last-session">
 <h1>Recap of the last session<a class="headerlink" href="#recap-of-the-last-session" title="Permalink to this heading">#</a></h1>
-<p>TBD</p>
+<section id="indentation-for-loops">
+<h2>Indentation, for loops<a class="headerlink" href="#indentation-for-loops" title="Permalink to this heading">#</a></h2>
+<p>We want to program an experiment and need a list of all possible combinations of four different experimental conditions (cond_a to cond_d), stimuli (20 stimuli per condition), and response hands (left vs. right). We could type this in Excel by hand resulting in 160 lines, or we could automatically write some <code class="docutils literal notranslate"><span class="pre">python</span></code> code with <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">loops</span></code> to get the job done more quickly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please write your solution here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="if-conditionals">
+<h2>if conditionals<a class="headerlink" href="#if-conditionals" title="Permalink to this heading">#</a></h2>
+<p>Can we use the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement so that every stimulus is included into the list only once. Specifically, we want every odd stimulus to be combined with the left hand and every even stimulus with the right hand!</p>
+<p>(Note: odd vs. even can be tested by using the <code class="docutils literal notranslate"><span class="pre">modulo</span> <span class="pre">division</span> <span class="pre">(%)</span></code>. I.e., <code class="docutils literal notranslate"><span class="pre">stim</span> <span class="pre">%</span> <span class="pre">2</span></code> is 0 for even numbers and 1 for odd numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please write your solution here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="while-loops">
+<h2>while loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h2>
+<p>Do we find something nice here?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Please write your solution here</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">151</span>
+<span class="n">counter</span> <span class="o">%</span> <span class="mi">2</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Thanks for taking the time to go through this recap!</strong></p>
 <p><img alt="image.png" src="https://media2.giphy.com/media/l1TqF9rA0bcKiRSQsT/giphy.gif?cid=790b7611959a95103f8a4a983b25e8a44cb2bd2aebe9145b&amp;rid=giphy.gif&amp;ct=g" /></p>
 <center><a href="https://giphy.com/gifs/CBSAllAccess-cbs-beverly-hills-90210-episode-107-l1TqF9rA0bcKiRSQsT">via GIPHY</a></center>
 <p>If you could solve/answer all questions, you should be well prepared for this session. Otherwise, maybe check out the earlier lessons again or work-out your googling skills!</p>
+</section>
 <section id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <p>Now let’s look into a new topic for the final session: <code class="docutils literal notranslate"><span class="pre">functions</span></code>.</p>
@@ -1395,6 +1438,9 @@ Kwargs: {&#39;name&#39;: &#39;Michael&#39;, &#39;number&#39;: &#39;017xxx&#39;, 
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#recap-of-the-last-session">Recap of the last session</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indentation-for-loops">Indentation, for loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-conditionals">if conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">while loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-vs-keyword-arguments">Positional vs. keyword arguments</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-quickly-talk-about-function-names">Let’s quickly talk about function names…</a></li>

@@ -522,6 +522,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-setup">VScode setup</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-folder-environment-files">Preparation: Folder, environment &amp; files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psychopy-basics"><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-psychopy">What is <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-goals-of-psychopy">Idea/goals of <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
@@ -651,27 +652,23 @@ touch experiment.py
 <h3>VScode setup<a class="headerlink" href="#vscode-setup" title="Permalink to this heading">#</a></h3>
 <p>Once more: please remember that we’re switching to an <code class="docutils literal notranslate"><span class="pre">IDE</span></code> for this part of the course, specifically <code class="docutils literal notranslate"><span class="pre">VScode</span></code>, as <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> aren’t the most feasible way to implement/test/run <code class="docutils literal notranslate"><span class="pre">experiment</span></code>s via <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. Therefore, please open <code class="docutils literal notranslate"><span class="pre">VScode</span></code> and within it open the folder we just created (<code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Folder</span></code>). Next, click on the <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> file which should open in the <code class="docutils literal notranslate"><span class="pre">editor</span></code> window.</p>
 <p>With that your setup is ready for our <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> adventure and should look roughly like below:</p>
-<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/vscode_setup.png" alt="logo" title="jupyter" width="800" height="400" /> <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Preparation: Folder, environment &amp; files
-
-
-
-Within this, currently empty, `python file`/`script` we will put our `python code` needed to `run` the `experiment`. 
-
-### VScode setup
-
-Once more: please remember that we&#39;re switching to an `IDE` for this part of the course, specifically `VScode`, as `jupyter notebooks` aren&#39;t the most feasible way to implement/test/run `experiment`s via `PsychoPy`. Therefore, please open `VScode` and within it open the folder we just created (`File` -&gt; `Open Folder`). Next, click on the `experiment.py` file which should open in the `editor` window.
-
-With that your setup is ready for our `PsychoPy` adventure and should look roughly like below:
-
-&lt;img align=&quot;center&quot; src=&quot;https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_Winter2021/master/lecture/static/vscode_setup.png&quot; alt=&quot;logo&quot; title=&quot;jupyter&quot; width=&quot;800&quot; height=&quot;400&quot; /&gt; 
-</pre></div>
-</div>
-</div>
-</div>
+<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/vscode_setup.png" alt="logo" title="jupyter" width="800" height="400" /> </section>
 </section>
-</section>
+<section id="preparation-folder-environment-files">
+<h2>Preparation: Folder, environment &amp; files<a class="headerlink" href="#preparation-folder-environment-files" title="Permalink to this heading">#</a></h2>
+<p><strong>Please note:</strong> We are now switching to an <code class="docutils literal notranslate"><span class="pre">IDE</span></code> for this part of the course, specifically <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code> which you should all have installed, as <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> aren’t the most feasible way to implement/test/run <code class="docutils literal notranslate"><span class="pre">experiment</span></code>s via <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. Therefore, the following steps are completely described in <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>!</p>
+<p>As mentioned before, it’s a good idea to keep things handy and organized. Obviously, this also holds true for running experiments using <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. While there are several ways we could do this, at the minimum we need a dedicated <code class="docutils literal notranslate"><span class="pre">folder</span></code> or <code class="docutils literal notranslate"><span class="pre">directory</span></code> somewhere on our machine within which we will store all corresponding information and <code class="docutils literal notranslate"><span class="pre">files</span></code>. Creating a new <code class="docutils literal notranslate"><span class="pre">directory</span></code> is no biggie using <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>. We can simply go to the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu, create a <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Project</span> <span class="pre">...</span></code>,</p>
+<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy2.png" alt="logo" title="jupyter" width="800" height="400" /> 
+<p>… make a new folder for our project and call it <code class="docutils literal notranslate"><span class="pre">psychopy_experiment</span></code>. Like for example this:</p>
+<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy1.png" alt="logo" title="jupyter" width="800" height="400" /> 
+<p>Next, we go again to the <code class="docutils literal notranslate"><span class="pre">File</span></code>menu, click on <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">File</span> <span class="pre">or</span> <span class="pre">Directory</span> <span class="pre">...</span> </code> and select <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">file</span></code>:</p>
+<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy3.png" alt="logo" title="jupyter" width="800" height="400" /> 
+<p>Let’s call this file èxperiment.py`:</p>
+<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy4.png" alt="logo" title="jupyter" width="800" height="400" /> 
+<p>After hitting return, it will directly be open in <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>:</p>
+<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy5.png" alt="logo" title="jupyter" width="800" height="400" /> 
+<p>With that your setup is ready for our <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> adventure and should look roughly like below:</p>
+<img align="center" src="https://i.giphy.com/RceaglkWbFstnLxnO1.webp" alt="logo" title="jupyter" width="400" height="400" /> </section>
 <section id="psychopy-basics">
 <h2><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics<a class="headerlink" href="#psychopy-basics" title="Permalink to this heading">#</a></h2>
 <p>It’s already time to talk about <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>, one of the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">libraries</span></code> intended to run <code class="docutils literal notranslate"><span class="pre">experiments</span></code> and acquire <code class="docutils literal notranslate"><span class="pre">data</span></code>. For more information regarding different software and options, their advantages and drawbacks, please consult the <a class="reference external" href="https://m-earnest.github.io/Python_for_Psychologists_Winter2022/experiments/experiments.html">slides</a>.</p>
@@ -2592,6 +2589,7 @@ Feel free to explore the other aspects of the coures website for further insight
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-setup">VScode setup</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-folder-environment-files">Preparation: Folder, environment &amp; files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psychopy-basics"><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-psychopy">What is <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-goals-of-psychopy">Idea/goals of <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>

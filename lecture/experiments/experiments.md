@@ -16,6 +16,11 @@ You can download the slides for todays session [here](https://docs.google.com/pr
 
 In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.  
 
+You find the code for this session in the following [notebook](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_I.ipynb)
+**However -  you should not try to run the code in the jupyter notebook! We will copy and paste it into the `PsychoPy coder`.**
+You can also access the pre-rendered version of this notebook through the table of contents on the right.
+
+
 **Remember: For this, you need to have installed PsychoPy as a stand-alone program! The `PsychoPy` code does not and should not be run in jupyter notebooks - we will use `coder`, i.e., a code editor that is provided with `PsychoPy`.**
 
 

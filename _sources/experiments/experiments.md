@@ -12,6 +12,8 @@ To get some idea on how to present experiments via Python, we will explore the `
 
 ### Materials 📓
 
+In case you have not yet done so - please install `PsychoPy` from [here](https://www.psychopy.org/download.html).
+
 You can download the slides for todays session [here](https://docs.google.com/presentation/d/1Sjo6YW92Ju_Zk5_glrQZpFsBNYYD88fTy2vYziZ1wR4/edit?usp=sharing)
 
 In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.  

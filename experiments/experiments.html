@@ -487,7 +487,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-psychopy-i">Introduction to PsychoPy - I</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment-6">Homework assignment #6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment-7">Homework assignment #7</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -504,28 +508,37 @@ document.write(`
 <p>After spending quite a good while on important prerequisites concerning scientific computing and the basics of the <code class="docutils literal notranslate"><span class="pre">python</span></code> programming language, it’s finally time to combine them via transitioning to more applied topics. This adventure will start with a brief exploration of how to create and run experiments using <a class="reference external" href="https://www.psychopy.org/index.html">PsychoPy</a>, a <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">library</span></code> dedicated to conducting experiments in the realm of <code class="docutils literal notranslate"><span class="pre">psychology</span></code> and adjacent fields. Due to time constraints we will only have a quick look at things and showcase the most important aspects to allow folks to explore things further after the course ends. We’ll further concentrate on using psychopy to further your understanding of the Python essential such as control-flow statements.</p>
 <section id="introduction-to-psychopy-i">
 <h2>Introduction to PsychoPy - I<a class="headerlink" href="#introduction-to-psychopy-i" title="Permalink to this heading">#</a></h2>
-<p>Most of us already conducted or at watched or help conduct an experiment. However, there’s a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master.</p>
+<p>Most of us already conducted or at least watched or helped conduct an experiment. However, there’s a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master - or simply what they used to use in the past. Often, these other solutions are not <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">source</span></code> but paid software.</p>
 <p>That being said: We’ll quickly discuss some tools to conduct experiments and work out if we can actually use <code class="docutils literal notranslate"><span class="pre">python</span></code> based resources in this context with a clear conscience or if you’re better off by defaulting to paid software packages.</p>
 <p>To get some idea on how to present experiments via Python, we will explore the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">library</span></code> <a class="reference external" href="https://www.psychopy.org/index.html">PsychoPy</a>, including its setup, basic working principles, as well as advantages and disadvantages, showcased on a very simple experiment. Buckle up y’all, this is the first time we will use <code class="docutils literal notranslate"><span class="pre">python</span></code> “in the wild”.</p>
 </section>
 <section id="materials">
 <h2>Materials 📓<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
-<p>You can download the slides for todays session <a class="reference external" href="https://docs.google.com/presentation/d/1KLXxBLYmqjVngjQvrpFvXzaN8Dmr2n0FF2bsNLLm7OI/edit?usp=sharing">here</a></p>
-<p>Afterwards, you will go through a tutorial by yourself, implementing the presented trial sequence. For the tutorial you need to download <a class="reference external" href="https://drive.google.com/drive/folders/1GYPMI785Ag91dSeUzJtJErToqbScfcXb?usp=sharing">this folder</a>. It contains all the materials you will need.</p>
+<p>You can download the slides for todays session <a class="reference external" href="https://docs.google.com/presentation/d/1Sjo6YW92Ju_Zk5_glrQZpFsBNYYD88fTy2vYziZ1wR4/edit?usp=sharing">here</a></p>
+<p>In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.</p>
+<p><strong>Remember: For this, you need to have installed PsychoPy as a stand-alone program! The <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> code does not and should not be run in jupyter notebooks - we will use <code class="docutils literal notranslate"><span class="pre">coder</span></code>, i.e., a code editor that is provided with <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>.</strong></p>
 </section>
-<section id="homework-assignment-6">
-<h2>Homework assignment #6<a class="headerlink" href="#homework-assignment-6" title="Permalink to this heading">#</a></h2>
-<p>Your sixth and last homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point.</p>
-<p>It should include</p>
+<section id="homework-assignment-7">
+<h2>Homework assignment #7<a class="headerlink" href="#homework-assignment-7" title="Permalink to this heading">#</a></h2>
+<p>Your next homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point.</p>
+<p>Your new experiment should include</p>
 <ul class="simple">
 <li><p>a trial sequence where some stimulus is presented and a response is collected.</p></li>
 <li><p>this sequence should be repeated multiple times with varying conditions.</p></li>
 <li><p>it should run without crashing and generate an output file.</p></li>
-<li><p>bonus: it should have a dialogue box where partcipants can input e.g., id, age, handedness etc. which will be written to the output file</p></li>
-<li><p>bonus 2: the output file should automatically be named after the participant id</p></li>
+<li><p>bonus: it should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file</p></li>
+<li><p>bonus 2: the output file should automatically be named after the participant id.</p></li>
 </ul>
-<p>Save it as a .py file and e-mail it to kallmayer[ at ]<a class="reference external" href="http://psych.uni-frankfurt.de">psych.uni-frankfurt.de</a></p>
-<p><strong>Deadline is TWO weeks from now</strong></p>
+<p>Save the experiment script as a .py file that contains your name in its filename.</p>
+<section id="part-2">
+<h3>Part 2:<a class="headerlink" href="#part-2" title="Permalink to this heading">#</a></h3>
+<p>Please run the experiment and send the output file also. We want to assemble all output files into dataset after the winter holiday and analyze the acquired data.</p>
+</section>
+<section id="submission-of-assignment">
+<h3>Submission of Assignment<a class="headerlink" href="#submission-of-assignment" title="Permalink to this heading">#</a></h3>
+<p>Please e-mail both files to fiebach[ at ]<a class="reference external" href="http://psych.uni-frankfurt.de">psych.uni-frankfurt.de</a>.</p>
+<p><strong>Deadline is Monday, January 12, 2026!</strong></p>
+</section>
 </section>
 </section>
 
@@ -577,7 +590,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-psychopy-i">Introduction to PsychoPy - I</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment-6">Homework assignment #6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment-7">Homework assignment #7</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

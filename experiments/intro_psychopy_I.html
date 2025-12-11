@@ -517,12 +517,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folders-files">Folders &amp; files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-setup">VScode setup</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-folder-environment-files">Preparation: Folder, environment &amp; files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psychopy-basics"><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-psychopy">What is <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-goals-of-psychopy">Idea/goals of <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
@@ -545,7 +540,11 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-very-simple-experiment">A very simple experiment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outro">Outro</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment">Homework assignment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment">Homework assignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -585,7 +584,7 @@ This lecture was prepared by Peer Herholz and further adapted and expanded for t
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics<br />
 1.1 The general idea<br />
-1.2 Input via <code class="docutils literal notranslate"><span class="pre">dialog</span> <span class="pre">boxes</span></code> <br>
+1.2 Input via <code class="docutils literal notranslate"><span class="pre">dialog</span> <span class="pre">boxes</span></code>
 1.3 Presenting instructions</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>’s working principles<br />
 2.1 <code class="docutils literal notranslate"><span class="pre">draw</span></code>ing &amp; <code class="docutils literal notranslate"><span class="pre">flip</span></code>ping<br />
@@ -595,80 +594,7 @@ This lecture was prepared by Peer Herholz and further adapted and expanded for t
 3.2 saving data</p></li>
 <li><p>A very simple experiment</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-
-conda create -n psychopy psychopy
-
-conda activate psychopy
-
-pip install jedi psychtoolbox pygame pyo pyobjc   
-            python-vlc ujson
-</pre></div>
-</div>
-</div>
-</div>
-<p>With these few steps we have our (initial) <code class="docutils literal notranslate"><span class="pre">computing</span> <span class="pre">environment</span></code> ready to go!</p>
-<p>Let’s continue with creating <code class="docutils literal notranslate"><span class="pre">folders</span></code> and <code class="docutils literal notranslate"><span class="pre">files</span></code> we need.</p>
-<section id="folders-files">
-<h3>Folders &amp; files<a class="headerlink" href="#folders-files" title="Permalink to this heading">#</a></h3>
-<p>As mentioned above, it’s a good idea to keep things handy and organized. Obviously, this also holds true for running experiments using <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. While there are several ways we could do this, at the minimum we need a dedicated <code class="docutils literal notranslate"><span class="pre">folder</span></code> or <code class="docutils literal notranslate"><span class="pre">directory</span></code> somewhere on our machine within which we will store all corresponding information and <code class="docutils literal notranslate"><span class="pre">files</span></code>. Creating a new <code class="docutils literal notranslate"><span class="pre">directory</span></code> is no biggie using <code class="docutils literal notranslate"><span class="pre">bash</span></code>. We can simply use <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> and specify the wanted <code class="docutils literal notranslate"><span class="pre">path</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code>. For the sake of simplicity, let’s put everything in a folder called <code class="docutils literal notranslate"><span class="pre">psychopy_experiment</span></code> on our <code class="docutils literal notranslate"><span class="pre">Desktop</span></code>s.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-mkdir /path/to/your/Desktop/psychopy_environment
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you’d prefer to just stick with Python you could instead make use of the <code class="docutils literal notranslate"><span class="pre">os</span></code>module, like so:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import os
-os.makedirs(&#39;/path/to/your/Desktop/psychopy_environment&#39;)
-</pre></div>
-</div>
-<p>But it’s a good exercise to get aquainted with bash, so let’s continue with that.</p>
-<p>Now we will change our <code class="docutils literal notranslate"><span class="pre">current</span> <span class="pre">working</span> <span class="pre">directory</span></code> to this new folder</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-cd /path/to/your/Desktop/psychopy_environment
-</pre></div>
-</div>
-</div>
-</div>
-<p>and once there, create a new <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code>, i.e. an empty <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">file</span></code>. For this we can use <code class="docutils literal notranslate"><span class="pre">bash</span></code>s <code class="docutils literal notranslate"><span class="pre">touch</span></code> <code class="docutils literal notranslate"><span class="pre">function</span></code> followed by the desired <code class="docutils literal notranslate"><span class="pre">filename</span></code>. Keeping things simple again, we will name it <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> (notice the file extension <code class="docutils literal notranslate"><span class="pre">.py</span></code>).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
-touch experiment.py
-</pre></div>
-</div>
-</div>
-</div>
-<p>Within this, currently empty, <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">file</span></code>/<code class="docutils literal notranslate"><span class="pre">script</span></code> we will put our <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">code</span></code> needed to <code class="docutils literal notranslate"><span class="pre">run</span></code> the <code class="docutils literal notranslate"><span class="pre">experiment</span></code>.</p>
 </section>
-<section id="vscode-setup">
-<h3>VScode setup<a class="headerlink" href="#vscode-setup" title="Permalink to this heading">#</a></h3>
-<p>Once more: please remember that we’re switching to an <code class="docutils literal notranslate"><span class="pre">IDE</span></code> for this part of the course, specifically <code class="docutils literal notranslate"><span class="pre">VScode</span></code>, as <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> aren’t the most feasible way to implement/test/run <code class="docutils literal notranslate"><span class="pre">experiment</span></code>s via <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. Therefore, please open <code class="docutils literal notranslate"><span class="pre">VScode</span></code> and within it open the folder we just created (<code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Folder</span></code>). Next, click on the <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> file which should open in the <code class="docutils literal notranslate"><span class="pre">editor</span></code> window.</p>
-<p>With that your setup is ready for our <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> adventure and should look roughly like below:</p>
-<img align="center" src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/vscode_setup.png" alt="logo" title="jupyter" width="800" height="400" /> </section>
-</section>
-<section id="preparation-folder-environment-files">
-<h2>Preparation: Folder, environment &amp; files<a class="headerlink" href="#preparation-folder-environment-files" title="Permalink to this heading">#</a></h2>
-<p><strong>Please note:</strong> We are now switching to an <code class="docutils literal notranslate"><span class="pre">IDE</span></code> for this part of the course, specifically <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code> which you should all have installed, as <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> aren’t the most feasible way to implement/test/run <code class="docutils literal notranslate"><span class="pre">experiment</span></code>s via <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. Therefore, the following steps are completely described in <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>!</p>
-<p>As mentioned before, it’s a good idea to keep things handy and organized. Obviously, this also holds true for running experiments using <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. While there are several ways we could do this, at the minimum we need a dedicated <code class="docutils literal notranslate"><span class="pre">folder</span></code> or <code class="docutils literal notranslate"><span class="pre">directory</span></code> somewhere on our machine within which we will store all corresponding information and <code class="docutils literal notranslate"><span class="pre">files</span></code>. Creating a new <code class="docutils literal notranslate"><span class="pre">directory</span></code> is no biggie using <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>. We can simply go to the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu, create a <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Project</span> <span class="pre">...</span></code>,</p>
-<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy2.png" alt="logo" title="jupyter" width="800" height="400" /> 
-<p>… make a new folder for our project and call it <code class="docutils literal notranslate"><span class="pre">psychopy_experiment</span></code>. Like for example this:</p>
-<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy1.png" alt="logo" title="jupyter" width="800" height="400" /> 
-<p>Next, we go again to the <code class="docutils literal notranslate"><span class="pre">File</span></code>menu, click on <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">File</span> <span class="pre">or</span> <span class="pre">Directory</span> <span class="pre">...</span> </code> and select <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">file</span></code>:</p>
-<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy3.png" alt="logo" title="jupyter" width="800" height="400" /> 
-<p>Let’s call this file èxperiment.py`:</p>
-<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy4.png" alt="logo" title="jupyter" width="800" height="400" /> 
-<p>After hitting return, it will directly be open in <code class="docutils literal notranslate"><span class="pre">PyCharm</span></code>:</p>
-<img align="center" src="https://raw.githubusercontent.com/cfiebach/Python_for_Psychologists_25-26/master/lecture/static/MSc4_Psychopy5.png" alt="logo" title="jupyter" width="800" height="400" /> 
-<p>With that your setup is ready for our <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> adventure and should look roughly like below:</p>
-<img align="center" src="https://i.giphy.com/RceaglkWbFstnLxnO1.webp" alt="logo" title="jupyter" width="400" height="400" /> </section>
 <section id="psychopy-basics">
 <h2><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics<a class="headerlink" href="#psychopy-basics" title="Permalink to this heading">#</a></h2>
 <p>It’s already time to talk about <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>, one of the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">libraries</span></code> intended to run <code class="docutils literal notranslate"><span class="pre">experiments</span></code> and acquire <code class="docutils literal notranslate"><span class="pre">data</span></code>. For more information regarding different software and options, their advantages and drawbacks, please consult the <a class="reference external" href="https://m-earnest.github.io/Python_for_Psychologists_Winter2022/experiments/experiments.html">slides</a>.</p>
@@ -707,8 +633,10 @@ touch experiment.py
 </section>
 <section id="the-general-idea">
 <h3>The general idea<a class="headerlink" href="#the-general-idea" title="Permalink to this heading">#</a></h3>
-<p>If you don’t get an <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">error</span></code> there, at least the basic <code class="docutils literal notranslate"><span class="pre">installation</span></code> should be ok!</p>
-<p>Cool, we are now ready to actually do some <code class="docutils literal notranslate"><span class="pre">coding</span></code>! As said before we will do that in our <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">script</span></code>. While the transition from <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> to <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scripts</span></code> might seem harsh at first, it’s actually straight-forward: the steps we conducted/<code class="docutils literal notranslate"><span class="pre">commands</span></code> we <code class="docutils literal notranslate"><span class="pre">run</span></code> in an incremental fashion will also be indicated/<code class="docutils literal notranslate"><span class="pre">run</span></code> in an incremental fashion here, just within one <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> line-by-line.</p>
+<p>We will use the so called <code class="docutils literal notranslate"><span class="pre">coder</span></code> window of <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. However, we will not start working directly with the GUI, we will start by programming our first experimnt inside <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>. To do so, please start <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>, and open the <code class="docutils literal notranslate"><span class="pre">coder</span></code>from the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">=&gt;</span> <span class="pre">Show</span> <span class="pre">coder</span></code> menu.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">coder</span></code> has everything we need - nicely, we do not have to worry about installation of packages … everything we need is coming as part of the <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> installation (or can be installed easily within PsychoPy under the Tools menu …).</p>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">coder</span></code> window is open, please open a new <code class="docutils literal notranslate"><span class="pre">python</span></code> file, either using the graphical symbol or the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu. Use <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">=&gt;</span> <span class="pre">Save</span> <span class="pre">as</span> <span class="pre">...</span></code> and save it under the name èxperiment.py` (or any other name you like).</p>
+<p>Cool, we are now ready to actually do some <code class="docutils literal notranslate"><span class="pre">coding</span></code>! As said before we will do that in our <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">script</span></code>. While the transition from <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> to <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scripts</span></code> might seem harsh at first, it’s actually straight-forward: the steps we conducted/<code class="docutils literal notranslate"><span class="pre">commands</span></code> we <code class="docutils literal notranslate"><span class="pre">run</span></code> in an incremental fashion will also be indicated/<code class="docutils literal notranslate"><span class="pre">run</span></code> in an incremental fashion here, just within one <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> line-by-line. You can do this by copy and paste-ing the <code class="docutils literal notranslate"><span class="pre">code</span></code> provided in the following, into the <code class="docutils literal notranslate"><span class="pre">PsychoPy</span> <span class="pre">coder</span></code> window. <strong>Please remember to not run psychopy code in jupyter notebooks!!!</strong></p>
 <p>So, what’s the first thing we usually do? That’s right: <code class="docutils literal notranslate"><span class="pre">import</span></code>ing <code class="docutils literal notranslate"><span class="pre">modules</span></code> and <code class="docutils literal notranslate"><span class="pre">function</span></code>s we need. Comparably to <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>, we will do that at the beginning of our <code class="docutils literal notranslate"><span class="pre">script</span></code>.</p>
 <p><em>Please note, that we will go through a realistic example of <code class="docutils literal notranslate"><span class="pre">coding</span></code> <code class="docutils literal notranslate"><span class="pre">experiments</span></code> in <code class="docutils literal notranslate"><span class="pre">python</span></code> and thus might not import all <code class="docutils literal notranslate"><span class="pre">modules</span></code>/<code class="docutils literal notranslate"><span class="pre">functions</span></code> we will actually need from the start. Thus, we will add them to the the beginning of our scripts as we go along.</em></p>
 <p>However, we actually haven’t checked out what <code class="docutils literal notranslate"><span class="pre">modules</span></code>/<code class="docutils literal notranslate"><span class="pre">functions</span></code> <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> has. Let’s do that first.</p>
@@ -729,7 +657,7 @@ touch experiment.py
 <section id="input-via-dialog-boxes">
 <h3>Input via dialog boxes<a class="headerlink" href="#input-via-dialog-boxes" title="Permalink to this heading">#</a></h3>
 <p>Many <code class="docutils literal notranslate"><span class="pre">experiments</span></code> start with a <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> that allow us to input certain information, for example <code class="docutils literal notranslate"><span class="pre">participant</span> <span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">session</span></code>, <code class="docutils literal notranslate"><span class="pre">group</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">storage</span> <span class="pre">path</span></code>, etc. . We can implement this crucial aspect via the <a class="reference external" href="https://psychopy.org/api/gui.html">psychopy.gui module</a>. Initially, we need to <code class="docutils literal notranslate"><span class="pre">import</span></code> it and thus need to start a new section in our <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> and after that, we can define the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> we want to create via a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> with respective <code class="docutils literal notranslate"><span class="pre">key-value</span> <span class="pre">pairs</span></code>.</p>
-<p><em>Please note: at this we will start populating our <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">script</span></code>. Thus, you should copy paste the respective content of the <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">cells</span></code> into your <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">script</span></code> you opened in <code class="docutils literal notranslate"><span class="pre">VScode</span></code>. As we will go step-by-step, the <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">script</span></code> will get longer and longer.</em></p>
+<p><em>Please note: at this we will start populating our <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">script</span></code>. Thus, you should copy paste the respective content of the <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">cells</span></code> into your <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">script</span></code> you opened in <code class="docutils literal notranslate"><span class="pre">PsychoPy's</span> <span class="pre">coder</span> <span class="pre">window</span></code>. As we will go step-by-step, the <code class="docutils literal notranslate"><span class="pre">code</span></code>/<code class="docutils literal notranslate"><span class="pre">script</span></code> will get longer and longer.</em></p>
 <p><em>Btw can you think of other uses such a dialog box may have for psychological research?</em></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,17 +692,9 @@ touch experiment.py
 </div>
 </div>
 </div>
-<p>That’s actually all we need to test our <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code>. In order to do that, we need to <code class="docutils literal notranslate"><span class="pre">run</span></code>/<code class="docutils literal notranslate"><span class="pre">execute</span></code> our <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> called <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code>.</p>
+<p>That’s actually all we need to test our <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code>. In order to do that, we need to <code class="docutils literal notranslate"><span class="pre">run</span></code>/<code class="docutils literal notranslate"><span class="pre">execute</span></code> our <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> called <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code>. <strong>Remember to not run it in the jupyter notebook, but inside <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>!</strong></p>
 <p>Simply open your <code class="docutils literal notranslate"><span class="pre">psychopy</span></code> installation, navigate to the <code class="docutils literal notranslate"><span class="pre">coder</span> <span class="pre">view</span></code>, open the <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> file via <code class="docutils literal notranslate"><span class="pre">file</span> <span class="pre">-&gt;</span> <span class="pre">open</span> <span class="pre">file</span></code> and hit the <code class="docutils literal notranslate"><span class="pre">run</span></code> button (green arrow).</p>
-<p><em>Usually this is achieved via typing <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiment.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">VScode</span> <span class="pre">terminal</span></code> and pressing <code class="docutils literal notranslate"><span class="pre">enter</span></code> this will <code class="docutils literal notranslate"><span class="pre">run</span></code>/<code class="docutils literal notranslate"><span class="pre">execute</span></code> the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> via the <code class="docutils literal notranslate"><span class="pre">python</span></code> installed in our <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">environment</span></code> called <code class="docutils literal notranslate"><span class="pre">psychopy</span></code>. Again, please don’t <code class="docutils literal notranslate"><span class="pre">run</span></code>/<code class="docutils literal notranslate"><span class="pre">execute</span></code> <code class="docutils literal notranslate"><span class="pre">code</span></code> in this <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code>!</em></p>
-<p><em>Note: You can also try out the <code class="docutils literal notranslate"><span class="pre">create_dialogue_box.py</span></code> script in the <code class="docutils literal notranslate"><span class="pre">/lecture/experiment/</span></code> folder, which does the same basic thing</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">experiment</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p><em>Note: You can also try out the <code class="docutils literal notranslate"><span class="pre">create_dialogue_box.py</span></code> script in the <code class="docutils literal notranslate"><span class="pre">/lecture/experiment/</span></code> folder from the github repository, which does the same basic thing</em></p>
 <p>If everything works/is set correctly you should see a <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> appearing on your screen asking for the information we indicated in our <code class="docutils literal notranslate"><span class="pre">experiment.py</span></code> <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">script</span></code> (chances are the layout on your end looks a bit different than mine, that’s no biggie). After entering all requested information and clicking <code class="docutils literal notranslate"><span class="pre">ok</span></code> the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> should close and no errors should appear.</p>
 <p>E.g.
 <img align="center" src="https://raw.githubusercontent.com/PeerHerholz/Python_for_Psychologists_Winter2021/master/lecture/static/gui_example.png" alt="logo" title="jupyter" width="350" height="200" /></p>
@@ -924,6 +844,7 @@ touch experiment.py
 </pre></div>
 </div>
 <p>Check-out the <a class="reference external" href="https://psychopy.org/api/visual/textstim.html#psychopy.visual.TextStim">visual.TextStim() API</a> for more ways to customize your <code class="docutils literal notranslate"><span class="pre">messages</span></code>.</p>
+<p>However, nothing is shown yet … why is this so? Maybe because we only <code class="docutils literal notranslate"><span class="pre">defined</span></code> it but did not tell <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> to actually show it to the participant? Let’s see …</p>
 </section>
 </section>
 <section id="psychopy-working-principles">
@@ -1018,14 +939,14 @@ touch experiment.py
 </div>
 </div>
 <p>As you might have noticed the <code class="docutils literal notranslate"><span class="pre">draw</span></code> function is applied to the <code class="docutils literal notranslate"><span class="pre">text_stimulus</span></code> to load it onto our <code class="docutils literal notranslate"><span class="pre">buffer</span> <span class="pre">screen</span></code>, while the <code class="docutils literal notranslate"><span class="pre">.flip</span></code> function is applied afterwards to our <code class="docutils literal notranslate"><span class="pre">window</span></code> instead.</p>
-<p>Let’s give it a try via <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiment.py</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> again but this time after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next.</p>
+<p>Let’s give it a try: copy and paste the code into the <code class="docutils literal notranslate"><span class="pre">PsychoPy</span> <span class="pre">coder</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> again but this time after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next.</p>
 </br>
 </section>
 <section id="waiting-for-input">
 <h3>Waiting for Input<a class="headerlink" href="#waiting-for-input" title="Permalink to this heading">#</a></h3>
 <p>However, the text only appears very briefly and in contrast to our <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> doesn’t wait for us to press anything in advance.</p>
 <p>This is because we didn’t tell <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> that we want to <code class="docutils literal notranslate"><span class="pre">wait</span></code> for a distinct <code class="docutils literal notranslate"><span class="pre">key</span> <span class="pre">press</span></code> before we advance further, we need the <a class="reference external" href="https://psychopy.org/api/event.html">psychopy.event module</a>.</p>
-<p>Through its <code class="docutils literal notranslate"><span class="pre">.waitKeys()</span></code> <code class="docutils literal notranslate"><span class="pre">function</span></code> we can define that nothing should happen/we shouldn’t advancing unless a certain <code class="docutils literal notranslate"><span class="pre">key</span></code> is pressed. We can Specify the respective <code class="docutils literal notranslate"><span class="pre">keys</span></code> we want to allow as input, by providing them as <code class="docutils literal notranslate"><span class="pre">elements</span></code> of a <code class="docutils literal notranslate"><span class="pre">list</span></code> to the function.</p>
+<p>Through its <code class="docutils literal notranslate"><span class="pre">.waitKeys()</span></code> <code class="docutils literal notranslate"><span class="pre">function</span></code> we can define that nothing should happen/we shouldn’t be advancing unless a certain <code class="docutils literal notranslate"><span class="pre">key</span></code> is pressed. We can Specify the respective <code class="docutils literal notranslate"><span class="pre">keys</span></code> we want to allow as input, by providing them as <code class="docutils literal notranslate"><span class="pre">elements</span></code> of a <code class="docutils literal notranslate"><span class="pre">list</span></code> to the function.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>keys = event.waitKeys(keyList=[&#39;space&#39;, &#39;escape&#39;])
 </pre></div>
 </div>
@@ -1142,7 +1063,7 @@ touch experiment.py
 </div>
 </div>
 </br>
-<p>Let’s give it a try via <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiment.py</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> and after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next, followed by the start message and finally the end message. In all cases, the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> should only advance if you press <code class="docutils literal notranslate"><span class="pre">spacebar</span></code> or quit when you press <code class="docutils literal notranslate"><span class="pre">escape</span></code>.</p>
+<p>Let’s run this in the <code class="docutils literal notranslate"><span class="pre">PsychoPy</span> <span class="pre">coder</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> and after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next, followed by the start message and finally the end message. In all cases, the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> should only advance if you press <code class="docutils literal notranslate"><span class="pre">spacebar</span></code> or quit when you press <code class="docutils literal notranslate"><span class="pre">escape</span></code>.</p>
 </br>
 <p>Having this rough frame of our <code class="docutils literal notranslate"><span class="pre">experiment</span></code>, it’s actually time to add the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> itself: the <code class="docutils literal notranslate"><span class="pre">evaluation</span></code> of our <code class="docutils literal notranslate"><span class="pre">artists</span></code>, <code class="docutils literal notranslate"><span class="pre">snacks</span></code> and <code class="docutils literal notranslate"><span class="pre">animals</span></code>.</p>
 </section>
@@ -1366,7 +1287,7 @@ stim_order.append({‘stimulus’: stim})</p>
 </div>
 </div>
 </br>
-<p>Let’s give it a try via <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiment.py</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> and after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next, followed by the start message. Subsequently, you should see all of our <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> one after another and the same question above them every <code class="docutils literal notranslate"><span class="pre">trial</span></code>. Finally, you should see the end message.</p>
+<p>Let’s give it a try and run it in the <code class="docutils literal notranslate"><span class="pre">PsychoPy</span> <span class="pre">coder</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> and after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next, followed by the start message. Subsequently, you should see all of our <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> one after another and the same question above them every <code class="docutils literal notranslate"><span class="pre">trial</span></code>. Finally, you should see the end message.</p>
 </br>
 <p>While this is already great, the same thing as during our earlier tests happened: the <code class="docutils literal notranslate"><span class="pre">text</span></code>, i.e. our <code class="docutils literal notranslate"><span class="pre">stimuli</span></code>, is only very briefly shown on screen (although the core.wait(0.5) statement slowed that down a bit).</p>
 <p>As we didn’t specify that we want to collect <code class="docutils literal notranslate"><span class="pre">responses</span></code> the script is simply moving on to the next <code class="docutils literal notranslate"><span class="pre">stimulus</span></code>. We could now use the <code class="docutils literal notranslate"><span class="pre">event.waitKeys()</span></code> function as before and allow people to use the keys  1 - 7, but we instead will add a proper <code class="docutils literal notranslate"><span class="pre">ratingscale</span></code> for each loop-iteration to our <code class="docutils literal notranslate"><span class="pre">experiment</span></code>.</p>
@@ -1378,19 +1299,17 @@ stim_order.append({‘stimulus’: stim})</p>
 <section id="collecting-responses">
 <h3>Collecting responses<a class="headerlink" href="#collecting-responses" title="Permalink to this heading">#</a></h3>
 <p>For the <code class="docutils literal notranslate"><span class="pre">experiment</span></code> at hand a simple <code class="docutils literal notranslate"><span class="pre">rating</span> <span class="pre">scale</span></code> yes, a Likert scale to make it Psychology, also recently know as “feeling integers”) should be sufficient. As with the other components we have explored so far, we need to implement/add this via two steps: <code class="docutils literal notranslate"><span class="pre">defining</span></code>/<code class="docutils literal notranslate"><span class="pre">creating</span></code> a <code class="docutils literal notranslate"><span class="pre">rating</span> <span class="pre">scale</span></code> and <code class="docutils literal notranslate"><span class="pre">draw</span></code>ing/presenting it.</p>
-<p>We can easily define and tweak a rating scale via <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>’s <a class="reference external" href="https://psychopy.org/api/visual/ratingscale.html#psychopy.visual.RatingScale">visual.RatingScale()</a> <code class="docutils literal notranslate"><span class="pre">function</span></code> which allows us to set the <code class="docutils literal notranslate"><span class="pre">range</span></code> of <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">labels</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, etc..</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> 
-          <span class="n">scale</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>      
-          <span class="n">low</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>           
-          <span class="n">high</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>          
-          <span class="n">showAccept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
-          <span class="n">markerStart</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>   
-          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1 - Not at all&#39;</span><span class="p">,</span> <span class="s1">&#39;7 - A lot&#39;</span><span class="p">],</span> 
-          <span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">])</span>
+<p>We can easily define and tweak a rating scale via <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code>’s <a class="reference external" href="https://www.psychopy.org/api/visual/slider.html">visual.Slider()</a> <code class="docutils literal notranslate"><span class="pre">function</span></code> which allows us to set the <code class="docutils literal notranslate"><span class="pre">range</span></code> of <code class="docutils literal notranslate"><span class="pre">values</span></code>, <code class="docutils literal notranslate"><span class="pre">labels</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code>, etc..</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">win</span><span class="p">,</span>
+    <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="s2">&quot;7&quot;</span><span class="p">],</span>
+    <span class="n">granularity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">),</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>We then need to <code class="docutils literal notranslate"><span class="pre">draw</span></code> it and indicate that we want to <code class="docutils literal notranslate"><span class="pre">wait</span></code> until a <code class="docutils literal notranslate"><span class="pre">rating</span></code> was conducted before we advance to the next <code class="docutils literal notranslate"><span class="pre">trial</span></code>. Which is done by calling a <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">loop</span></code> that “asks” wether a <code class="docutils literal notranslate"><span class="pre">response</span></code> has not been given yet. We don’t need to write this out, as the <code class="docutils literal notranslate"><span class="pre">ratingScale</span></code> object already includes this functionaliyt via <code class="docutils literal notranslate"><span class="pre">ratingScale.noResponse</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">noResponse</span><span class="p">:</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRating</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </pre></div>
 </div>
 <p>Additionally, we are going to display a small helpful message describing the <code class="docutils literal notranslate"><span class="pre">rating</span></code> and make sure that the <code class="docutils literal notranslate"><span class="pre">rating</span> <span class="pre">scale</span></code> is reset back to its <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">status</span></code> before the next <code class="docutils literal notranslate"><span class="pre">trial</span></code> starts.</p>
@@ -1398,7 +1317,7 @@ stim_order.append({‘stimulus’: stim})</p>
 </pre></div>
 </div>
 <p>Even though <code class="docutils literal notranslate"><span class="pre">participants</span></code> could already perform the <code class="docutils literal notranslate"><span class="pre">rating</span></code> of the <code class="docutils literal notranslate"><span class="pre">stimuli</span></code>, we don’t track and collect the respective <code class="docutils literal notranslate"><span class="pre">responses</span></code> yet. These need to be obtained from the <code class="docutils literal notranslate"><span class="pre">rating</span> <span class="pre">scale</span></code> before we <code class="docutils literal notranslate"><span class="pre">reset</span></code> before the next <code class="docutils literal notranslate"><span class="pre">trial</span></code>.</p>
-<p>As indicated before <code class="docutils literal notranslate"><span class="pre">visual.RatingScale()</span></code> creates an <code class="docutils literal notranslate"><span class="pre">object</span></code>/<code class="docutils literal notranslate"><span class="pre">class</span></code>/<code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> with many inbuilt <code class="docutils literal notranslate"><span class="pre">functions</span></code>, this includes <code class="docutils literal notranslate"><span class="pre">.getRating()</span></code> and <code class="docutils literal notranslate"><span class="pre">.getRT()</span></code> to collect the provided <code class="docutils literal notranslate"><span class="pre">rating</span></code> and corresponding <code class="docutils literal notranslate"><span class="pre">response</span> <span class="pre">time</span></code>:</p>
+<p>As indicated before <code class="docutils literal notranslate"><span class="pre">visual.Slider()</span></code> creates an <code class="docutils literal notranslate"><span class="pre">object</span></code>/<code class="docutils literal notranslate"><span class="pre">class</span></code>/<code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">type</span></code> with many inbuilt <code class="docutils literal notranslate"><span class="pre">functions</span></code>, this includes <code class="docutils literal notranslate"><span class="pre">.getRating()</span></code> and <code class="docutils literal notranslate"><span class="pre">.getRT()</span></code> to collect the provided <code class="docutils literal notranslate"><span class="pre">rating</span></code> and corresponding <code class="docutils literal notranslate"><span class="pre">response</span> <span class="pre">time</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">rating</span> <span class="o">=</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRating</span><span class="p">()</span>
     <span class="n">rt</span> <span class="o">=</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRT</span><span class="p">()</span>
 </pre></div>
@@ -1432,6 +1351,7 @@ This would look something like this:</p>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">psychopy</span><span class="w"> </span><span class="kn">import</span> <span class="n">gui</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">data</span> <span class="c1"># import psychopy modules/functions</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span> <span class="c1"># import os module</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rnd</span> <span class="c1"># import random module from numpy</span>
 
 <span class="c1">#========================================</span>
@@ -1536,15 +1456,18 @@ This would look something like this:</p>
 <span class="c1"># Define a rating scale</span>
 <span class="c1">#================================</span>
 
-<span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> 
-          <span class="n">scale</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>          <span class="c1"># This makes sure there&#39;s no subdivision on the scale</span>
-          <span class="n">low</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>               <span class="c1"># This is the minimum value I want the scale to have</span>
-          <span class="n">high</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>             <span class="c1"># This is the maximum value of the scale</span>
-          <span class="n">showAccept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>    <span class="c1"># This shows the user&#39;s chosen value in a window below the scale</span>
-          <span class="n">markerStart</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>       <span class="c1"># This sets the rating scale to have its marker start on 5</span>
-          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1 - Not at all&#39;</span><span class="p">,</span> <span class="s1">&#39;7 - A lot&#39;</span><span class="p">],</span> <span class="c1"># This creates the labels</span>
-          <span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">])</span> <span class="c1"># set the position of the rating scale within the window</span>
 
+<span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">win</span><span class="p">,</span>
+    <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="s2">&quot;7&quot;</span><span class="p">],</span>
+    <span class="n">granularity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">),</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="p">)</span>
+
+
+
+<span class="n">trial_counter</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="c1"># define a dictionary to save responses in</span>
 <span class="n">data_info</span> <span class="o">=</span> <span class="p">{</span>
@@ -1559,7 +1482,7 @@ This would look something like this:</p>
 <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
 
     <span class="n">ratingScale</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-    <span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">noResponse</span><span class="p">:</span>  <span class="c1"># show &amp; update until a response has been made</span>
+    <span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRating</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># show &amp; update until a response has been made</span>
 
         <span class="c1"># display/draw task question to remind participants</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;How much do you like the following?&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="n">italic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
@@ -1567,7 +1490,7 @@ This would look something like this:</p>
         <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">artist</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         <span class="c1"># display/draw help message regarding rating scale</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;(Move the marker along the line and click &quot;enter&quot; to indicate your rating from 1 to 7.)&#39;</span><span class="p">,</span> 
-                        <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+                        <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">220</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         <span class="c1"># display/draw the rating scale</span>
         <span class="n">ratingScale</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
@@ -1575,8 +1498,8 @@ This would look something like this:</p>
         <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 
         <span class="c1"># if participants press `escape`, stop the experiment</span>
-        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>
-            <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>   
+        <span class="k">if</span> <span class="s1">&#39;escape&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>  <span class="c1"># &lt;&lt;&lt; FIX: only check ESC, avoids swallowing other keys</span>
+            <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
                 
 
     <span class="c1"># get the current rating        </span>
@@ -1588,11 +1511,16 @@ This would look something like this:</p>
     <span class="n">data_info</span><span class="p">[</span><span class="s1">&#39;stimulus&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">artist</span><span class="p">)</span>
     <span class="n">data_info</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rating</span><span class="p">)</span>
     <span class="n">data_info</span><span class="p">[</span><span class="s1">&#39;rating_rt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rt</span><span class="p">)</span>
+    <span class="n">data_info</span><span class="p">[</span><span class="s1">&#39;trial_num&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trial_counter</span><span class="p">)</span>
 
-    <span class="c1"># if participants press `escape`, stop the experiment</span>
-    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>
-        <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>   
+    <span class="c1"># if participants press `escape`, stop the experiment (between trials)</span>
+    <span class="k">if</span> <span class="s1">&#39;escape&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>
+        <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
             
+
+    <span class="n">trial_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
 <span class="c1">#======================</span>
 <span class="c1"># End of the experiment</span>
 <span class="c1">#======================</span>
@@ -1600,13 +1528,15 @@ This would look something like this:</p>
 <span class="c1"># Display end message</span>
 <span class="n">end_message</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1"># draw end message to buffer screen</span>
 <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span> <span class="c1"># flip it to the front screen</span>
-<span class="n">keys</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;space&#39;</span><span class="p">,</span> <span class="s1">&#39;escape&#39;</span><span class="p">])</span> <span class="c1"># wait for spacebar key press before advancing or quit when escape is pressed </span>
+<span class="n">keys</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;space&#39;</span><span class="p">,</span> <span class="s1">&#39;escape&#39;</span><span class="p">])</span> <span class="c1"># wait for spacebar key press before advancing or quit when escape is pressed</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Experiment ended&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">getDateStr</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">_%H_M&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </br>
-<p>Let’s give it a try via <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">experiment.py</span></code>. If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> and after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next, followed by the start message. Subsequently, you should see all of our <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> one after another and the same question above them every <code class="docutils literal notranslate"><span class="pre">trial</span></code>, this time not advancing until you provided a <code class="docutils literal notranslate"><span class="pre">rating</span></code>. Finally, you should see the end message.</p>
+<p>If everything works/is set correctly you should see the <code class="docutils literal notranslate"><span class="pre">GUI</span> <span class="pre">dialog</span> <span class="pre">box</span></code> and after clicking <code class="docutils literal notranslate"><span class="pre">OK</span></code>, the <code class="docutils literal notranslate"><span class="pre">text</span></code> we defined as a welcome message should appear next, followed by the start message. Subsequently, you should see all of our <code class="docutils literal notranslate"><span class="pre">stimuli</span></code> one after another and the same question above them every <code class="docutils literal notranslate"><span class="pre">trial</span></code>, this time not advancing until you provided a <code class="docutils literal notranslate"><span class="pre">rating</span></code>. Finally, you should see the end message.</p>
 <p>Our <code class="docutils literal notranslate"><span class="pre">experiment</span></code> works as expected but we don’t get any <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">files</span></code>. The reason is once again simple: we actually didn’t tell <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> that we would like to <code class="docutils literal notranslate"><span class="pre">save</span></code> our <code class="docutils literal notranslate"><span class="pre">data</span></code> to an <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">file</span></code>. Our <code class="docutils literal notranslate"><span class="pre">data</span></code> is uo until now only stored “internally” in our <code class="docutils literal notranslate"><span class="pre">data_info</span></code> dictionary.</p>
 </section>
 <section id="saving-data">
@@ -2419,14 +2349,16 @@ object. We have to further specify</p>
 <span class="c1"># Define a rating scale</span>
 <span class="c1">#================================</span>
 
-<span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> 
-          <span class="n">scale</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>          <span class="c1"># This makes sure there&#39;s no subdivision on the scale</span>
-          <span class="n">low</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>               <span class="c1"># This is the minimum value I want the scale to have</span>
-          <span class="n">high</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span>             <span class="c1"># This is the maximum value of the scale</span>
-          <span class="n">showAccept</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>    <span class="c1"># This shows the user&#39;s chosen value in a window below the scale</span>
-          <span class="n">markerStart</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>       <span class="c1"># This sets the rating scale to have its marker start on 5</span>
-          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1 - Not at all&#39;</span><span class="p">,</span> <span class="s1">&#39;7 - A lot&#39;</span><span class="p">],</span> <span class="c1"># This creates the labels</span>
-          <span class="n">pos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">])</span> <span class="c1"># set the position of the rating scale within the window</span>
+
+<span class="n">ratingScale</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Slider</span><span class="p">(</span><span class="n">win</span><span class="p">,</span>
+    <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="s2">&quot;7&quot;</span><span class="p">],</span>
+    <span class="n">granularity</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">),</span>
+    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="p">)</span>
+
+
 
 <span class="n">trial_counter</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -2443,7 +2375,7 @@ object. We have to further specify</p>
 <span class="k">for</span> <span class="n">artist</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
 
     <span class="n">ratingScale</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
-    <span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">noResponse</span><span class="p">:</span>  <span class="c1"># show &amp; update until a response has been made</span>
+    <span class="k">while</span> <span class="n">ratingScale</span><span class="o">.</span><span class="n">getRating</span><span class="p">()</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># show &amp; update until a response has been made</span>
 
         <span class="c1"># display/draw task question to remind participants</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;How much do you like the following?&#39;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="n">italic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
@@ -2451,7 +2383,7 @@ object. We have to further specify</p>
         <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">artist</span><span class="p">,</span> <span class="n">bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         <span class="c1"># display/draw help message regarding rating scale</span>
         <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;(Move the marker along the line and click &quot;enter&quot; to indicate your rating from 1 to 7.)&#39;</span><span class="p">,</span> 
-                        <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+                        <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">220</span><span class="p">],</span> <span class="n">height</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
         <span class="c1"># display/draw the rating scale</span>
         <span class="n">ratingScale</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
@@ -2459,8 +2391,8 @@ object. We have to further specify</p>
         <span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 
         <span class="c1"># if participants press `escape`, stop the experiment</span>
-        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>
-            <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>   
+        <span class="k">if</span> <span class="s1">&#39;escape&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>  <span class="c1"># &lt;&lt;&lt; FIX: only check ESC, avoids swallowing other keys</span>
+            <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
                 
 
     <span class="c1"># get the current rating        </span>
@@ -2474,9 +2406,9 @@ object. We have to further specify</p>
     <span class="n">data_info</span><span class="p">[</span><span class="s1">&#39;rating_rt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rt</span><span class="p">)</span>
     <span class="n">data_info</span><span class="p">[</span><span class="s1">&#39;trial_num&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trial_counter</span><span class="p">)</span>
 
-    <span class="c1"># if participants press `escape`, stop the experiment</span>
-    <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">([</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>
-        <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>   
+    <span class="c1"># if participants press `escape`, stop the experiment (between trials)</span>
+    <span class="k">if</span> <span class="s1">&#39;escape&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">(</span><span class="n">keyList</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;escape&#39;</span><span class="p">]):</span>
+        <span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
             
 
     <span class="n">trial_counter</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -2524,15 +2456,29 @@ object. We have to further specify</p>
 <section id="outro">
 <h2>Outro<a class="headerlink" href="#outro" title="Permalink to this heading">#</a></h2>
 <p>As usually: awesome work folks! The transition from basic <code class="docutils literal notranslate"><span class="pre">Python</span></code> aspects to applied together is definitely no cake-walk, especially when simultaneously switching to <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">scripts</span></code> from <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebooks</span></code> but you did a great job!
-Feel free to explore the other aspects of the coures website for further insights on what you can do with Python.</p>
+Feel free to explore the other aspects of the course website for further insights on what you can do with Python.</p>
 <p><strong>Thank so much for sticking with us throughout this!</strong></p>
 <img align="center" src="https://media1.giphy.com/media/Y2bC3o5BkYNndT4vbK/giphy.gif?cid=790b7611efb3ab9e8609b1d019b214ade942084c480d68a9&rid=giphy.gif&ct=g" title="otterly amazing"/> 
 <center><a href="https://giphy.com/gifs/hallmarkecards-wow-otter-otterly-amazing-Y2bC3o5BkYNndT4vbK">via GIPHY</a></center><section id="homework-assignment">
 <h3>Homework assignment<a class="headerlink" href="#homework-assignment" title="Permalink to this heading">#</a></h3>
-<p>Your sixth and last homework assignment will entail the generation of a “new” psychopy experiment</p>
+<p>Your next homework assignment will entail the generation of a “new” psychopy experiment!</p>
 <p>Try to implemente a rating task using the words below, asking participants to rate how concrete these words are.</p>
 <p>Words: Felsen, Gabel, Apfel, Hammer, Frieden, Ruhm, Pfanne, Ehre, Anker, Stuhl, Wahrheit, Tragik, Seele, Hoffnung, Besen, Toaster, Weisheit, Klugheit, Bagger, Liebe.</p>
 <p>These words come from this paper: Kanske, P., &amp; Kotz, S. A. (2010). Leipzig affective norms for German: A reliability study. Behavior research methods, 42(4), 987-991.</p>
+<p>Please use a dialogue box to ask for participants`s age, handedness and initials (as a subject ID).</p>
+<p>The output file should automatically be named after the participant ID.</p>
+<p>The script should write the results of the rating task, including the chosen value and the response time as well as the item itself, the item number and the handedness of the participant into an output logfile (csv). Please think about the most reasonable order for the variables for this output, and implement it.</p>
+<p>You can (and should!) implement all of this inside the Psychopy Coder!</p>
+<p>Please save this experiment as a <code class="docutils literal notranslate"><span class="pre">*.py</span></code> file whose filename also contains your name.</p>
+<section id="part-2">
+<h4>Part 2:<a class="headerlink" href="#part-2" title="Permalink to this heading">#</a></h4>
+<p>Please run the experiment and send the output file also. We want to assemble all output files into dataset after the winter holiday and analyze the acquired data.</p>
+</section>
+<section id="submission-of-assignment">
+<h4>Submission of Assignment<a class="headerlink" href="#submission-of-assignment" title="Permalink to this heading">#</a></h4>
+<p>Please e-mail both files to fiebach[ at ]<a class="reference external" href="http://psych.uni-frankfurt.de">psych.uni-frankfurt.de</a>.</p>
+<p><strong>Deadline is Monday, January 12, 2026!</strong></p>
+</section>
 </section>
 </section>
 </section>
@@ -2584,12 +2530,7 @@ Feel free to explore the other aspects of the coures website for further insight
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives 📍</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#folders-files">Folders &amp; files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-setup">VScode setup</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation-folder-environment-files">Preparation: Folder, environment &amp; files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#psychopy-basics"><code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code> basics</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-psychopy">What is <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idea-goals-of-psychopy">Idea/goals of <code class="docutils literal notranslate"><span class="pre">PsychoPy</span></code></a></li>
@@ -2612,7 +2553,11 @@ Feel free to explore the other aspects of the coures website for further insight
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-very-simple-experiment">A very simple experiment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outro">Outro</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment">Homework assignment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignment">Homework assignment</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2">Part 2:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

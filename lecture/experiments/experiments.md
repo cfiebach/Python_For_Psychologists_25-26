@@ -4,7 +4,7 @@ After spending quite a good while on important prerequisites concerning scientif
 
 ### Introduction to PsychoPy - I
 
-Most of us already conducted or at watched or help conduct an experiment. However, there's a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master. 
+Most of us already conducted or at least watched or helped conduct an experiment. However, there's a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master - or simply what they used to use in the past. Often, these other solutions are not `open source` but paid software.
 
 That being said: We'll quickly discuss some tools to conduct experiments and work out if we can actually use `python` based resources in this context with a clear conscience or if you're better off by defaulting to paid software packages.
 
@@ -12,21 +12,31 @@ To get some idea on how to present experiments via Python, we will explore the `
 
 ### Materials 📓
 
-You can download the slides for todays session [here](https://docs.google.com/presentation/d/1KLXxBLYmqjVngjQvrpFvXzaN8Dmr2n0FF2bsNLLm7OI/edit?usp=sharing)
+You can download the slides for todays session [here](https://docs.google.com/presentation/d/1Sjo6YW92Ju_Zk5_glrQZpFsBNYYD88fTy2vYziZ1wR4/edit?usp=sharing)
 
-Afterwards, you will go through a tutorial by yourself, implementing the presented trial sequence. For the tutorial you need to download [this folder](https://drive.google.com/drive/folders/1GYPMI785Ag91dSeUzJtJErToqbScfcXb?usp=sharing). It contains all the materials you will need.
+In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.  
 
-### Homework assignment #6
-Your sixth and last homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point.
+**Remember: For this, you need to have installed PsychoPy as a stand-alone program! The `PsychoPy` code does not and should not be run in jupyter notebooks - we will use `coder`, i.e., a code editor that is provided with `PsychoPy`.**
 
-It should include 
+
+### Homework assignment #7
+
+Your next homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point.
+
+Your new experiment should include 
 - a trial sequence where some stimulus is presented and a response is collected. 
 - this sequence should be repeated multiple times with varying conditions.
 - it should run without crashing and generate an output file. 
-- bonus: it should have a dialogue box where partcipants can input e.g., id, age, handedness etc. which will be written to the output file
-- bonus 2: the output file should automatically be named after the participant id 
+- bonus: it should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
+- bonus 2: the output file should automatically be named after the participant id. 
 
-Save it as a .py file and e-mail it to kallmayer[ at ]psych.uni-frankfurt.de
+Save the experiment script as a .py file that contains your name in its filename.
 
-**Deadline is TWO weeks from now**
+#### Part 2:
+Please run the experiment and send the output file also. We want to assemble all output files into dataset after the winter holiday and analyze the acquired data.
+
+#### Submission of Assignment
+Please e-mail both files to fiebach[ at ]psych.uni-frankfurt.de.
+
+**Deadline is Monday, January 12, 2026!**
 

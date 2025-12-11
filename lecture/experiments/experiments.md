@@ -45,3 +45,15 @@ Please e-mail both files to fiebach[ at ]psych.uni-frankfurt.de.
 
 **Deadline is Monday, January 12, 2026!**
 
+
+## optional/reading/further materials
+
+The official website of PsychoPy provides a lot of helpful information. For example, [here](https://www.youtube.com/@PsychoPy_official/videos) you can find video tutorials, on interesting topics like `Build your first PsychoPy experiment (Stroop task)`, `PsychoPy is Easy: Posner cueing task`, `How to copy and paste a routine in PsychoPy` or `How to check if a typed response is correct in PsychoPy`.  
+
+
+There is also a webpage with a host of [demo experiments](https://pavlovia.org/explore/demos?sort=DEFAULT), many of which one could use as a starting point for programming an own experiment.
+Chapter 2 in the e-book **Python for Experimental Psychologists**, which you should already have downloaded! The first pages are also a structured introduction into variables, variable types, and some basic operations you can conduct in python with numbers and variables. Looking into this Chapter may also help introduce yourself to the work with variables in the python programming language.
+
+There are many more resources ... Here, for example, you find the first video in an easy introduction series to PsychoPy:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tTq6IfESVZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

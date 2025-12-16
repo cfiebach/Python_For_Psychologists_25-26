@@ -23,5 +23,5 @@ The optimistic schedule below may be subject of change, dependent on time constr
 | 20/11/2025 | No in person session! Introductory Session IV - Intro to Python Part II |
 | 27/11/2025 | Introductory Session V - Intro to Python Recap and Intro to Python Part III |
 | 04/12/2025 | Introductory Session VI - Intro to Python Recap and Intro to Python Part IV |
-| 11/12/2025 | Start of Block 2: Running Experiments in Python with PsychoPy (Dr. Cosimo Iaia)|
-| 18/12/2025 | Programming your own experiment! Counseling with Dr. Cosimo Iaia, if needed |
+| 11/12/2025 | Start of Block 2: Running Experiments in Python with PsychoPy - Part 1 (Dr. Cosimo Iaia)|
+| 18/12/2025 | Running Experiments in Python with PsychoPy - Part 2 (Dr. Cosimo Iaia)|

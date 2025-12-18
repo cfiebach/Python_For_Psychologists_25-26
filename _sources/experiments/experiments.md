@@ -40,6 +40,8 @@ Please use a dialogue box to ask for participants`s age, handedness and initials
 
 Please also adjust the instruction in the start message to the new task.
 
+Please add a fixation cross for 1000 ms after the response was given.
+
 The output file should automatically be named after the participant ID. 
 
 The script should write the results of the rating task, including the chosen value and the response time as well as the item itself, the item number and the handedness of the participant into an output logfile (csv). Please think about the most reasonable order for the variables for this output, and implement it.
@@ -48,8 +50,7 @@ You can (and should!) implement all of this inside the Psychopy Coder!
 
 Note that: 
 - Your script should run without crashing and generate an output file. 
-- Bonus: it should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
-- Bonus 2: the output file should automatically be named after the participant id. 
+- Remember: It should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
 
 Save the experiment script as a .py file that contains your name in its filename.
 

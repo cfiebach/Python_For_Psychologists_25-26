@@ -28,15 +28,28 @@ You can also access the pre-rendered version of this notebook through the table 
 
 ### Homework assignment #7
 
-Your next homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point.
+Your next homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point. Your new experiment should include a trial sequence where some stimulus is presented and a response is collected. 
 
-Your new experiment should include 
-- a trial sequence where some stimulus is presented and a response is collected. 
-- this sequence should be repeated multiple times with varying conditions.
-- it should run without crashing and generate an output file. 
-- bonus: it should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
-- bonus 2: the output file should automatically be named after the participant id. 
-- Please also adjust the instruction in the start message to the new task.
+Please implemente a rating task using the words below, asking participants to rate **on a scale from 1 to 9** how concrete (1 = very concrete) vs. abstract (9 = very abstract) these words are. 
+
+Words: Felsen, Gabel, Apfel, Hammer, Frieden, Ruhm, Pfanne, Ehre, Anker, Stuhl, Wahrheit, Tragik, Seele, Hoffnung, Besen, Toaster, Weisheit, Klugheit, Bagger, Liebe. 
+
+These words come from this paper: Kanske, P., & Kotz, S. A. (2010). Leipzig affective norms for German: A reliability study. Behavior research methods, 42(4), 987-991.
+
+Please use a dialogue box to ask for participants`s age, handedness and initials (as a subject ID). 
+
+Please also adjust the instruction in the start message to the new task.
+
+The output file should automatically be named after the participant ID. 
+
+The script should write the results of the rating task, including the chosen value and the response time as well as the item itself, the item number and the handedness of the participant into an output logfile (csv). Please think about the most reasonable order for the variables for this output, and implement it.
+
+You can (and should!) implement all of this inside the Psychopy Coder!
+
+Note that: 
+- Your script should run without crashing and generate an output file. 
+- Bonus: it should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
+- Bonus 2: the output file should automatically be named after the participant id. 
 
 Save the experiment script as a .py file that contains your name in its filename.
 

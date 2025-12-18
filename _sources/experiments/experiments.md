@@ -36,6 +36,7 @@ Your new experiment should include
 - it should run without crashing and generate an output file. 
 - bonus: it should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
 - bonus 2: the output file should automatically be named after the participant id. 
+- Please also adjust the instruction in the start message to the new task.
 
 Save the experiment script as a .py file that contains your name in its filename.
 

@@ -28,7 +28,7 @@ chapters:
         - file: experiments/intro_psychopy_I.ipynb
 - file: experiments/data_analysis.md
   sections: 
-        - file: experiments/intro_psychopy_2_data:analysis.ipynb
+        - file: experiments/intro_psychopy_2_data_analysis.ipynb
 - file: showcases/showcases.md
   sections:
     - file: showcases/python_numpy.ipynb

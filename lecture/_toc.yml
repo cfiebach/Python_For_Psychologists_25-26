@@ -23,7 +23,7 @@ chapters:
     - file: introduction/introduction_6.md
       sections:
         - file: introduction/intro_python_IV.ipynb
-- file: experiments/experiments.md
+- file: experiments/experimenting_overview.md
   sections:
     - file: experiments/experiments.md
       sections: 

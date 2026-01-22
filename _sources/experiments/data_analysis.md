@@ -1,50 +1,60 @@
 # Analyzing Experimental Data in Python
 
-After spending quite a good while on important prerequisites concerning scientific computing and the basics of the `python` programming language, it's finally time to combine them via transitioning to more applied topics. This adventure will start with a brief exploration of how to create and run experiments using [PsychoPy](https://www.psychopy.org/index.html), a `python library` dedicated to conducting experiments in the realm of `psychology` and adjacent fields. Due to time constraints we will only have a quick look at things and showcase the most important aspects to allow folks to explore things further after the course ends. We'll further concentrate on using psychopy to further your understanding of the Python essential such as control-flow statements.
+
+Welcome to the last session of the 2025/2026 Python for Psychologists course!
+
+
 
 ### Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps
 
-Most of us already conducted or at least watched or helped conduct an experiment. However, there's a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master - or simply what they used to use in the past. Often, these other solutions are not `open source` but paid software.
-
-That being said: We'll quickly discuss some tools to conduct experiments and work out if we can actually use `python` based resources in this context with a clear conscience or if you're better off by defaulting to paid software packages.
-
-To get some idea on how to present experiments via Python, we will explore the `python library` [PsychoPy](https://www.psychopy.org/index.html), including its setup, basic working principles, as well as advantages and disadvantages, showcased on a very simple experiment. Buckle up y'all, this is the first time we will use `python` "in the wild".      
+In this session, we will jointly go through a tutorial that shows us how to read in data using pandas, and do some simple corrections and first descriptive statistics.
+     
 
 ### Materials 📓
 
-In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.  
-
 You find the code for this session in the following [notebook](hhttps://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb)
+
+You can download the data we need for this [here](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/pfp25_psychopy_data.zip). Please download them, put them into a convenient place on your computer, so that you can access them from jupyter by specifying the path to the data.
 
 
 ### Final Assignment: Modulpruefung
 
-Your next homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point. Your new experiment should include a trial sequence where some stimulus is presented and a response is collected. 
+If you choose to do the `Modulpruefung` in this course, you have to complete a final assignment to get a grade! Please note that you also have to register formally for the exam (Pruefungsanmeldung)!
 
-Please implemente a rating task using the words below, asking participants to rate **on a scale from 1 to 9** how concrete (1 = very concrete) vs. abstract (9 = very abstract) these words are. 
+You have already programmed an experiment and submitted a dataset ... this will count as one part of the exam. And you have all done a great job here!
 
-Words: Felsen, Gabel, Apfel, Hammer, Frieden, Ruhm, Pfanne, Ehre, Anker, Stuhl, Wahrheit, Tragik, Seele, Hoffnung, Besen, Toaster, Weisheit, Klugheit, Bagger, Liebe. 
+The second part will be to take the data that you generated and that we worked with today and: 
 
-These words come from this paper: Kanske, P., & Kotz, S. A. (2010). Leipzig affective norms for German: A reliability study. Behavior research methods, 42(4), 987-991.
+- test them for the presence of outlier(s) and - if present - exclude those outliers from the remainder of the data analysis, 
+- define a new variable that separates the words into two experimental conditions: abstract vs. concrete words. 
+- When done with this, use this variable first to plot mean and standard deviation for each condition, then
+- compare the ratings and the response times between abstract and concrete words using a t test.
+- Last but not least, please report what you did and the results in a jupyter notebook that you hand in as your exam.
 
-Please use a dialogue box to ask for participants`s age, handedness and initials (as a subject ID). 
 
-Please also adjust the instruction in the start message to the new task.
+#### Author Guide Notebook
+The notebook should have a nice structure with headlines, text sections and code and results of your code. You should read in the data, describe how you test for outlier(s) and implement this test, exclude outliers if necessary. Then, you should describe how you generate the condition variable (abstract vs. concrete) and implement this. Following this, please (a) visualizee and describe mean differences between abstract and concrete words (don't forget errorbars!), describe the statistical test and implemnt it and report its results. 
+Please also don't forget to include your name and Matrikelnumber into the document when you submit.
 
-Please add a fixation cross for 1000 ms after the response was given.
+#### Testing for Outliers
+There are many ways to test for outliers. A frequently used approach is to test whether a subject's dependent values (e.g., ratings, RTs) are beyond 3 standard deviations from the mean of the remaining sample. So you might want to iterate over participants and calculate, on every iteration, the mean and std across all but one participant and compare that participant's mean to the mean of the others.
 
-The output file should automatically be named after the participant ID. 
+This would be tested for each dependent variable. If you want to be more sophisticated, you could even test this separately for every condition. 
 
-The script should write the results of the rating task, including the chosen value and the response time as well as the item itself, the item number and the handedness of the participant into an output logfile (csv). Please think about the most reasonable order for the variables for this output, and implement it.
+#### Abstract vs. Concrete Words
+It should be quite obvious which are which, but just to make sure: 
+Abstract words: Ehre, Frieden, Hoffnung, Klugheit, Liebe, Ruhm, Seele, Tragik, Wahrheit, Weisheit
+Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuhl, Toaster
 
-You can (and should!) implement all of this inside the Psychopy Coder!
+### Comparing Abstract and Concrete Words
+To plot a mean for comparing experimental conditions, you would calculate it in a way to first calculate a mean within each participant (e.g., a mean across all concrete words within every participant) and then calculate a mean across participants. This 'grand mean' is the mean value you want to plot.
 
-Note that: 
-- Your script should run without crashing and generate an output file. 
-- Remember: It should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file
+The first t test (rating) will have more the character of a manipulation check - it would be really weird if abstract words would not be rated as more abstract in our sample ... However, it is not unplausible to assume that these ratings take longer for abstract words. We would like to test this assumption with a t test. 
 
-Save the experiment script as a .py file that contains your name in its filename.
+To calculate the t test, you can use scipy or statsmodels packages. I think we have done a t test before!?!
 
+#### Data 
+You can get the data from here: TBD
 
 
 
@@ -54,10 +64,4 @@ Please e-mail the final notebook to fiebach[ at ]psych.uni-frankfurt.de.
 **Deadline is March 15, 2026!**
 
 
-## optional/reading/further materials
-
-The official website of PsychoPy provides a lot of helpful information. For example, [here](https://www.youtube.com/@PsychoPy_official/videos) you can find video tutorials, on interesting topics like `Build your first PsychoPy experiment (Stroop task)`, `PsychoPy is Easy: Posner cueing task`, `How to copy and paste a routine in PsychoPy` or `How to check if a typed response is correct in PsychoPy`.  
-
-There are many more resources ... Here, for example, you find the first video in an easy introduction series to PsychoPy:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tTq6IfESVZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+#

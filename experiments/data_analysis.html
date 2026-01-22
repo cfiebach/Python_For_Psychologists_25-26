@@ -218,9 +218,8 @@
 <li class="toctree-l2"><a class="reference internal" href="intro_psychopy_I.html">Experimentation I - Introduction to PsychoPy I</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Analyzing Experimental Data in Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
-</ul>
-</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyzing Experimental Data in Python</a></li>
+
 <li class="toctree-l1 has-children"><a class="reference internal" href="../showcases/showcases.html">Advanced Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../showcases/python_numpy.html">Introduction to NumPy</a></li>
 
@@ -492,14 +491,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyzing Experimental Data in Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps">Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment-modulpruefung">Final Assignment: Modulpruefung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#author-guide-notebook">Author Guide Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-outliers">Testing for Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-vs-concrete-words">Abstract vs. Concrete Words</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-abstract-and-concrete-words">Comparing Abstract and Concrete Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-reading-further-materials">optional/reading/further materials</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -512,48 +522,63 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analyzing-experimental-data-in-python">
 <h1>Analyzing Experimental Data in Python<a class="headerlink" href="#analyzing-experimental-data-in-python" title="Permalink to this heading">#</a></h1>
-<p>After spending quite a good while on important prerequisites concerning scientific computing and the basics of the <code class="docutils literal notranslate"><span class="pre">python</span></code> programming language, it’s finally time to combine them via transitioning to more applied topics. This adventure will start with a brief exploration of how to create and run experiments using <a class="reference external" href="https://www.psychopy.org/index.html">PsychoPy</a>, a <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">library</span></code> dedicated to conducting experiments in the realm of <code class="docutils literal notranslate"><span class="pre">psychology</span></code> and adjacent fields. Due to time constraints we will only have a quick look at things and showcase the most important aspects to allow folks to explore things further after the course ends. We’ll further concentrate on using psychopy to further your understanding of the Python essential such as control-flow statements.</p>
+<p>Welcome to the last session of the 2025/2026 Python for Psychologists course!</p>
 <section id="introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps">
 <h2>Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps<a class="headerlink" href="#introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps" title="Permalink to this heading">#</a></h2>
-<p>Most of us already conducted or at least watched or helped conduct an experiment. However, there’s a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master - or simply what they used to use in the past. Often, these other solutions are not <code class="docutils literal notranslate"><span class="pre">open</span> <span class="pre">source</span></code> but paid software.</p>
-<p>That being said: We’ll quickly discuss some tools to conduct experiments and work out if we can actually use <code class="docutils literal notranslate"><span class="pre">python</span></code> based resources in this context with a clear conscience or if you’re better off by defaulting to paid software packages.</p>
-<p>To get some idea on how to present experiments via Python, we will explore the <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">library</span></code> <a class="reference external" href="https://www.psychopy.org/index.html">PsychoPy</a>, including its setup, basic working principles, as well as advantages and disadvantages, showcased on a very simple experiment. Buckle up y’all, this is the first time we will use <code class="docutils literal notranslate"><span class="pre">python</span></code> “in the wild”.</p>
+<p>In this session, we will jointly go through a tutorial that shows us how to read in data using pandas, and do some simple corrections and first descriptive statistics.</p>
 </section>
 <section id="materials">
 <h2>Materials 📓<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
-<p>In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.</p>
 <p>You find the code for this session in the following <a class="reference internal" href="#hhttps://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb"><span class="xref myst">notebook</span></a></p>
+<p>You can download the data we need for this <a class="reference external" href="https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/pfp25_psychopy_data.zip">here</a>. Please download them, put them into a convenient place on your computer, so that you can access them from jupyter by specifying the path to the data.</p>
 </section>
 <section id="final-assignment-modulpruefung">
 <h2>Final Assignment: Modulpruefung<a class="headerlink" href="#final-assignment-modulpruefung" title="Permalink to this heading">#</a></h2>
-<p>Your next homework assignment will entail the generation of a “new” psychopy experiment. You can use the tutorial as a starting point. Your new experiment should include a trial sequence where some stimulus is presented and a response is collected.</p>
-<p>Please implemente a rating task using the words below, asking participants to rate <strong>on a scale from 1 to 9</strong> how concrete (1 = very concrete) vs. abstract (9 = very abstract) these words are.</p>
-<p>Words: Felsen, Gabel, Apfel, Hammer, Frieden, Ruhm, Pfanne, Ehre, Anker, Stuhl, Wahrheit, Tragik, Seele, Hoffnung, Besen, Toaster, Weisheit, Klugheit, Bagger, Liebe.</p>
-<p>These words come from this paper: Kanske, P., &amp; Kotz, S. A. (2010). Leipzig affective norms for German: A reliability study. Behavior research methods, 42(4), 987-991.</p>
-<p>Please use a dialogue box to ask for participants`s age, handedness and initials (as a subject ID).</p>
-<p>Please also adjust the instruction in the start message to the new task.</p>
-<p>Please add a fixation cross for 1000 ms after the response was given.</p>
-<p>The output file should automatically be named after the participant ID.</p>
-<p>The script should write the results of the rating task, including the chosen value and the response time as well as the item itself, the item number and the handedness of the participant into an output logfile (csv). Please think about the most reasonable order for the variables for this output, and implement it.</p>
-<p>You can (and should!) implement all of this inside the Psychopy Coder!</p>
-<p>Note that:</p>
+<p>If you choose to do the <code class="docutils literal notranslate"><span class="pre">Modulpruefung</span></code> in this course, you have to complete a final assignment to get a grade! Please note that you also have to register formally for the exam (Pruefungsanmeldung)!</p>
+<p>You have already programmed an experiment and submitted a dataset … this will count as one part of the exam. And you have all done a great job here!</p>
+<p>The second part will be to take the data that you generated and that we worked with today and:</p>
 <ul class="simple">
-<li><p>Your script should run without crashing and generate an output file.</p></li>
-<li><p>Remember: It should have a dialogue box where partcipants can input e.g., id (initials of your first and last name), age, handedness which will be written to the output file</p></li>
+<li><p>test them for the presence of outlier(s) and - if present - exclude those outliers from the remainder of the data analysis,</p></li>
+<li><p>define a new variable that separates the words into two experimental conditions: abstract vs. concrete words.</p></li>
+<li><p>When done with this, use this variable first to plot mean and standard deviation for each condition, then</p></li>
+<li><p>compare the ratings and the response times between abstract and concrete words using a t test.</p></li>
+<li><p>Last but not least, please report what you did and the results in a jupyter notebook that you hand in as your exam.</p></li>
 </ul>
-<p>Save the experiment script as a .py file that contains your name in its filename.</p>
+<section id="author-guide-notebook">
+<h3>Author Guide Notebook<a class="headerlink" href="#author-guide-notebook" title="Permalink to this heading">#</a></h3>
+<p>The notebook should have a nice structure with headlines, text sections and code and results of your code. You should read in the data, describe how you test for outlier(s) and implement this test, exclude outliers if necessary. Then, you should describe how you generate the condition variable (abstract vs. concrete) and implement this. Following this, please (a) visualizee and describe mean differences between abstract and concrete words (don’t forget errorbars!), describe the statistical test and implemnt it and report its results.
+Please also don’t forget to include your name and Matrikelnumber into the document when you submit.</p>
+</section>
+<section id="testing-for-outliers">
+<h3>Testing for Outliers<a class="headerlink" href="#testing-for-outliers" title="Permalink to this heading">#</a></h3>
+<p>There are many ways to test for outliers. A frequently used approach is to test whether a subject’s dependent values (e.g., ratings, RTs) are beyond 3 standard deviations from the mean of the remaining sample. So you might want to iterate over participants and calculate, on every iteration, the mean and std across all but one participant and compare that participant’s mean to the mean of the others.</p>
+<p>This would be tested for each dependent variable. If you want to be more sophisticated, you could even test this separately for every condition.</p>
+</section>
+<section id="abstract-vs-concrete-words">
+<h3>Abstract vs. Concrete Words<a class="headerlink" href="#abstract-vs-concrete-words" title="Permalink to this heading">#</a></h3>
+<p>It should be quite obvious which are which, but just to make sure:
+Abstract words: Ehre, Frieden, Hoffnung, Klugheit, Liebe, Ruhm, Seele, Tragik, Wahrheit, Weisheit
+Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuhl, Toaster</p>
+</section>
+</section>
+<section id="comparing-abstract-and-concrete-words">
+<h2>Comparing Abstract and Concrete Words<a class="headerlink" href="#comparing-abstract-and-concrete-words" title="Permalink to this heading">#</a></h2>
+<p>To plot a mean for comparing experimental conditions, you would calculate it in a way to first calculate a mean within each participant (e.g., a mean across all concrete words within every participant) and then calculate a mean across participants. This ‘grand mean’ is the mean value you want to plot.</p>
+<p>The first t test (rating) will have more the character of a manipulation check - it would be really weird if abstract words would not be rated as more abstract in our sample … However, it is not unplausible to assume that these ratings take longer for abstract words. We would like to test this assumption with a t test.</p>
+<p>To calculate the t test, you can use scipy or statsmodels packages. I think we have done a t test before!?!</p>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h3>
+<p>You can get the data from here: TBD</p>
+</section>
 <section id="submission-of-assignment">
 <h3>Submission of Assignment<a class="headerlink" href="#submission-of-assignment" title="Permalink to this heading">#</a></h3>
 <p>Please e-mail the final notebook to fiebach[ at ]<a class="reference external" href="http://psych.uni-frankfurt.de">psych.uni-frankfurt.de</a>.</p>
 <p><strong>Deadline is March 15, 2026!</strong></p>
 </section>
 </section>
-<section id="optional-reading-further-materials">
-<h2>optional/reading/further materials<a class="headerlink" href="#optional-reading-further-materials" title="Permalink to this heading">#</a></h2>
-<p>The official website of PsychoPy provides a lot of helpful information. For example, <a class="reference external" href="https://www.youtube.com/&#64;PsychoPy_official/videos">here</a> you can find video tutorials, on interesting topics like <code class="docutils literal notranslate"><span class="pre">Build</span> <span class="pre">your</span> <span class="pre">first</span> <span class="pre">PsychoPy</span> <span class="pre">experiment</span> <span class="pre">(Stroop</span> <span class="pre">task)</span></code>, <code class="docutils literal notranslate"><span class="pre">PsychoPy</span> <span class="pre">is</span> <span class="pre">Easy:</span> <span class="pre">Posner</span> <span class="pre">cueing</span> <span class="pre">task</span></code>, <code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">copy</span> <span class="pre">and</span> <span class="pre">paste</span> <span class="pre">a</span> <span class="pre">routine</span> <span class="pre">in</span> <span class="pre">PsychoPy</span></code> or <code class="docutils literal notranslate"><span class="pre">How</span> <span class="pre">to</span> <span class="pre">check</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">typed</span> <span class="pre">response</span> <span class="pre">is</span> <span class="pre">correct</span> <span class="pre">in</span> <span class="pre">PsychoPy</span></code>.</p>
-<p>There are many more resources … Here, for example, you find the first video in an easy introduction series to PsychoPy:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tTq6IfESVZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -622,14 +647,25 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyzing Experimental Data in Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps">Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment-modulpruefung">Final Assignment: Modulpruefung</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#author-guide-notebook">Author Guide Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-outliers">Testing for Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-vs-concrete-words">Abstract vs. Concrete Words</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-abstract-and-concrete-words">Comparing Abstract and Concrete Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-reading-further-materials">optional/reading/further materials</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

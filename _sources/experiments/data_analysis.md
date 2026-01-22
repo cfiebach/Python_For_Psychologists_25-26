@@ -1,4 +1,4 @@
-# Analyzing Experimental Data in Python
+# Data Processing and Simple Analyses
 
 
 Welcome to the last session of the 2025/2026 Python for Psychologists course!
@@ -12,7 +12,7 @@ In this session, we will jointly go through a tutorial that shows us how to read
 
 ### Materials 📓
 
-You find the code for this session in the following [notebook](hhttps://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb)
+You find the code for this session in the following [notebook](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb).
 
 You can download the data we need for this [here](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/pfp25_psychopy_data.zip). Please download them, put them into a convenient place on your computer, so that you can access them from jupyter by specifying the path to the data.
 
@@ -64,4 +64,3 @@ Please e-mail the final notebook to fiebach[ at ]psych.uni-frankfurt.de.
 **Deadline is March 15, 2026!**
 
 
-#

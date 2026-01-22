@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Analyzing Experimental Data in Python &#8212; Winter Term - 2025/2026</title>
+    <title>Data Processing and Simple Analyses &#8212; Winter Term - 2025/2026</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/data_analysis';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Experimentation Part II - Data Preprocessing and Simple Analyses" href="intro_psychopy_2_data_analysis.html" />
+    <link rel="next" title="Experimentation II - Data Preprocessing and Simple Analyses" href="intro_psychopy_2_data_analysis.html" />
     <link rel="prev" title="Experimentation I - Introduction to PsychoPy I" href="intro_psychopy_I.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -214,12 +214,17 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="experiments.html">Running experiments in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro_psychopy_I.html">Experimentation I - Introduction to PsychoPy I</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="experimenting_overview.html">Practical Example: Experiments in Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="experiments.html">Running experiments in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro_psychopy_I.html">Experimentation I - Introduction to PsychoPy I</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analyzing Experimental Data in Python</a></li>
-
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Data Processing and Simple Analyses</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro_psychopy_2_data_analysis.html">Experimentation II - Data Preprocessing and Simple Analyses</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../showcases/showcases.html">Advanced Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../showcases/python_numpy.html">Introduction to NumPy</a></li>
 
@@ -481,7 +486,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Analyzing Experimental Data in Python</h1>
+    <h1>Data Processing and Simple Analyses</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -491,7 +496,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyzing Experimental Data in Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps">Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment-modulpruefung">Final Assignment: Modulpruefung</a><ul class="nav section-nav flex-column">
@@ -506,10 +510,6 @@ document.write(`
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -520,8 +520,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="analyzing-experimental-data-in-python">
-<h1>Analyzing Experimental Data in Python<a class="headerlink" href="#analyzing-experimental-data-in-python" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-processing-and-simple-analyses">
+<h1>Data Processing and Simple Analyses<a class="headerlink" href="#data-processing-and-simple-analyses" title="Permalink to this heading">#</a></h1>
 <p>Welcome to the last session of the 2025/2026 Python for Psychologists course!</p>
 <section id="introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps">
 <h2>Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps<a class="headerlink" href="#introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps" title="Permalink to this heading">#</a></h2>
@@ -529,7 +529,7 @@ document.write(`
 </section>
 <section id="materials">
 <h2>Materials 📓<a class="headerlink" href="#materials" title="Permalink to this heading">#</a></h2>
-<p>You find the code for this session in the following <a class="reference internal" href="#hhttps://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb"><span class="xref myst">notebook</span></a></p>
+<p>You find the code for this session in the following <a class="reference external" href="https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb">notebook</a>.</p>
 <p>You can download the data we need for this <a class="reference external" href="https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/pfp25_psychopy_data.zip">here</a>. Please download them, put them into a convenient place on your computer, so that you can access them from jupyter by specifying the path to the data.</p>
 </section>
 <section id="final-assignment-modulpruefung">
@@ -576,9 +576,6 @@ Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuh
 <p><strong>Deadline is March 15, 2026!</strong></p>
 </section>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -627,7 +624,7 @@ Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuh
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Experimentation Part II - Data Preprocessing and Simple Analyses</p>
+        <p class="prev-next-title">Experimentation II - Data Preprocessing and Simple Analyses</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -647,7 +644,6 @@ Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuh
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analyzing Experimental Data in Python</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-experimental-work-in-python-part-2-data-analysis-first-steps">Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials 📓</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-assignment-modulpruefung">Final Assignment: Modulpruefung</a><ul class="nav section-nav flex-column">
@@ -662,10 +658,6 @@ Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuh
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
-</ul>
-
   </nav></div>
 
 </div></div>

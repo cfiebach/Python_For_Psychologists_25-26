@@ -4,17 +4,14 @@ After spending quite a good while on important prerequisites concerning scientif
 
 ### Introduction to Experimental Work in Python Part 2 - Data Analysis, first steps
 
-Most of us already conducted or at least watched or helped conduct an experiment. However, there's a fair number of different software options and tools out there, which mostly depends on the computational infrastructure at hand, but also on what people have the experience and skills to master - or simply what they used to use in the past. Often, these other solutions are not `open source` but paid software.
-
-That being said: We'll quickly discuss some tools to conduct experiments and work out if we can actually use `python` based resources in this context with a clear conscience or if you're better off by defaulting to paid software packages.
-
-To get some idea on how to present experiments via Python, we will explore the `python library` [PsychoPy](https://www.psychopy.org/index.html), including its setup, basic working principles, as well as advantages and disadvantages, showcased on a very simple experiment. Buckle up y'all, this is the first time we will use `python` "in the wild".      
+In this session, we will jointly go through a tutorial that shows us how to read in data using pandas, and do some simple corrections and first descriptive statistics.
+     
 
 ### Materials 📓
 
-In this session, we will jointly go through a tutorial, implementing a simple rating task - led by Dr. Cosimo Iaia from our research group. As homework assignment, you will adjust this experiment to work with different stimuli.  
-
 You find the code for this session in the following [notebook](hhttps://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/intro_psychopy_2_data_analysis.ipynb)
+
+You can download the data we need for this [here](https://github.com/cfiebach/Python_For_Psychologists_25-26/blob/main/lecture/experiments/pfp25_psychopy_data.zip). Please download them, put them into a convenient place on your computer, so that you can access them from jupyter by specifying the path to the data.
 
 
 ### Final Assignment: Modulpruefung

@@ -1,4 +1,4 @@
-# Analyzing Experimental Data in Python
+# Data Processing and Simple Analyses
 
 
 Welcome to the last session of the 2025/2026 Python for Psychologists course!
@@ -64,4 +64,3 @@ Please e-mail the final notebook to fiebach[ at ]psych.uni-frankfurt.de.
 **Deadline is March 15, 2026!**
 
 
-#

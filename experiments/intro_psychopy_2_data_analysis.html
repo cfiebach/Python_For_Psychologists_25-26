@@ -1,0 +1,1212 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Experimentation Part II - Data Preprocessing and Simple Analyses &#8212; Winter Term - 2025/2026</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'experiments/intro_psychopy_2_data_analysis';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/pfp_logo.png" class="logo__image only-light" alt="Winter Term - 2025/2026 - Home"/>
+    <script>document.write(`<img src="../_static/pfp_logo.png" class="logo__image only-dark" alt="Winter Term - 2025/2026 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../dei.html">Diversity, Equity and Inclusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Course overview &amp; procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../setup.html">Setup for the course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outline.html">Schedule</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/introduction.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/introduction_1.html">Introductory Session I</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introduction/introduction_2.html">Introductory Session II</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/intro_jupyter.html">Introduction II - the jupyter ecosystem &amp; notebooks, first look at programming in Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introduction/introduction_3_new.html">Introductory Session III</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/intro_python_I.html">Introductory Session III: Introduction to Python - Part I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introduction/introduction_4.html">Introductory Session IV</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/intro_python_II.html">Introductory Session IV: Introduction to Python - Part II</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introduction/introduction_5.html">Introductory Session V</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/intro_python_III.html">Introductory Session V: Introduction to Python - Part III</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../introduction/introduction_6.html">Introductory Session VI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/intro_python_IV.html">Introductory Session VI: Introduction to Python - Part IV</a></li>
+
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="experiments.html">Running experiments in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro_psychopy_I.html">Experimentation I - Introduction to PsychoPy I</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../showcases/showcases.html">Advanced Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../showcases/python_numpy.html">Introduction to NumPy</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/python_scipy.html">Introduction to SciPy</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/python_scikit.html">Introduction to scikit-learn &amp; scikit-image</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/python_visualization_for_data.html">Visualization of different data types with python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../showcases/image_manipulation_nibabel.html">Using Python for neuroimaging data - NiBabel</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/image_manipulation_nilearn.html">Using Python for neuroimaging data - Nilearn</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/statistical_analyses_MRI.html">Nilearn GLM: statistical analyses of MRI in Python</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/functional_connectivity.html">Functional connectivity and resting state</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/diffusion_imaging.html">Structural connectivity and diffusion imaging</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/machine_learning_preparation.html">Preparation Machine Learning</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/machine_learning_nilearn.html">MVPA and Searchlight with <code class="docutils literal notranslate"><span class="pre">nilearn</span></code></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/machine_learning_keras.html"><code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code>/<code class="docutils literal notranslate"><span class="pre">Keras</span></code></a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../showcases/Predicting_age_with_machine_learning.html">Machine learning to predict age from rs-fmri</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../questionnaires.html">Questionnaire templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../break.html">Yoga and/or dance break</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CoC.html">Code of Conduct</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/aylinsgl/Python_For_Psychologists_23-24/master?urlpath=tree/lecture/experiments/intro_psychopy_2_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/aylinsgl/Python_For_Psychologists_23-24" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/aylinsgl/Python_For_Psychologists_23-24/edit/master/lecture/experiments/intro_psychopy_2_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/aylinsgl/Python_For_Psychologists_23-24/issues/new?title=Issue%20on%20page%20%2Fexperiments/intro_psychopy_2_data_analysis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/experiments/intro_psychopy_2_data_analysis.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Experimentation Part II - Data Preprocessing and Simple Analyses</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-our-dataset">Building Our Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-in-the-log-files">Reading in the log files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-some-descriptive-statistics">Calculating Some Descriptive Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-a-correlation">Calculating a Correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-correlation-using-scipy">1. Calculating the correlation using scipy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-correlation-with-built-in-methods-in-pandas">2. Calculating the correlation with built-in methods in pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatterplot-with-regression-line">3. Scatterplot with regression line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">Final Exam</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#author-guide-notebook">Author Guide Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-outliers">Testing for Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-vs-concrete-words">Abstract vs. Concrete Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-abstract-and-concrete-words">Comparing Abstract and Concrete Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="experimentation-part-ii-data-preprocessing-and-simple-analyses">
+<h1>Experimentation Part II - Data Preprocessing and Simple Analyses<a class="headerlink" href="#experimentation-part-ii-data-preprocessing-and-simple-analyses" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://fiebachlab.org/team/iaia">Cosimo Iaia</a>, Christian Fiebach</p>
+<p>Dear all, welcome back after the Christmas break, and thank you for handing in your experiment scripts and csv-datasets!!!</p>
+<p>In this final session of the course, we will work with these data and try to read the into python to have a first look at them.</p>
+<section id="outline">
+<h2>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">#</a></h2>
+<p>Within this notebook we will go through a few steps that frequently occur when getting our data. These include:</p>
+<ol class="arabic simple">
+<li><p>Building a dataset</p></li>
+</ol>
+<ul class="simple">
+<li><p>Reading in the log files from our subjects</p></li>
+<li><p>Having a look at the data</p></li>
+<li><p>Identifying potential problems and cleaning them</p></li>
+<li><p>Defining which variables to include into the dataset</p></li>
+<li><p>Writing the variables to a new dataset</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Visualizing the data</p></li>
+<li><p>Calculating descriptive statistics</p></li>
+<li><p>Info on final exam (Modulpruefung)</p></li>
+</ol>
+</section>
+<section id="building-our-dataset">
+<h2>Building Our Dataset<a class="headerlink" href="#building-our-dataset" title="Permalink to this heading">#</a></h2>
+<p>Note that we can expect to do a bit of pre-processing … because a quick glance already showed that there is a bit of variation between some of the files. So some of the first things we may have to do is to <code class="docutils literal notranslate"><span class="pre">clean</span></code> files a bit, so that they can be read in automatically and converted into a <code class="docutils literal notranslate"><span class="pre">dataset</span></code> with which we can work efficiently.</p>
+<cr>
+<p><em>(Even though probably different from the current case, this kind of cleaning or pre-processing is not so uncommon in experimental work. Some cases over which we may stumble in “everyday lab life” might be missing triggers in an EEG dataset, so that we have to reconstruct timing and add it into a file post hoc, or correct a systematic delay that occurred due to technical problems in some subjects, etc.)</em></p>
+<section id="reading-in-the-log-files">
+<h3>Reading in the log files<a class="headerlink" href="#reading-in-the-log-files" title="Permalink to this heading">#</a></h3>
+<p>The first thing we have to do is access our experimental log files which contain the data. Remember that you all submitted a *.csv file, so to work with those (e.g., loop over them, open them …), we need a <code class="docutils literal notranslate"><span class="pre">list</span></code> of these *.csv files. We will need quite flexible code here, as we did not define strict filenames conventions. Thus, filenames could very quite a bit across files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="kn">import</span> <span class="n">listdir</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define your directory where you store your data</span>
+<span class="n">cwd</span> <span class="o">=</span> <span class="s1">&#39;/Users/cfiebach/Desktop/pfp25_psychopy_data/&#39;</span>
+
+<span class="c1">#List of all files contained in your directory</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">listdir</span><span class="p">(</span><span class="n">cwd</span><span class="p">)</span>
+
+<span class="c1">#Here, make sure that you have only csv files: </span>
+<span class="c1">#i.e., exclude any file that is not a csv</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="n">file</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span> <span class="k">if</span> <span class="s1">&#39;.csv&#39;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">]</span> <span class="c1"># this is a list comprehension</span>
+
+
+<span class="c1">#Note that this is equivalent to the following code: </span>
+
+<span class="c1">#files_csv = list()</span>
+
+<span class="c1">#for file in files: </span>
+    
+<span class="c1">#    if &#39;.csv&#39; in file: </span>
+        
+<span class="c1">#        file_csv.append(file)</span>
+
+<span class="c1">#   ... just that this would generate a new list (files_csv) from files, which only contains *.csv files!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a test, let’s print the list and see if it contains the twelve files we expect it to contain:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## You all know how to print a list, right?</span>
+<span class="c1">## Please try out after the course if not ...</span>
+<span class="c1">## Hint: What would be an elegant way to do this? Do you remember the enumerate function?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, what next?</p>
+</section>
+<section id="dataset">
+<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">#</a></h3>
+<p>Maybe we first have a look at our data - we have only a few short datasets - so we can actually look into them to check if everything is ok. For this, we want to <code class="docutils literal notranslate"><span class="pre">loop</span></code> over the filenames, open them (i.e., read them in) and maybe first check if all individual datasets have the same length.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Initilize an empty list in which you store the files you open</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1">#Loop through the file names ...</span>
+<span class="k">for</span> <span class="n">sub_id</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span> 
+    
+    <span class="c1"># ... and open the current file in pandas</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span> <span class="c1"># the default separator here is (sep = &#39;,&#39;)</span>
+
+    <span class="c1">#Let&#39;s use the .column attribute combine with len() to check for the number of columns in each file:</span>
+    <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    
+    <span class="c1">#This will print the number of columns:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39; columns found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, so there are quite obvious differences here that we need to fix. Maybe we have a quick look at the datasets themselves, right? We can use almost the same syntax for this …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Initilize an empty list in which you store the files you open</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1">#dictionary for remapping the name of the columns</span>
+<span class="c1">#this is needed because not all files are in the same format/naming scheme</span>
+<span class="c1">#rename_columns = {&#39;reaction_time&#39;: &#39;rating_rt&#39;, </span>
+<span class="c1">#                  &#39;item&#39;: &#39;stimulus&#39;}</span>
+
+<span class="c1">#we will only extract what we need</span>
+<span class="n">columns_to_include</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;stimulus&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;rating_rt&#39;</span><span class="p">]</span>
+
+<span class="c1">#loop through the file names</span>
+<span class="k">for</span> <span class="n">sub_id</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span> 
+    
+    <span class="c1">#open in pandas</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span> <span class="c1"># the default separator here is (sep = &#39;,&#39;)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    
+   
+</pre></div>
+</div>
+</div>
+</div>
+<p>Did you notice the problem?</p>
+<p>Yes, indeed! Some of the file contents are not <code class="docutils literal notranslate"><span class="pre">comma</span> <span class="pre">separated</span></code> but use semicolon instead. This is less standard than comma separation - and actually a problem, because <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">assumes</span> <span class="pre">comma</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">separator</span></code> when reading in <code class="docutils literal notranslate"><span class="pre">*.csv</span></code> files. We can see that if this is not the case, python / pandas will will not separate the columns correctly when reading in the datafiles.
+We need to fix this!</p>
+<p>One approach to fix this prohblem would be to specify a different separator (the semicolon) for these two datasets.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Initilize an empty list in which you store the files you open</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1">#loop through the file names</span>
+<span class="k">for</span> <span class="n">sub_id</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span> 
+        
+    <span class="c1"># ... and open the current file in pandas</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span> <span class="c1"># the default separator here is (sep = &#39;,&#39;)</span>
+
+    <span class="c1">#Let&#39;s use the .column attribute combine with len() to check for the number of columns in each file:</span>
+    <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    
+    <span class="c1">#this statement will account for this</span>
+    <span class="c1">#we basically assume that if the n of columns is one or less, then the file has semicolon</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span> 
+        
+        <span class="c1">#reopen it but specify semicolon as separator</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="n">file</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+        
+        <span class="c1">#and check the number of columns as above ...</span>
+        <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>   
+        <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39; columns found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="c1">#and print the respective dataset</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>OK, this looks better now! Seems we have found a little routine to fix this problem!</strong></p>
+<p>There seems to be another problem - did you notice it? Sometimes the variable identifying our items is called <code class="docutils literal notranslate"><span class="pre">stimulus</span></code>, sometimes <code class="docutils literal notranslate"><span class="pre">item</span></code> - we want it to be called stimulus. And we want to use <code class="docutils literal notranslate"><span class="pre">rating_rt</span></code> not <code class="docutils literal notranslate"><span class="pre">reaction_time</span></code> - se we also need to rename these columns in some datasets, before we can merge the individual files into a single dataset. To do so, we use the <code class="docutils literal notranslate"><span class="pre">rename</span></code> attribute of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>Lastly, we want to keep it simple and only extract three variables from the datasets, <code class="docutils literal notranslate"><span class="pre">stimulus</span></code>, <code class="docutils literal notranslate"><span class="pre">rating</span></code>, and <code class="docutils literal notranslate"><span class="pre">rating_rt</span></code>. These shall be included into a new dataset together with a subject identifier, <code class="docutils literal notranslate"><span class="pre">sub_id</span></code>. You have probably noticed that we have generated this variable using the <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> command in the previous cells …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Initilize an empty list in which you store the files you open</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1">#Define a dictionary for remapping the names of the columns in some datafiles</span>
+<span class="c1">#this is needed because not all files are in the same format/naming scheme</span>
+<span class="n">rename_columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;reaction_time&#39;</span><span class="p">:</span> <span class="s1">&#39;rating_rt&#39;</span><span class="p">,</span> 
+                  <span class="s1">&#39;item&#39;</span><span class="p">:</span> <span class="s1">&#39;stimulus&#39;</span><span class="p">}</span>
+
+<span class="c1">#Define the variables to extract from the datasets</span>
+<span class="n">columns_to_include</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;stimulus&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;rating_rt&#39;</span><span class="p">]</span>
+
+
+<span class="c1">#loop through the file names</span>
+<span class="k">for</span> <span class="n">sub_id</span><span class="p">,</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">files</span><span class="p">):</span> 
+    
+    <span class="c1">#open in pandas</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="n">file</span><span class="p">)</span> <span class="c1"># the default separator here is (sep = &#39;,&#39;)</span>
+    
+    <span class="c1">#Get the number of columns in each file, to correct the ones separated by semicolon</span>
+    <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    
+    <span class="c1">#Print filename and the number of columns</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39; columns found: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1">#Correct files with only 1 column, assuming that these files had semicolon as separator</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)</span> <span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span> 
+        
+        <span class="c1">#reopen it but specify semicolon as separator</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">cwd</span> <span class="o">+</span> <span class="n">file</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+        
+        <span class="c1">#and check the number of columns as above ...</span>
+        <span class="n">n_columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>   
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  ... corrected! columns now: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">n_columns</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+        <span class="c1">#NEW: </span>
+        <span class="c1">#remap the column names if needed, so that everything is in the same format</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rename_columns</span><span class="p">)</span>
+        
+        <span class="c1">#extract only the columns we need</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">columns_to_include</span><span class="p">]</span>
+        
+        <span class="c1">#add a sub_id to keep track of different subject</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sub_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_id</span><span class="p">)</span> <span class="c1"># sub_id comes from enumerate at the beginning of the loop</span>
+
+    <span class="c1">#Proceed for all other datasets, i.e., in case n_columns is actually more then one    </span>
+    <span class="k">else</span><span class="p">:</span> 
+        
+        <span class="c1">#NEW: </span>
+        <span class="c1">#remap the column names </span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">rename_columns</span><span class="p">)</span>
+        
+        <span class="c1">#extract only the the columns we need</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">columns_to_include</span><span class="p">]</span>
+        
+        <span class="c1">#add a sub_id to keep track of different subject</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sub_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sub_id</span><span class="p">)</span>
+    
+    <span class="c1">#In all cases, store the current file in the final dataset by appending it to the list called dfs</span>
+    <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s have a look at the list <code class="docutils literal notranslate"><span class="pre">dfs</span></code> we generated. It seems it is not yet the kind of dataframe we want to have …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What is the problem here? It is a list of dataframes. One potential problem here may be, that each index appears multiple time and that different items can have the same index in different subjects. One problem that may occur here, for example, is that when looping through the dataset with <code class="docutils literal notranslate"><span class="pre">for</span></code>, the routine implicitly calls these indices, so that the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop may be in a different order than you expected!</p>
+<p>What we want to have, thus, is only one dataframe to work with when doing statistics. For this, we want to concatenate all entries in the <code class="docutils literal notranslate"><span class="pre">dfs</span></code> list into one, and <code class="docutils literal notranslate"><span class="pre">reset</span></code> the indices. Luckily, there is a command that can do just this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>This looks right!!!</strong></p>
+</section>
+</section>
+<section id="visualizing-data">
+<h2>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Permalink to this heading">#</a></h2>
+<p>The next step one often does is to visualize descriptive statistics of data, to get some feeling for how your data look like. In our case, we could for example look at the <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">ratings</span></code> and <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">response</span> <span class="pre">times</span></code> across participants for each word (as the number of words in our study is not too large …).</p>
+<p>For this, we can use common libraries for plotting, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> in particular is built to work on top of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>and easy to use. <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> can work with anything (e.g., lists, numpy arrays) but requires more lines of code. Here, we use a combination of both.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span> 
+
+<span class="c1">#initialize a new figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;stimulus&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;rating&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Isn’t this super-efficient? We did not even have to specify that we want <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> to calculate the mean - it just did so automatically. When providing a <code class="docutils literal notranslate"><span class="pre">categorical</span> <span class="pre">x</span> <span class="pre">variable</span></code> (here: stimulus) and a <code class="docutils literal notranslate"><span class="pre">numerical</span> <span class="pre">y</span> <span class="pre">variable</span></code>, it is the <code class="docutils literal notranslate"><span class="pre">default</span></code> that data are grouped by the x variable and the mean is calculated across all members of each group! You could find out <strong>HERE TBD</strong> how to change this default behavior, e.g., if you want to visualize a different measure of central tendency.</p>
+<p>And what do the error bars show? Again, the default was used, which is actually <strong>not</strong> the standard deviation, but a confidence interval (specifically: a 95% confidence interval determined by bootstrapping). We can try to use the standard deviation by setting the <code class="docutils literal notranslate"><span class="pre">errorbar</span></code> attribute and compare the plots:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#initialize a new figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;stimulus&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">errorbar</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For the sake of completeness, let’s do the same for the time taken to give the ratings, i.e., <code class="docutils literal notranslate"><span class="pre">rating_rt</span></code>. There are many ways to format your figures nicely, including adding titles and subtitles, changing the color of the bars, specifying text for the axis labels, controlling the axes, the tick marks on the axes, font and font size, etc etc. As an example, we could add a bit more color to the next plot and include a title:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#NOTE: if we would not open a new figure, the plot would be in the same figure you opened before</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;stimulus&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;rating_rt&#39;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;stimulus&#39;</span><span class="p">,</span> <span class="n">palette</span> <span class="o">=</span> <span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean Response Time per Word&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can play around with this, for example based on the following website: <a class="reference external" href="https://seaborn.pydata.org/tutorial/introduction.html">https://seaborn.pydata.org/tutorial/introduction.html</a>
+Here, you also find a nice overview over different types of beautiful data plots, which could be inspiring for your future work!!!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## you can try out further formatting options of the figure here ... </span>
+<span class="c1">## For example, you can try to format the title differently or try out different color palettes.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculating-some-descriptive-statistics">
+<h2>Calculating Some Descriptive Statistics<a class="headerlink" href="#calculating-some-descriptive-statistics" title="Permalink to this heading">#</a></h2>
+<p>Often we want to calculate some intiail descriptive statistics to get a feeling for our data. Here we show, as an example, how to calculate the <code class="docutils literal notranslate"><span class="pre">mean</span></code> quite efficiently for each word using <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. You can easily adapt this to calculate other statistics like the <code class="docutils literal notranslate"><span class="pre">.median()</span></code> or the standard deviation <code class="docutils literal notranslate"><span class="pre">.std()</span></code>. You will easily find web resources for this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Compute mean ratings and mean RTs per word </span>
+
+<span class="c1"># first define three lists to work with</span>
+<span class="n">words</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">ratings</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">rts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c1"># you can group by a specific label/condition in pandas in a loop!</span>
+<span class="c1"># The following loop very efficiently partitions our dataset df into separate dataframes (which we here</span>
+<span class="c1"># call &#39;df_rating&#39;) for every word stimulus in the dataset. The word (i.e., stimulus column) is used</span>
+<span class="c1"># to group the dataset, and the &#39;word specific&#39; dataframe (df_ratings) will contain the variables </span>
+<span class="c1"># from our dataset which we want to average, i.e., rating and rating_rt.</span>
+<span class="c1"># Another way to say this is that df_ratings is a dataframe that contains only the rows with stimulus == word</span>
+<span class="c1"># If this is difficult to understand, you can use print() commands to &#39;visualize&#39; what happens on every iteration ...</span>
+
+<span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">df_ratings</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;stimulus&#39;</span><span class="p">):</span> 
+    
+    <span class="c1">#keep track of the word for this dataframe</span>
+    <span class="n">words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="c1">#compute mean rating for this word</span>
+    <span class="n">mean_rating</span> <span class="o">=</span> <span class="n">df_ratings</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mean_rating</span><span class="p">)</span> <span class="c1">#store</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s have a quick look at the sliced dataframe - i.e., one iteration of this loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_ratings</span> <span class="c1">#this calls the last iteration only</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we want to build a dataset with the results. This can become helpful, when for example the plan is to continue working with the results calculated here. It also can be a nice way to display the results in a notebook - for the small number of words we used, this actually works in our case.</p>
+<p>As the command below shows, <strong>a dataframe (df) is actually built from a dictionary</strong> in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, where each key becomes a column and each value (which is typically a list or an array) will be the observations or rows in that column. Note that this will work only if all the values have the same dimensions - if you have 20 ratings, you need to have 20 reaction times!</p>
+<p>A good idea from a coding perspective is to check whether this precondition for building a dataset is fulfilled, which you can do like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">ratings</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">rts</span><span class="p">)</span>
+
+<span class="c1">#if this assertion is False, you get an assertion error and you need to check your code to </span>
+<span class="c1">#find a mistake</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, there seems to be an error here - we need to fix it!</p>
+<p>If you have fixed it, you can now build the new dataframe which we want to call <code class="docutils literal notranslate"><span class="pre">res</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#build df for results </span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;words&#39;</span><span class="p">:</span> <span class="n">words</span><span class="p">,</span> 
+                    <span class="s1">&#39;mean_ratings&#39;</span><span class="p">:</span> <span class="n">ratings</span><span class="p">,</span> 
+                    <span class="s1">&#39;mean_rt&#39;</span><span class="p">:</span> <span class="n">rts</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s have a lool at the results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calling the new dataset `res` which cotains the calculated mean values per word.</span>
+<span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Admittedly, this is just another way to get to the same data as in the plotting section above - that also showed the means … Still, this is a showcase of what you can do with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>!</p>
+<p><em>If you want to save this dataframe, remember that you saw how to do this during the psychopy session!</em></p>
+</section>
+<section id="calculating-a-correlation">
+<h2>Calculating a Correlation<a class="headerlink" href="#calculating-a-correlation" title="Permalink to this heading">#</a></h2>
+<p>The last thing we want to do in today’s session is to calculate a <code class="docutils literal notranslate"><span class="pre">correlation</span></code> between the two variables we acquired - the rating and the response time, i.e., the time it took to rate the respective stimulus word. More specifically, we want to compute this correlation based on the mean response times and ratings across subjects, for each word! So we can use the dataset <code class="docutils literal notranslate"><span class="pre">res</span></code> we just generated to calculate that correlation. (Why do we want to look at this correlation? We might have hypothesized that concrete words are easier to recognition or that it might take longer to judge an abstract word on the concrete-abstract dimention. Let’s find it out …)</p>
+<p>In the following, we will use two different ways to calculate this correlation, and we will also visualize it.</p>
+<section id="calculating-the-correlation-using-scipy">
+<h3>1. Calculating the correlation using scipy<a class="headerlink" href="#calculating-the-correlation-using-scipy" title="Permalink to this heading">#</a></h3>
+<p>For this, we use scipy’s <code class="docutils literal notranslate"><span class="pre">pearsonr</span></code> correlation, to calculate a Pearson correlation. <code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code> has also <code class="docutils literal notranslate"><span class="pre">spearmanr</span></code> etc. Note that we want to calculate the correlation value itself and test it for significance!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span> <span class="c1"># always a good idea to import it </span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">pearsonr</span>
+
+<span class="c1"># extract the two variables to be correlated ...</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;mean_ratings&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="c1"># this is now a numpy array</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;mean_rt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># ... and have a look at them</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the pearson correlation and print the output</span>
+<span class="n">pearson_corr</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">pearson_corr</span><span class="p">,</span> <span class="n">p_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>OK, there does seem to be a significant correlation of around <em>r</em> = .56. This means that more abstract words (with higher ratings) took on average longer to respond to.</p>
+</section>
+<section id="calculating-the-correlation-with-built-in-methods-in-pandas">
+<h3>2. Calculating the correlation with built-in methods in pandas<a class="headerlink" href="#calculating-the-correlation-with-built-in-methods-in-pandas" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following command will return a correlation matrix.</span>
+<span class="c1"># It computes the corr for all the columns you pass (it can be more than two).</span>
+<span class="c1"># As default, Pearson correlation is used, but you can specify spearman or kendall by doing .corr(method = &#39;spearman&#39;)</span>
+<span class="n">corrs</span> <span class="o">=</span> <span class="n">res</span><span class="p">[[</span><span class="s1">&#39;mean_ratings&#39;</span><span class="p">,</span> <span class="s1">&#39;mean_rt&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#it shoud be the same as scipy.stats</span>
+<span class="n">corrs</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot-with-regression-line">
+<h3>3. Scatterplot with regression line<a class="headerlink" href="#scatterplot-with-regression-line" title="Permalink to this heading">#</a></h3>
+<p>To this end, we use the plotting libraries we have imported above!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#let&#39;s plot the scatterplot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span> <span class="c1">#new figure</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;mean_ratings&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;mean_rt&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1">#plot regression line</span>
+<span class="c1"># Note that this time we do not open a new figure, because we want to plot the line into the scatterplot we just made! </span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;mean_ratings&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;mean_rt&#39;</span><span class="p">,</span> <span class="n">scatter</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> 
+<span class="c1"># we set scatter to False because it is already plotted</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To save a figure, you would call matplotlib again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You have to specify a path which is the full path (folder + filename).</span>
+<span class="c1"># Do not forget the file format (png or svg, etc)!</span>
+
+<span class="c1"># The command looks like this:</span>
+<span class="c1">#plt.savefig(&#39;folder/name.png&#39;) </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this saves the last figure opened! So if you want to save multple figures (like the figures above), you need to add this line of code after you plot something, each time.</p>
+<cr>
+<cr>    
+</cr>
+</section>
+</section>
+<section id="final-exam">
+<h2>Final Exam<a class="headerlink" href="#final-exam" title="Permalink to this heading">#</a></h2>
+<p>If you choose to do the <code class="docutils literal notranslate"><span class="pre">Modulpruefung</span></code> in this course, you have to complete a final assignment to get a grade!</p>
+<p>You have already programmed an experiment and submitted a dataset … this will count as one part of the exam. And you have all done a great job here!</p>
+<p>The second part will be to take the data we worked with today and:</p>
+<ul class="simple">
+<li><p>test them for the presence of outlier(s) and - if present - exclude those outliers from the remainder of the data analysis,</p></li>
+<li><p>define a new variable that separates the words into two experimental conditions: abstract vs. concrete words.</p></li>
+<li><p>When done with this, use this variable first to plot mean and standard deviation for each condition, then</p></li>
+<li><p>compare the ratings and the response times between abstract and concrete words using a t test.</p></li>
+<li><p>Last but not least, please report what you did and the results in a jupyter notebook that you hand in as your exam.</p></li>
+</ul>
+<section id="author-guide-notebook">
+<h3>Author Guide Notebook<a class="headerlink" href="#author-guide-notebook" title="Permalink to this heading">#</a></h3>
+<p>The notebook should have a nice structure with headlines, text sections and code and results. You should read in the data, describe how you test for outlier(s) and implement this test, exclude outliers if necessary. Then, you should describe how you generate the condition variable (abstract vs. concrete) and implement this. Following this, please (a) visualizee and describe mean differences between abstract and concrete words (don’t forget errorbars!), describe the statistical test and implemnt it and report its results.
+Please also don’t forget to include your name and Matrikelnumber into the document when you submit.</p>
+</section>
+<section id="testing-for-outliers">
+<h3>Testing for Outliers<a class="headerlink" href="#testing-for-outliers" title="Permalink to this heading">#</a></h3>
+<p>There are many ways to test for outliers. A frequently used approach is to test whether a subject’s dependent values (e.g., ratings, RTs) are beyond 3 standard deviations from the mean of the remaining sample. So you might want to iterate over participants and calculate, on every iteration, the mean and std across all but one participant and compare that participant’s mean to the mean of the others.</p>
+<p>This would be tested for each dependent variable. If you want to be more sophisticated, you could even test this separately for every condition.</p>
+</section>
+<section id="abstract-vs-concrete-words">
+<h3>Abstract vs. Concrete Words<a class="headerlink" href="#abstract-vs-concrete-words" title="Permalink to this heading">#</a></h3>
+<p>It should be quite obvious which are which, but just to make sure:
+Abstract words: Ehre, Frieden, Hoffnung, Klugheit, Liebe, Ruhm, Seele, Stuhl, Tragik, Wahrheit, Weisheit
+Concrete words: Anker, Apfel, Bagger, Besen, Felsen, Gabel, Hammer, Pfanne, Stuhl, Toaster</p>
+</section>
+<section id="comparing-abstract-and-concrete-words">
+<h3>Comparing Abstract and Concrete Words<a class="headerlink" href="#comparing-abstract-and-concrete-words" title="Permalink to this heading">#</a></h3>
+<p>To plot a mean for comparing experimental conditions, you would calculate it in a way to first calculate a mean within each participant (e.g., a mean across all concrete words within every participant) and then calculate a mean across participants. This ‘grand mean’ is the mean value you want to plot.</p>
+<p>The first t test (rating) will have more the character of a manipulation check - it would be really weird if abstract words would not be rated as more abstract in our sample … However, it is not unplausible to assume that these ratings take longer for abstract words. We would like to test this assumption with a t test.</p>
+<p>To calculate the t test, you can use scipy or statsmodels packages. I think we have done a t test before!?!</p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h4>
+<p>You can get the data from here: TBD</p>
+</section>
+<section id="submission-of-assignment">
+<h4>Submission of Assignment<a class="headerlink" href="#submission-of-assignment" title="Permalink to this heading">#</a></h4>
+<p>Please e-mail both files to fiebach[ at ]<a class="reference external" href="http://psych.uni-frankfurt.de">psych.uni-frankfurt.de</a>.</p>
+<p><strong>Deadline is March 15, 2026!</strong></p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./experiments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outline">Outline</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-our-dataset">Building Our Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-in-the-log-files">Reading in the log files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-some-descriptive-statistics">Calculating Some Descriptive Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-a-correlation">Calculating a Correlation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-correlation-using-scipy">1. Calculating the correlation using scipy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-the-correlation-with-built-in-methods-in-pandas">2. Calculating the correlation with built-in methods in pandas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatterplot-with-regression-line">3. Scatterplot with regression line</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-exam">Final Exam</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#author-guide-notebook">Author Guide Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-outliers">Testing for Outliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstract-vs-concrete-words">Abstract vs. Concrete Words</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-abstract-and-concrete-words">Comparing Abstract and Concrete Words</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#submission-of-assignment">Submission of Assignment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Peer Herholz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
